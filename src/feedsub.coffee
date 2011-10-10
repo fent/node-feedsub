@@ -42,10 +42,10 @@ class FeedReader extends EventEmitter
     _.extend @getOpt, @options.get
 
     if @options.autoStart
-      @start(true)
+      @start()
 
 
-  start: (begin) ->
+  start: (begin = true) ->
     @intervalid = @readInterval @options.interval, null, begin
 
   stop: ->
