@@ -13,7 +13,7 @@
     "node": "*"
   },
   "dependencies": {
-    "feedme": ">=0.0.1",
+    "feedme": ">=0.0.2",
     "underscore": ">=1.1.7"
   },
   "devDependencies": {
