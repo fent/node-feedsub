@@ -112,7 +112,7 @@ class FeedReader extends EventEmitter
         if @options.lastDate is date
           res.pause()
           req.abort()
-          return callback null, []
+          return callback null, [] if typeof callback is 'function'
         @options.lastDate = date
         parser.on 'item', getitems
         getitems(item)
