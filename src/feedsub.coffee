@@ -69,7 +69,7 @@ class FeedReader extends EventEmitter
         req.abort()
 
       # save date
-      date = null
+      date = false
       getdate = (text) ->
         date = text
 
