@@ -124,8 +124,8 @@ class FeedReader extends EventEmitter
         # check if the item has already been read
         # in previous requests
         if @options.history.length > 0
-          iterator = (historyitem) ->
-            _.isEqual historyitem, item
+          iterator = (hitem) ->
+            _.isEqual(hitem.title, item.title) and ((not hitem.pubdate? and not hitem.published?) or (hitem.pubdate? and hitem.pubdate is item.pubdate) or (hitem.published? and hitem.published is item.published))
 
           # if it has, then stop parsing the rest of the xml
           if _.detect @options.history, iterator
