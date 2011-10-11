@@ -2,7 +2,7 @@
   "name": "feedsub",
   "description": "Reads online feeds notifying on new items.",
   "keywords": ["feed", "rss", "atom", "subscribe"],
-  "version": "0.0.4",
+  "version": "0.0.5",
   "repository": {
     "type": "git",
     "url": "git://github.com/fent/node-feedsub.git"
@@ -13,7 +13,7 @@
     "node": "*"
   },
   "dependencies": {
-    "feedme": ">=0.0.2",
+    "feedme": ">=0.0.3",
     "underscore": ">=1.1.7"
   },
   "devDependencies": {
