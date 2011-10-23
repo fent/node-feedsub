@@ -170,6 +170,12 @@ class FeedReader extends EventEmitter
         parser.done()
         end()
 
+    req.on 'error', (err) =>
+      if typeof callback is 'function'
+        callback err
+      else
+        @emit 'error', err
+
 
   readInterval: (callback, interval, begin) ->
     @stop()
