@@ -1,5 +1,5 @@
 var FeedSub = require('./../lib/feedsub');
-          nock = require('nock');
+       nock = require('nock');
 
 
 nock('http://feedsite.info')
@@ -29,22 +29,25 @@ exports['Read the old rss feed first'] = function(beforeExit, assert) {
   var n = 0;
 
   reader.read(function(err, items) {
-    assert.equal(++n, 1);
+    if (err) throw err;
+    assert.eql(++n, 1);
     assert.isNull(err);
-    assert.length(items, 2997, 'read all items in feed');
+    assert.eql(items.length, 2997, 'read all items in feed');
 
     // read feed again
     reader.read(function(err, items) {
-      assert.equal(++n, 2);
+      if (err) throw err;
+      assert.eql(++n, 2);
       assert.isNull(err);
-      assert.length(items, 0, 'should not return any new items');
+      assert.eql(items.length, 0, 'should not return any new items');
 
       // read the new feed this time
       reader.getOpt.path = feed1new;
       reader.read(function(err, items) {
-        assert.equal(++n, 3);
+        if (err) throw err;
+        assert.eql(++n, 3);
         assert.isNull(err);
-        assert.length(items, 3, '3 new items');
+        assert.eql(items.length, 3, '3 new items');
       });
     });
   });
@@ -56,9 +59,10 @@ exports['Read feed without emitOnStart'] = function(beforeExit, assert) {
   var n = 0;
 
   reader.read(function(err, items) {
-    assert.equal(++n, 1);
+    if (err) throw err;
+    assert.eql(++n, 1);
     assert.isNull(err);
-    assert.length(items, 0, 'should return no items');
+    assert.eql(items.length, 0, 'should return no items');
   });
 };
 
@@ -77,9 +81,10 @@ exports['Use skipHours'] = function(beforeExit, assert) {
   var n = 0;
 
   reader.read(function(err, items) {
-    assert.equal(++n, 1);
+    if (err) throw err;
+    assert.eql(++n, 1);
     assert.isNull(err);
-    assert.length(items, 0, 'should return no items');
+    assert.eql(items.length, 0, 'should return no items');
   });
 };
 
@@ -89,22 +94,25 @@ exports['Same title but different pubdate'] = function(beforeExit, assert) {
   var n = 0;
 
   reader.read(function(err, items) {
-    assert.equal(++n, 1);
+    if (err) throw err;
+    assert.eql(++n, 1);
     assert.isNull(err);
-    assert.length(items, 4, 'read all items in feed');
+    assert.eql(items.length, 4, 'read all items in feed');
 
     // read feed again
     reader.read(function(err, items) {
-      assert.equal(++n, 2);
+      if (err) throw err;
+      assert.eql(++n, 2);
       assert.isNull(err);
-      assert.length(items, 0, 'should not return any new items');
+      assert.eql(items.length, 0, 'should not return any new items');
 
       // read the new feed this time
       reader.getOpt.path = feed3new;
       reader.read(function(err, items) {
-        assert.equal(++n, 3);
+        if (err) throw err;
+        assert.eql(++n, 3);
         assert.isNull(err);
-        assert.length(items, 1, '1 new item with different pubdate');
+        assert.eql(items.length, 1, '1 new item with different pubdate');
       });
     });
   });
