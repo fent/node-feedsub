@@ -42,7 +42,7 @@ exports['Read the old rss feed first'] = function(beforeExit, assert) {
       assert.eql(items.length, 0, 'should not return any new items');
 
       // read the new feed this time
-      reader.getOpt.path = feed1new;
+      reader.getOpts.path = feed1new;
       reader.read(function(err, items) {
         if (err) throw err;
         assert.eql(++n, 3);
@@ -107,7 +107,7 @@ exports['Same title but different pubdate'] = function(beforeExit, assert) {
       assert.eql(items.length, 0, 'should not return any new items');
 
       // read the new feed this time
-      reader.getOpt.path = feed3new;
+      reader.getOpts.path = feed3new;
       reader.read(function(err, items) {
         if (err) throw err;
         assert.eql(++n, 3);

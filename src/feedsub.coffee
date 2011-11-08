@@ -36,10 +36,12 @@ class FeedReader extends EventEmitter
         @r = http
       when 'https:'
         @r = https
-    @getOpt =
+    @getOpts =
       host: parsed.host
+      port: parsed.port
       path: parsed.pathname + (parsed.search or '') + (parsed.hash or '')
-    _.extend @getOpt, @options.get
+      auth: parsed.auth
+    _.extend @getOpts, @options.requestOpts
 
     if @options.autoStart
       @start()
@@ -54,7 +56,7 @@ class FeedReader extends EventEmitter
 
 
   read: (callback) ->
-    req = @r.get @getOpt, (res) =>
+    req = @r.get @getOpts, (res) =>
       res.setEncoding 'utf8'
       if res.statusCode isnt 200 and typeof callback is 'function'
         return callback new Error 'Status Code: ' + res.statusCode
