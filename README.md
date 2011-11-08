@@ -48,6 +48,7 @@ Creates a new instance of FeedSub. `options` defaults to.
                     // if this is set to true and the feed has that tag,
                     // it follows that rule.
   skipDays: false // same as above but with days
+  get: {} // options object passed to the http(s).get function
 }
 ```
 
