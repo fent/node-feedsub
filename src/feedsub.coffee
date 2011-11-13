@@ -58,8 +58,12 @@ class FeedReader extends EventEmitter
   read: (callback) ->
     req = @r.get @getOpts, (res) =>
       res.setEncoding 'utf8'
-      if res.statusCode isnt 200 and typeof callback is 'function'
-        return callback new Error 'Status Code: ' + res.statusCode
+      if res.statusCode isnt 200
+        err = new Error 'Status Code: ' + res.statusCode
+        if typeof callback is 'function'
+          return callback err
+        else
+          return @emit 'error', err
 
       parser = new FeedMe()
       parser.on 'error', (err) =>
@@ -67,7 +71,6 @@ class FeedReader extends EventEmitter
           callback err
         else
           @emit 'error', err
-        res.pause()
         req.abort()
 
       # save date
@@ -106,13 +109,11 @@ class FeedReader extends EventEmitter
         if @options.skipHours or @options.skipDays
           now = new Date()
           if (@options.hours and @options.hours.indexOf(now.getHours()) isnt -1) or (@options.days and @options.days.indexOf(DAYS[now.getDay()]) isnt -1)
-            res.pause()
             req.abort()
             return callback null, [] if typeof callback is 'function'
             return
 
         if @options.lastDate is date
-          res.pause()
           req.abort()
           return callback null, [] if typeof callback is 'function'
         @options.lastDate = date
@@ -131,7 +132,6 @@ class FeedReader extends EventEmitter
 
           # if it has, then stop parsing the rest of the xml
           if _.detect @options.history, iterator
-            res.pause()
             req.abort()
             parser.removeListener 'item', getitems
             end()
@@ -146,12 +146,13 @@ class FeedReader extends EventEmitter
       # or by reading the whole feed
       end = =>
         # concat new items to the front of the history list
-        @options.history = newitems.concat(@options.history)
-
-        # cut off the array to save memory
-        @options.history =
-          @options.history.slice(0, @options.maxHistory)
-
+        # cut off history array to save memory
+        if newitems.length > @options.maxHistory
+          @options.history = newitems.slice(0, @options.maxHistory)
+        else
+          @options.history = newitems
+            .concat(@options.history
+              .slice(0, @options.maxHistory - newitems.length))
 
         # reverse order to emit items in chronological order
         newitems.reverse()

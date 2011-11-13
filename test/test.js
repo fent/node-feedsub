@@ -2,31 +2,16 @@ var FeedSub = require('./../lib/feedsub');
        nock = require('nock');
 
 
-nock('http://feedsite.info')
-  .get('/rss/feedold.xml')
-  .replyWithFile(200, __dirname + '/feedold.xml')
-  .get('/rss/feednew.xml')
-  .replyWithFile(200, __dirname + '/feednew.xml')
-  .get('/rss/rss2old.xml')
-  .replyWithFile(200, __dirname + '/rss2old.xml')
-  .get('/rss/rss2new.xml')
-  .replyWithFile(200, __dirname + '/rss2new.xml')
-
-nock('http://www.google.com')
-  .get('/reader/public/atom/')
-  .replyWithFile(200, __dirname + '/aninews.rss')
-
-
-var feed1old = 'http://feedsite.info/rss/feedold.xml',
-    feed1new = '/rss/feednew.xml',
-    feed2    = 'http://www.google.com/reader/public/atom/'
-    feed3old = 'http://feedsite.info/rss/rss2old.xml',
-    feed3new = '/rss/rss2new.xml';
-
-
 exports['Read the old rss feed first'] = function(beforeExit, assert) {
-  var reader = new FeedSub(feed1old, { interval: 3 });
-  var n = 0;
+  var host = 'http://feedsite.info'
+    , path = '/rss/feed.xml'
+    , reader = new FeedSub(host + path, { interval: 3 })
+    , n = 0
+    ;
+
+  nock(host)
+    .get(path)
+    .replyWithFile(200, __dirname + '/feedold.xml')
 
   reader.read(function(err, items) {
     if (err) throw err;
@@ -35,6 +20,10 @@ exports['Read the old rss feed first'] = function(beforeExit, assert) {
     assert.eql(items.length, 2997, 'read all items in feed');
 
     // read feed again
+    nock(host)
+      .get(path)
+      .replyWithFile(200, __dirname + '/feedold.xml')
+
     reader.read(function(err, items) {
       if (err) throw err;
       assert.eql(++n, 2);
@@ -42,7 +31,10 @@ exports['Read the old rss feed first'] = function(beforeExit, assert) {
       assert.eql(items.length, 0, 'should not return any new items');
 
       // read the new feed this time
-      reader.getOpts.path = feed1new;
+      nock(host)
+        .get(path)
+        .replyWithFile(200, __dirname + '/feednew.xml')
+
       reader.read(function(err, items) {
         if (err) throw err;
         assert.eql(++n, 3);
@@ -53,10 +45,16 @@ exports['Read the old rss feed first'] = function(beforeExit, assert) {
   });
 };
 
-
 exports['Read feed without emitOnStart'] = function(beforeExit, assert) {
-  var reader = new FeedSub(feed1old, { emitOnStart: false });
-  var n = 0;
+  var host = 'http://feedsite.info'
+    , path = '/rss/feed.xml'
+    , reader = new FeedSub(host + path, { emitOnStart: false })
+    , n = 0
+    ;
+
+  nock(host)
+    .get(path)
+    .replyWithFile(200, __dirname + '/feedold.xml')
 
   reader.read(function(err, items) {
     if (err) throw err;
@@ -65,7 +63,6 @@ exports['Read feed without emitOnStart'] = function(beforeExit, assert) {
     assert.eql(items.length, 0, 'should return no items');
   });
 };
-
 
 exports['Use skipHours'] = function(beforeExit, assert) {
   // mock Date
@@ -77,8 +74,15 @@ exports['Use skipHours'] = function(beforeExit, assert) {
     };
   };
 
-  var reader = new FeedSub(feed2, { skipHours: true });
-  var n = 0;
+  var host = 'http://www.google.com'
+    , path = '/reader/public/atom/'
+    , reader = new FeedSub(host + path, { skipHours: true })
+    , n = 0
+    ;
+
+  nock(host)
+    .get(path)
+    .replyWithFile(200, __dirname + '/aninews.rss')
 
   reader.read(function(err, items) {
     if (err) throw err;
@@ -90,8 +94,15 @@ exports['Use skipHours'] = function(beforeExit, assert) {
 
 
 exports['Same title but different pubdate'] = function(beforeExit, assert) {
-  var reader = new FeedSub(feed3old);
-  var n = 0;
+  var host = 'http://feedburner.info'
+    , path = '/rss'
+    , reader = new FeedSub(host + path)
+    , n = 0
+    ;
+
+  nock(host)
+    .get(path)
+    .replyWithFile(200, __dirname + '/rss2old.xml')
 
   reader.read(function(err, items) {
     if (err) throw err;
@@ -100,6 +111,10 @@ exports['Same title but different pubdate'] = function(beforeExit, assert) {
     assert.eql(items.length, 4, 'read all items in feed');
 
     // read feed again
+    nock(host)
+      .get(path)
+      .replyWithFile(200, __dirname + '/rss2old.xml')
+
     reader.read(function(err, items) {
       if (err) throw err;
       assert.eql(++n, 2);
@@ -107,7 +122,10 @@ exports['Same title but different pubdate'] = function(beforeExit, assert) {
       assert.eql(items.length, 0, 'should not return any new items');
 
       // read the new feed this time
-      reader.getOpts.path = feed3new;
+      nock(host)
+        .get(path)
+        .replyWithFile(200, __dirname + '/rss2new.xml')
+
       reader.read(function(err, items) {
         if (err) throw err;
         assert.eql(++n, 3);
