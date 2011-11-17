@@ -20,7 +20,7 @@ class FeedReader extends EventEmitter
   constructor: (feed, @options = {}) ->
     _.defaults(@options, {
       interval: 10
-      forceInterval: true
+      forceInterval: false
       autoStart: false
       emitOnStart: false
       lastDate: null
