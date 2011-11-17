@@ -34,7 +34,7 @@ Creates a new instance of FeedSub. `options` defaults to.
                        // number of minutes to cache the feed
                        // this will ignore that
   autoStart: false, // if true, calls `reader.start()` on instanstiation
-  emitOnStart: true, // emits items on the very first request
+  emitOnStart: false, // emits items on the very first request
                      // after which, it should consider those items read
   lastDate: null, // keeps track of last date of the feed
   history: [], // keeps track of last items from the feed
