@@ -28,23 +28,40 @@ Creates a new instance of FeedSub. `options` defaults to.
 
 ```javascript
 {
-  interval: 10, // number of minutes to wait between checking the feed
-                // for new items
-  forceInterval: true, // some feeds contain a `ttl` tag that specifies the
-                       // number of minutes to cache the feed
-                       // this will ignore that
-  autoStart: false, // if true, calls `reader.start()` on instanstiation
-  emitOnStart: false, // emits items on the very first request
-                     // after which, it should consider those items read
-  lastDate: null, // keeps track of last date of the feed
-  history: [], // keeps track of last items from the feed
-  maxHistory: 50, // maximum size of `history` array
-  skipHours: false, // some feeds have a `skipHours` tag with a list ofs
-                    // hours in which the feed should not be read.
-                    // if this is set to true and the feed has that tag,
-                    // it follows that rule.
-  skipDays: false // same as above but with days
-  requestOpts: {} // options object passed to the http(s).get function
+  // number of minutes to wait between checking the feed for new items
+  interval: 10,
+
+  // some feeds contain a `ttl` tag that specifies the
+  // number of minutes to cache the feed
+  // setting this to true will ignore that
+  forceInterval: false,
+
+  // if true, calls `reader.start()` on instanstiation
+  autoStart: false, 
+
+  // emits items on the very first request
+  // after which, it should consider those items read
+  emitOnStart: false,
+
+  // keeps track of last date of the feed
+  lastDate: null,
+
+  // keeps track of last items read from the feed
+  history: [],
+
+  // maximum size of `history` array
+  maxHistory: 50,
+
+  // some feeds have a `skipHours` tag with a list of
+  // hours in which the feed should not be read.
+  // if this is set to true and the feed has that tag, it obeys that rule
+  skipHours: false,
+
+  // same as `skipHours`, but with days
+  skipDays: false,
+
+  // options object passed to the http(s).get function
+  requestOpts: {}
 }
 ```
 
