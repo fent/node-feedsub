@@ -22,7 +22,7 @@ class FeedReader extends EventEmitter
       interval: 10
       forceInterval: true
       autoStart: false
-      emitOnStart: true
+      emitOnStart: false
       lastDate: null
       history: []
       maxHistory: 50
