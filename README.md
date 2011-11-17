@@ -1,7 +1,6 @@
-Install
-------------
+FeedSub subscribes to a remote RSS/Atom feed and notifies you of any new items it reads.
 
-    npm install feedsub
+It works by checking the feed every once in a while, comparing the date of the document, if it's the same as the last date, it stops downloading it and parsing the xml. If it's an updated document, then it looks through it top to bottom recording all the new items. Once it finds something it has already read, it stops downloading and parsing the document.
 
 
 Usage
@@ -21,9 +20,6 @@ reader.on('item', function(item) {
 
 reader.start();
 ```
-
-FeedSub is simple. It reads a remote feed, keeps reading it every once in a while, and lets you know whenever it finds something new. It checks the date of the document, if it's the same as the last date, it stops downloading it and parsing the xml. If it's an updated document, then it looks through it top to bottom recording all the new items. Once it finds something it has read, it stops downloading and parsing.
-
 
 API
 ---
@@ -77,3 +73,18 @@ Emits all new items from one request in one array, and the date from the feed at
 
 ###Event: 'error'
 Emitted when there is an error downloading or parsing the feed. Not emitted if `callback` is given for `read` or `readInterval`.
+
+
+Install
+------------
+
+    npm install feedsub
+
+
+Tests
+---------
+Tests are written with [expresso](http://visionmedia.github.com/expresso/)
+
+```bash
+npm test
+```
