@@ -9,6 +9,9 @@
   },
   "author": "Roly Fentanes (https://github.com/fent)",
   "main": "./lib/feedsub.js",
+  "scripts": {
+    "test": "expresso"
+  },
   "engines": {
     "node": "*"
   },
