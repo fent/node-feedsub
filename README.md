@@ -1,10 +1,11 @@
+# FeedSub [![Build Status](https://secure.travis-ci.org/fent/node-feedsub.png)](http://travis-ci.org/fent/node-feedsub)
+
 FeedSub subscribes to a remote RSS/Atom feed and notifies you of any new items it reads.
 
 It works by checking the feed every once in a while, comparing the date of the document, if it's the same as the last date, it stops downloading it and parsing the xml. If it's an updated document, then it looks through it top to bottom recording all the new items. Once it finds something it has already read, it stops downloading and parsing the document.
 
 
-Usage
-------------------
+# Usage
 
 ```javascript
 var FeedSub = require('feedsub');
@@ -21,8 +22,7 @@ reader.on('item', function(item) {
 reader.start();
 ```
 
-API
----
+#API
 ###new FeedSub(feed, [options])
 Creates a new instance of FeedSub. `options` defaults to.
 
@@ -92,16 +92,20 @@ Emits all new items from one request in one array, and the date from the feed at
 Emitted when there is an error downloading or parsing the feed. Not emitted if `callback` is given for `read` or `readInterval`.
 
 
-Install
-------------
+#Install
 
     npm install feedsub
 
 
-Tests
----------
+#Tests
+
 Tests are written with [expresso](http://visionmedia.github.com/expresso/)
 
 ```bash
 npm test
 ```
+
+
+# License
+
+MIT
