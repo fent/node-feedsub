@@ -154,16 +154,20 @@ class FeedReader extends EventEmitter
             .concat(@options.history
               .slice(0, @options.maxHistory - newitems.length))
 
-        # reverse order to emit items in chronological order
-        newitems.reverse()
-
         # only emit new items if this is not the first request
         # or if emitOnStart is enabled
         if not first or @options.emitOnStart
-          callback null, newitems if typeof callback is 'function'
-          @emit 'items', newitems, @options.lastDate
+
+          # reverse order to emit items in chronological order
+          newitems.reverse()
+
           for item, i in newitems
             @emit 'item', item, i
+          @emit 'items', newitems, @options.lastDate
+          callback null, newitems if typeof callback is 'function'
+
+        else
+          callback null, [] if typeof callback is 'function'
 
 
       res.on 'data', (chunk) ->
