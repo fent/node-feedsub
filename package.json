@@ -10,18 +10,18 @@
   "author": "fent (https://github.com/fent)",
   "main": "./lib/feedsub.js",
   "scripts": {
-    "test": "expresso"
+    "test": "mocha -R spec test/*-test.js"
   },
   "engines": {
     "node": "*"
   },
   "dependencies": {
-    "feedme": ">=0.0.4",
+    "feedme": "0.1.x",
     "underscore": "1.1.x"
   },
   "devDependencies": {
     "nock": "0.3.x",
-    "expresso": ">=0.9.0"
+    "mocha": "0.7.x"
   },
   "licenses": [ {
     "type": "MIT",
