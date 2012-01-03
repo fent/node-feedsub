@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	xmlns:georss="http://www.georss.org/georss" xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" xmlns:media="http://search.yahoo.com/mrss/"
+	>
+
+<channel>
+	<title>node blog</title>
+	<atom:link href="http://blog.nodejs.org/feed/" rel="self" type="application/rss+xml" />
+	<link>http://blog.nodejs.org</link>
+	<description></description>
+  <skipDays>
+    <day>Saturday</day>
+    <day>Sunday</day>
+  </skipDays>
+	<lastBuildDate>Fri, 30 Dec 2011 20:27:44 +0000</lastBuildDate>
+	<language>en</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>http://wordpress.com/</generator>
+<cloud domain='blog.nodejs.org' port='80' path='/?rsscloud=notify' registerProcedure='' protocol='http-post' />
+<image>
+		<url>http://s2.wp.com/i/buttonw-com.png</url>
+		<title>node blog</title>
+		<link>http://blog.nodejs.org</link>
+	</image>
+	<atom:link rel="search" type="application/opensearchdescription+xml" href="http://blog.nodejs.org/osd.xml" title="node blog" />
+	<atom:link rel='hub' href='http://blog.nodejs.org/?pushpress=hub'/>
+		<item>
+		<title>Growing up</title>
+		<link>http://blog.nodejs.org/2011/12/15/growing-up/</link>
+		<comments>http://blog.nodejs.org/2011/12/15/growing-up/#comments</comments>
+		<pubDate>Thu, 15 Dec 2011 19:59:15 +0000</pubDate>
+		<dc:creator>ryandahl</dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+
+		<guid isPermaLink="false">http://blog.nodejs.org/?p=387</guid>
+		<description><![CDATA[This week Microsoft announced support for Node in Windows Azure, their cloud computing platform. For the Node core team and the community, this is an important milestone. We&#8217;ve worked hard over the past six months reworking Node&#8217;s machinery to support &#8230; <a href="http://blog.nodejs.org/2011/12/15/growing-up/">Continue reading <span class="meta-nav">&#8594;</span></a><img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=blog.nodejs.org&amp;blog=21260551&amp;post=387&amp;subd=nodeblog&amp;ref=&amp;feed=1" width="1" height="1" />]]></description>
+			<content:encoded><![CDATA[<p>This week Microsoft announced <a href="https://www.windowsazure.com/en-us/develop/nodejs/">support for Node in Windows Azure</a>, their cloud computing platform. For the Node core team and the community, this is an important milestone. We&#8217;ve worked hard over the past six months reworking Node&#8217;s machinery to support IO completion ports and Visual Studio to provide a good native port to Windows. The overarching goal of the port was to expand our user base to the largest number of developers. Happily, this has paid off in the form of being a first class citizen on Azure. Many users who would have never used Node as a pure unix tool are now up and running on the Windows platform. More users translates into a deeper and better ecosystem of modules, which makes for a better experience for everyone.</p>
+<p>We also redesigned <a href="http://nodejs.org">our website</a> &#8211; something that we&#8217;ve put off for a long time because we felt that Node was too nascent to dedicate marketing to it. But now that we have binary distributions for Macintosh and Windows, have bundled npm, and are <a href="https://twitter.com/#!/mranney/status/145778414165569536">serving millions of users</a> at various companies, we felt ready to indulge in a new website and share of a few of our success stories on the home page.</p>
+<p>Work is on-going. We continue to improve the software, making performance improvements and adding isolate support, but Node is growing up.</p>
+<br />  <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gocomments/nodeblog.wordpress.com/387/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/comments/nodeblog.wordpress.com/387/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godelicious/nodeblog.wordpress.com/387/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/delicious/nodeblog.wordpress.com/387/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gofacebook/nodeblog.wordpress.com/387/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/facebook/nodeblog.wordpress.com/387/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gotwitter/nodeblog.wordpress.com/387/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/twitter/nodeblog.wordpress.com/387/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gostumble/nodeblog.wordpress.com/387/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/stumble/nodeblog.wordpress.com/387/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godigg/nodeblog.wordpress.com/387/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/digg/nodeblog.wordpress.com/387/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/goreddit/nodeblog.wordpress.com/387/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/reddit/nodeblog.wordpress.com/387/" /></a> <img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=blog.nodejs.org&amp;blog=21260551&amp;post=387&amp;subd=nodeblog&amp;ref=&amp;feed=1" width="1" height="1" />]]></content:encoded>
+			<wfw:commentRss>http://blog.nodejs.org/2011/12/15/growing-up/feed/</wfw:commentRss>
+		<slash:comments>10</slash:comments>
+	
+		<media:content url="http://1.gravatar.com/avatar/b00bca6ed4657a9c9ea2e40585f454d9?s=96&#38;d=identicon&#38;r=G" medium="image">
+			<media:title type="html">ryandahl</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>Node v0.6.6</title>
+		<link>http://blog.nodejs.org/2011/12/15/node-v0-6-6/</link>
+		<comments>http://blog.nodejs.org/2011/12/15/node-v0-6-6/#comments</comments>
+		<pubDate>Thu, 15 Dec 2011 19:07:57 +0000</pubDate>
+		<dc:creator>Isaac Schlueter</dc:creator>
+				<category><![CDATA[release]]></category>
+
+		<guid isPermaLink="false">http://blog.nodejs.org/?p=385</guid>
+		<description><![CDATA[2011.12.14, Version 0.6.6 (stable) npm update to 1.1.0-beta-4 (Isaac Z. Schlueter) cli: fix output of &#8211;help (Ben Noordhuis) new website pause/resume semantics for stdin (Isaac Z. Schlueter) Travis CI integration (Maciej Małecki) child_process: Fix bug regarding closed stdin (Ben Noordhuis) &#8230; <a href="http://blog.nodejs.org/2011/12/15/node-v0-6-6/">Continue reading <span class="meta-nav">&#8594;</span></a><img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=blog.nodejs.org&amp;blog=21260551&amp;post=385&amp;subd=nodeblog&amp;ref=&amp;feed=1" width="1" height="1" />]]></description>
+			<content:encoded><![CDATA[<p>2011.12.14, Version 0.6.6 (stable)</p>
+<ul>
+<li>npm update to 1.1.0-beta-4 (Isaac Z. Schlueter)</li>
+<li>cli: fix output of &#8211;help (Ben Noordhuis)</li>
+<li>new website</li>
+<li>pause/resume semantics for stdin (Isaac Z. Schlueter)</li>
+<li>Travis CI integration (Maciej Małecki)</li>
+<li>child_process: Fix bug regarding closed stdin (Ben Noordhuis)</li>
+<li>Enable upgrades in MSI. (Igor Zinkovsky)</li>
+<li>net: Fixes memory leak (Ben Noordhuis)</li>
+<li>fs: handle fractional or NaN ReadStream buffer size (Ben Noordhuis)</li>
+<li>crypto: fix memory leaks in PBKDF2 error path (Ben Noordhuis)</li>
+</ul>
+<p>Source Code: <a href="http://nodejs.org/dist/v0.6.6/node-v0.6.6.tar.gz">http://nodejs.org/dist/v0.6.6/node-v0.6.6.tar.gz</a></p>
+<p>Windows Installer: <a href="http://nodejs.org/dist/v0.6.6/node-v0.6.6.msi">http://nodejs.org/dist/v0.6.6/node-v0.6.6.msi</a></p>
+<p>Macintosh Installer: <a href="http://nodejs.org/dist/v0.6.6/node-v0.6.6.pkg">http://nodejs.org/dist/v0.6.6/node-v0.6.6.pkg</a></p>
+<p>Website: <a href="http://nodejs.org/docs/v0.6.6/">http://nodejs.org/docs/v0.6.6/</a></p>
+<p>Documentation: <a href="http://nodejs.org/docs/v0.6.6/api/">http://nodejs.org/docs/v0.6.6/api/</a></p>
+<br />  <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gocomments/nodeblog.wordpress.com/385/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/comments/nodeblog.wordpress.com/385/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godelicious/nodeblog.wordpress.com/385/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/delicious/nodeblog.wordpress.com/385/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gofacebook/nodeblog.wordpress.com/385/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/facebook/nodeblog.wordpress.com/385/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gotwitter/nodeblog.wordpress.com/385/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/twitter/nodeblog.wordpress.com/385/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gostumble/nodeblog.wordpress.com/385/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/stumble/nodeblog.wordpress.com/385/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godigg/nodeblog.wordpress.com/385/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/digg/nodeblog.wordpress.com/385/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/goreddit/nodeblog.wordpress.com/385/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/reddit/nodeblog.wordpress.com/385/" /></a> <img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=blog.nodejs.org&amp;blog=21260551&amp;post=385&amp;subd=nodeblog&amp;ref=&amp;feed=1" width="1" height="1" />]]></content:encoded>
+			<wfw:commentRss>http://blog.nodejs.org/2011/12/15/node-v0-6-6/feed/</wfw:commentRss>
+		<slash:comments>4</slash:comments>
+	
+		<media:content url="http://1.gravatar.com/avatar/73a2b24daecb976af81e010b7a3ce3c6?s=96&#38;d=identicon&#38;r=G" medium="image">
+			<media:title type="html">isaacschlueter</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>Node v0.6.5</title>
+		<link>http://blog.nodejs.org/2011/12/04/node-v0-6-5/</link>
+		<comments>http://blog.nodejs.org/2011/12/04/node-v0-6-5/#comments</comments>
+		<pubDate>Sun, 04 Dec 2011 08:59:57 +0000</pubDate>
+		<dc:creator>ryandahl</dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+
+		<guid isPermaLink="false">http://blog.nodejs.org/?p=379</guid>
+		<description><![CDATA[2011.12.04, Version 0.6.5 (stable) npm workaround Windows antivirus software (isaacs) Upgrade V8 to 3.6.6.11 Source Code: http://nodejs.org/dist/v0.6.5/node-v0.6.5.tar.gz Windows Installer: http://nodejs.org/dist/v0.6.5/node-v0.6.5.msi Macintosh Installer: http://nodejs.org/dist/v0.6.5/node-v0.6.5.pkg Website: http://nodejs.org/docs/v0.6.5/ Documentation: http://nodejs.org/docs/v0.6.5/api/<img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=blog.nodejs.org&amp;blog=21260551&amp;post=379&amp;subd=nodeblog&amp;ref=&amp;feed=1" width="1" height="1" />]]></description>
+			<content:encoded><![CDATA[<p>2011.12.04, Version 0.6.5 (stable)</p>
+<ul>
+<li>npm workaround Windows antivirus software (isaacs)</p>
+<li>Upgrade V8 to 3.6.6.11</ul>
+<p>Source Code: <a href="http://nodejs.org/dist/v0.6.5/node-v0.6.5.tar.gz">http://nodejs.org/dist/v0.6.5/node-v0.6.5.tar.gz</a></p>
+<p>Windows Installer: <a href="http://nodejs.org/dist/v0.6.5/node-v0.6.5.msi">http://nodejs.org/dist/v0.6.5/node-v0.6.5.msi</a></p>
+<p>Macintosh Installer: <a href="http://nodejs.org/dist/v0.6.5/node-v0.6.5.pkg">http://nodejs.org/dist/v0.6.5/node-v0.6.5.pkg</a></p>
+<p>Website: <a href="http://nodejs.org/docs/v0.6.5/">http://nodejs.org/docs/v0.6.5/</a></p>
+<p>Documentation: <a href="http://nodejs.org/docs/v0.6.5/api/">http://nodejs.org/docs/v0.6.5/api/</a></p>
+<br />  <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gocomments/nodeblog.wordpress.com/379/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/comments/nodeblog.wordpress.com/379/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godelicious/nodeblog.wordpress.com/379/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/delicious/nodeblog.wordpress.com/379/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gofacebook/nodeblog.wordpress.com/379/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/facebook/nodeblog.wordpress.com/379/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gotwitter/nodeblog.wordpress.com/379/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/twitter/nodeblog.wordpress.com/379/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gostumble/nodeblog.wordpress.com/379/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/stumble/nodeblog.wordpress.com/379/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godigg/nodeblog.wordpress.com/379/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/digg/nodeblog.wordpress.com/379/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/goreddit/nodeblog.wordpress.com/379/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/reddit/nodeblog.wordpress.com/379/" /></a> <img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=blog.nodejs.org&amp;blog=21260551&amp;post=379&amp;subd=nodeblog&amp;ref=&amp;feed=1" width="1" height="1" />]]></content:encoded>
+			<wfw:commentRss>http://blog.nodejs.org/2011/12/04/node-v0-6-5/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+	
+		<media:content url="http://1.gravatar.com/avatar/b00bca6ed4657a9c9ea2e40585f454d9?s=96&#38;d=identicon&#38;r=G" medium="image">
+			<media:title type="html">ryandahl</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>Node v0.6.4</title>
+		<link>http://blog.nodejs.org/2011/12/01/node-v0-6-4/</link>
+		<comments>http://blog.nodejs.org/2011/12/01/node-v0-6-4/#comments</comments>
+		<pubDate>Fri, 02 Dec 2011 02:20:14 +0000</pubDate>
+		<dc:creator>bennoordhuis</dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+
+		<guid isPermaLink="false">http://blog.nodejs.org/?p=374</guid>
+		<description><![CDATA[2011.12.02, Version 0.6.4 (stable) doc improvements (Kyle Young, Tim Oxley, Roman Shtylman, Mathias Bynens) upgrade bundled npm (Isaac Schlueter) polish Windows installer (Igor Zinkovsky, Isaac Schlueter) punycode: upgrade to v0.2.1 (Mathias Bynens) build: add &#8211;without-npm flag to configure script sys: &#8230; <a href="http://blog.nodejs.org/2011/12/01/node-v0-6-4/">Continue reading <span class="meta-nav">&#8594;</span></a><img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=blog.nodejs.org&amp;blog=21260551&amp;post=374&amp;subd=nodeblog&amp;ref=&amp;feed=1" width="1" height="1" />]]></description>
+			<content:encoded><![CDATA[<p>2011.12.02, Version 0.6.4 (stable)</p>
+<ul>
+<li>doc improvements (Kyle Young, Tim Oxley, Roman Shtylman, Mathias Bynens)</li>
+<li>upgrade bundled npm (Isaac Schlueter)</li>
+<li>polish Windows installer (Igor Zinkovsky, Isaac Schlueter)</li>
+<li>punycode: upgrade to v0.2.1 (Mathias Bynens)</li>
+<li>build: add &#8211;without-npm flag to configure script</li>
+<li>sys: deprecate module some more, print stack trace if NODE_DEBUG=sys</li>
+<li>cli: add -p switch, prints result of &#8211;eval</li>
+<li>#1997: fix Blowfish ECB encryption and decryption (Ingmar Runge)</li>
+<li>#2223: fix socket &#8216;close&#8217; event being emitted twice</li>
+<li>#2224: fix RSS memory usage &gt; 4 GB reporting (Russ Bradberry)</li>
+<li>#2225: fix util.inspect() object stringification bug (Nathan Rajlich)</li>
+</ul>
+<p>Source Code: <a href="http://nodejs.org/dist/v0.6.4/node-v0.6.4.tar.gz">http://nodejs.org/dist/v0.6.4/node-v0.6.4.tar.gz</a></p>
+<p>Windows Installer: <a href="http://nodejs.org/dist/v0.6.4/node-v0.6.4.msi">http://nodejs.org/dist/v0.6.4/node-v0.6.4.msi</a></p>
+<p>Macintosh Installer: <a href="http://nodejs.org/dist/v0.6.4/node-v0.6.4.pkg">http://nodejs.org/dist/v0.6.4/node-v0.6.4.pkg</a></p>
+<p>Website: <a href="http://nodejs.org/docs/v0.6.4/">http://nodejs.org/docs/v0.6.4/</a></p>
+<p>Documentation: <a href="http://nodejs.org/docs/v0.6.4/api/">http://nodejs.org/docs/v0.6.4/api/</a></p>
+<br />  <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gocomments/nodeblog.wordpress.com/374/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/comments/nodeblog.wordpress.com/374/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godelicious/nodeblog.wordpress.com/374/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/delicious/nodeblog.wordpress.com/374/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gofacebook/nodeblog.wordpress.com/374/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/facebook/nodeblog.wordpress.com/374/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gotwitter/nodeblog.wordpress.com/374/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/twitter/nodeblog.wordpress.com/374/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gostumble/nodeblog.wordpress.com/374/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/stumble/nodeblog.wordpress.com/374/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godigg/nodeblog.wordpress.com/374/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/digg/nodeblog.wordpress.com/374/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/goreddit/nodeblog.wordpress.com/374/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/reddit/nodeblog.wordpress.com/374/" /></a> <img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=blog.nodejs.org&amp;blog=21260551&amp;post=374&amp;subd=nodeblog&amp;ref=&amp;feed=1" width="1" height="1" />]]></content:encoded>
+			<wfw:commentRss>http://blog.nodejs.org/2011/12/01/node-v0-6-4/feed/</wfw:commentRss>
+		<slash:comments>8</slash:comments>
+	
+		<media:content url="http://1.gravatar.com/avatar/df603c018c4ce3851a218af36d3c5e6a?s=96&#38;d=identicon&#38;r=G" medium="image">
+			<media:title type="html">bennoordhuis</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>Node v0.6.3</title>
+		<link>http://blog.nodejs.org/2011/11/25/node-v0-6-3/</link>
+		<comments>http://blog.nodejs.org/2011/11/25/node-v0-6-3/#comments</comments>
+		<pubDate>Fri, 25 Nov 2011 10:54:08 +0000</pubDate>
+		<dc:creator>piscisaureus</dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+
+		<guid isPermaLink="false">http://blog.nodejs.org/?p=365</guid>
+		<description><![CDATA[2011.11.25, Version 0.6.3 (stable) #2083 Land NPM in Node. It is included in packages/installers and installed on `make install`. #2076 Add logos to windows installer. #1711 Correctly handle http requests without headers. (Ben Noordhuis, Felix Geisendörfer) TLS: expose more openssl SSL context &#8230; <a href="http://blog.nodejs.org/2011/11/25/node-v0-6-3/">Continue reading <span class="meta-nav">&#8594;</span></a><img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=blog.nodejs.org&amp;blog=21260551&amp;post=365&amp;subd=nodeblog&amp;ref=&amp;feed=1" width="1" height="1" />]]></description>
+			<content:encoded><![CDATA[<p>2011.11.25, Version 0.6.3 (stable)</p>
+<ul>
+<li>#2083 Land NPM in Node. It is included in packages/installers and installed on `make install`.</li>
+<li>#2076 Add logos to windows installer.</li>
+<li>#1711 Correctly handle http requests without headers. (Ben Noordhuis, Felix Geisendörfer)</li>
+<li>TLS: expose more openssl SSL context options and constants. (Ben Noordhuis)</li>
+<li>#2177 Windows: don&#8217;t kill UDP socket when a packet fails to reach its destination. (Bert Belder)</li>
+<li>Windows: support paths longer than 260 characters. (Igor Zinkovsky)</li>
+<li>Windows: correctly resolve drive-relative paths. (Bert Belder)</li>
+<li>#2166 Don&#8217;t leave file descriptor open after lchmod. (Isaac Schlueter)</li>
+<li>#2084 Add OS X .pkg build script to make file.</li>
+<li>#2160 Documentation improvements. (Ben Noordhuis)</li>
+</ul>
+<p>Source Code: <a href="http://nodejs.org/dist/v0.6.3/node-v0.6.3.tar.gz">http://nodejs.org/dist/v0.6.3/node-v0.6.3.tar.gz</a></p>
+<p>Windows Installer: <a href="http://nodejs.org/dist/v0.6.3/node-v0.6.3.msi">http://nodejs.org/dist/v0.6.3/node-v0.6.3.msi</a></p>
+<p>Macintosh Installer: <a href="http://nodejs.org/dist/v0.6.3/node-v0.6.3.pkg">http://nodejs.org/dist/v0.6.3/node-v0.6.3.pkg</a></p>
+<p>Website: <a href="http://nodejs.org/docs/v0.6.3/">http://nodejs.org/docs/v0.6.3/</a></p>
+<p>Documentation: <a href="http://nodejs.org/docs/v0.6.3/api/">http://nodejs.org/docs/v0.6.3/api/</a></p>
+<br />  <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gocomments/nodeblog.wordpress.com/365/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/comments/nodeblog.wordpress.com/365/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godelicious/nodeblog.wordpress.com/365/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/delicious/nodeblog.wordpress.com/365/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gofacebook/nodeblog.wordpress.com/365/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/facebook/nodeblog.wordpress.com/365/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gotwitter/nodeblog.wordpress.com/365/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/twitter/nodeblog.wordpress.com/365/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gostumble/nodeblog.wordpress.com/365/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/stumble/nodeblog.wordpress.com/365/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godigg/nodeblog.wordpress.com/365/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/digg/nodeblog.wordpress.com/365/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/goreddit/nodeblog.wordpress.com/365/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/reddit/nodeblog.wordpress.com/365/" /></a> <img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=blog.nodejs.org&amp;blog=21260551&amp;post=365&amp;subd=nodeblog&amp;ref=&amp;feed=1" width="1" height="1" />]]></content:encoded>
+			<wfw:commentRss>http://blog.nodejs.org/2011/11/25/node-v0-6-3/feed/</wfw:commentRss>
+		<slash:comments>8</slash:comments>
+	
+		<media:content url="http://1.gravatar.com/avatar/dfa62a8ce7e537d68302b67a4a853b4b?s=96&#38;d=identicon&#38;r=G" medium="image">
+			<media:title type="html">piscisaureus</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>Node v0.6.2</title>
+		<link>http://blog.nodejs.org/2011/11/18/node-v0-6-2/</link>
+		<comments>http://blog.nodejs.org/2011/11/18/node-v0-6-2/#comments</comments>
+		<pubDate>Fri, 18 Nov 2011 23:35:32 +0000</pubDate>
+		<dc:creator>bennoordhuis</dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+
+		<guid isPermaLink="false">http://blog.nodejs.org/?p=361</guid>
+		<description><![CDATA[2011.11.18, Version 0.6.2 (stable) doc improvements (Artur Adib, Trevor Burnham, Ryan Emery, Trent Mick) timers: remember extra setTimeout() arguments when timeout==0 punycode: use Mathias Bynens&#8217;s punycode library, it&#8217;s more compliant repl: improved tab completion (Ryan Emery) buffer: fix range checks &#8230; <a href="http://blog.nodejs.org/2011/11/18/node-v0-6-2/">Continue reading <span class="meta-nav">&#8594;</span></a><img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=blog.nodejs.org&amp;blog=21260551&amp;post=361&amp;subd=nodeblog&amp;ref=&amp;feed=1" width="1" height="1" />]]></description>
+			<content:encoded><![CDATA[<p>2011.11.18, Version 0.6.2 (stable)</p>
+<ul>
+<li>doc improvements (Artur Adib, Trevor Burnham, Ryan Emery, Trent Mick)</li>
+<li>timers: remember extra setTimeout() arguments when timeout==0</li>
+<li>punycode: use Mathias Bynens&#8217;s punycode library, it&#8217;s more compliant</li>
+<li>repl: improved tab completion (Ryan Emery)</li>
+<li>buffer: fix range checks in .writeInt() functions (Lukasz Walukiewicz)</li>
+<li>tls: make cipher list configurable</li>
+<li>addons: make Buffer and ObjectWrap visible to Windows add-ons (Bert Belder)</li>
+<li>crypto: add PKCS#1 a.k.a RSA public key verification support</li>
+<li>windows: fix stdout writes when redirected to nul</li>
+<li>sunos: fix build on Solaris and Illumos</li>
+<li>Upgrade V8 to 3.6.6.8</li>
+</ul>
+<p>Source Code: <a href="http://nodejs.org/dist/v0.6.2/node-v0.6.2.tar.gz">http://nodejs.org/dist/v0.6.2/node-v0.6.2.tar.gz</a></p>
+<p>Windows Installer: <a href="http://nodejs.org/dist/v0.6.2/node-v0.6.2.msi">http://nodejs.org/dist/v0.6.2/node-v0.6.2.msi</a></p>
+<p>Macintosh Installer: <a href="http://nodejs.org/dist/v0.6.2/node-v0.6.2.pkg">http://nodejs.org/dist/v0.6.2/node-v0.6.2.pkg</a></p>
+<p>Website: <a href="http://nodejs.org/docs/v0.6.2/">http://nodejs.org/docs/v0.6.2/</a></p>
+<p>Documentation: <a href="http://nodejs.org/docs/v0.6.2/api/">http://nodejs.org/docs/v0.6.2/api/</a></p>
+<br />  <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gocomments/nodeblog.wordpress.com/361/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/comments/nodeblog.wordpress.com/361/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godelicious/nodeblog.wordpress.com/361/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/delicious/nodeblog.wordpress.com/361/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gofacebook/nodeblog.wordpress.com/361/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/facebook/nodeblog.wordpress.com/361/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gotwitter/nodeblog.wordpress.com/361/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/twitter/nodeblog.wordpress.com/361/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gostumble/nodeblog.wordpress.com/361/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/stumble/nodeblog.wordpress.com/361/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godigg/nodeblog.wordpress.com/361/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/digg/nodeblog.wordpress.com/361/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/goreddit/nodeblog.wordpress.com/361/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/reddit/nodeblog.wordpress.com/361/" /></a> <img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=blog.nodejs.org&amp;blog=21260551&amp;post=361&amp;subd=nodeblog&amp;ref=&amp;feed=1" width="1" height="1" />]]></content:encoded>
+			<wfw:commentRss>http://blog.nodejs.org/2011/11/18/node-v0-6-2/feed/</wfw:commentRss>
+		<slash:comments>7</slash:comments>
+	
+		<media:content url="http://1.gravatar.com/avatar/df603c018c4ce3851a218af36d3c5e6a?s=96&#38;d=identicon&#38;r=G" medium="image">
+			<media:title type="html">bennoordhuis</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>Node v0.6.1</title>
+		<link>http://blog.nodejs.org/2011/11/11/node-v0-6-1/</link>
+		<comments>http://blog.nodejs.org/2011/11/11/node-v0-6-1/#comments</comments>
+		<pubDate>Fri, 11 Nov 2011 23:34:15 +0000</pubDate>
+		<dc:creator>ryandahl</dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+
+		<guid isPermaLink="false">http://blog.nodejs.org/?p=356</guid>
+		<description><![CDATA[2011.11.11, Version 0.6.1 (stable) doc improvements (Eric Lovett, Ben Noordhuis, Scott Anderson, Yoji SHIDARA) crypto: make thread-safe (Ben Noordhuis) fix process.kill error object debugger: correctly handle source with multi-byte characters (Shigeki Ohtsu) make stdout and stderr non-destroyable (Igor Zinkovsky) fs: &#8230; <a href="http://blog.nodejs.org/2011/11/11/node-v0-6-1/">Continue reading <span class="meta-nav">&#8594;</span></a><img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=blog.nodejs.org&amp;blog=21260551&amp;post=356&amp;subd=nodeblog&amp;ref=&amp;feed=1" width="1" height="1" />]]></description>
+			<content:encoded><![CDATA[<p>2011.11.11, Version 0.6.1 (stable)</p>
+<ul>
+<li>doc improvements (Eric Lovett, Ben Noordhuis, Scott Anderson, Yoji SHIDARA)</li>
+<li>crypto: make thread-safe (Ben Noordhuis)</li>
+<li>fix process.kill error object</li>
+<li>debugger: correctly handle source with multi-byte characters (Shigeki Ohtsu)</li>
+<li>make stdout and stderr non-destroyable (Igor Zinkovsky)</li>
+<li>fs: don&#8217;t close uninitialized fs.watch handle (Ben Noordhuis)</li>
+<li>#2026 fix man page install on BSDs (Ben Noordhuis)</li>
+<li>#2040 fix unrecognized errno assert in uv_err_name</li>
+<li>#2043 fs: mkdir() should call callback if mode is omitted</li>
+<li>#2045 fs: fix fs.realpath on windows to return on error (Benjamin Pasero)</li>
+<li>#2047 minor cluster improvements</li>
+<li>#2052 readline get window columns correctly</li>
+<li>Upgrade V8 to 3.6.6.7</li>
+</ul>
+<p>Source Code: <a href="http://nodejs.org/dist/v0.6.1/node-v0.6.1.tar.gz">http://nodejs.org/dist/v0.6.1/node-v0.6.1.tar.gz</a></p>
+<p>Windows Installer: <a href="http://nodejs.org/dist/v0.6.1/node-v0.6.1.msi">http://nodejs.org/dist/v0.6.1/node-v0.6.1.msi</a></p>
+<p>Macintosh Installer: <a href="http://nodejs.org/dist/v0.6.1/node-v0.6.1.pkg">http://nodejs.org/dist/v0.6.1/node-v0.6.1.pkg</a></p>
+<p>Website: <a href="http://nodejs.org/docs/v0.6.1/">http://nodejs.org/docs/v0.6.1/</a></p>
+<p>Documentation: <a href="http://nodejs.org/docs/v0.6.1/api/">http://nodejs.org/docs/v0.6.1/api/</a></p>
+<br />  <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gocomments/nodeblog.wordpress.com/356/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/comments/nodeblog.wordpress.com/356/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godelicious/nodeblog.wordpress.com/356/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/delicious/nodeblog.wordpress.com/356/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gofacebook/nodeblog.wordpress.com/356/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/facebook/nodeblog.wordpress.com/356/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gotwitter/nodeblog.wordpress.com/356/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/twitter/nodeblog.wordpress.com/356/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gostumble/nodeblog.wordpress.com/356/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/stumble/nodeblog.wordpress.com/356/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godigg/nodeblog.wordpress.com/356/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/digg/nodeblog.wordpress.com/356/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/goreddit/nodeblog.wordpress.com/356/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/reddit/nodeblog.wordpress.com/356/" /></a> <img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=blog.nodejs.org&amp;blog=21260551&amp;post=356&amp;subd=nodeblog&amp;ref=&amp;feed=1" width="1" height="1" />]]></content:encoded>
+			<wfw:commentRss>http://blog.nodejs.org/2011/11/11/node-v0-6-1/feed/</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+	
+		<media:content url="http://1.gravatar.com/avatar/b00bca6ed4657a9c9ea2e40585f454d9?s=96&#38;d=identicon&#38;r=G" medium="image">
+			<media:title type="html">ryandahl</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>Node v0.6.0</title>
+		<link>http://blog.nodejs.org/2011/11/05/node-v0-6-0/</link>
+		<comments>http://blog.nodejs.org/2011/11/05/node-v0-6-0/#comments</comments>
+		<pubDate>Sat, 05 Nov 2011 09:07:10 +0000</pubDate>
+		<dc:creator>ryandahl</dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+
+		<guid isPermaLink="false">http://blog.nodejs.org/?p=340</guid>
+		<description><![CDATA[We are happy to announce the third stable branch of Node v0.6. We will be freezing JavaScript, C++, and binary interfaces for all v0.6 releases. The major differences between v0.4 and v0.6 are Native Windows support using I/O Completion Ports &#8230; <a href="http://blog.nodejs.org/2011/11/05/node-v0-6-0/">Continue reading <span class="meta-nav">&#8594;</span></a><img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=blog.nodejs.org&amp;blog=21260551&amp;post=340&amp;subd=nodeblog&amp;ref=&amp;feed=1" width="1" height="1" />]]></description>
+			<content:encoded><![CDATA[<p>We are happy to announce the third stable branch of Node v0.6. We will be freezing JavaScript, C++, and binary interfaces for all v0.6 releases.</p>
+<p>The major differences between v0.4 and v0.6 are
+<ul>
+<li>Native Windows support using I/O Completion Ports for sockets.
+<li>Integrated load balancing over multiple processes. <a href="http://nodejs.org/docs/v0.6.0/api/cluster.html">docs</a>
+<li>Better support for IPC between Node instances <a href="http://nodejs.org/docs/v0.6.0/api/child_processes.html#child_process.fork">docs</a>
+<li>Improved command line debugger <a href="http://nodejs.org/docs/v0.6.0/api/debugger.html">docs</a>
+<li>Built-in binding to zlib for compression <a href="http://nodejs.org/docs/v0.6.0/api/zlib.html">docs</a>
+<li>Upgrade v8 from 3.1 to 3.6</ul>
+<p>In order to support Windows we reworked much of the core architecture. There was some fear that our work would degrade performance on UNIX systems but this was not the case. Here is a Linux system we benched for demonstration:</p>
+<table>
+<tr>
+<th></th>
+<th>v0.4.12 (linux)</th>
+<th>v0.6.0 (linux)</th>
+</tr>
+<tr>
+<td>http_simple.js /bytes/1024</td>
+<td>5461 r/s</td>
+<td>6263 r/s</td>
+</tr>
+<tr>
+<td>io.js read </td>
+<td>19.75 mB/s</td>
+<td>26.63 mB/s</td>
+</tr>
+<tr>
+<td>io.js write </td>
+<td>21.60 mB/s</td>
+<td>17.40 mB/s</td>
+</tr>
+<tr>
+<td>startup.js </td>
+<td>74.7 ms</td>
+<td>49.6 ms</td>
+</tr>
+</table>
+<p>Bigger is better in http and io benchmarks, smaller is better in startup. The http benchmark was done with 600 clients on a 10GE network served from three load generation machines.</p>
+<p>In the last version of Node, v0.4, we could only run Node on Windows with Cygwin. Therefore we&#8217;ve gotten massive improvements by targeting the native APIs. Benchmarks on the same machine:</p>
+<table>
+<tr>
+<th></th>
+<th>v0.4.12 (windows)</th>
+<th>v0.6.0 (windows)</th>
+</tr>
+<tr>
+<td>http_simple.js /bytes/1024</td>
+<td>3858 r/s</td>
+<td>5823 r/s</td>
+</tr>
+<tr>
+<td>io.js read </td>
+<td>12.41 mB/s</td>
+<td>26.51 mB/s</td>
+</tr>
+<tr>
+<td>io.js write </td>
+<td>12.61 mB/s</td>
+<td>33.58 mB/s</td>
+</tr>
+<tr>
+<td>startup.js </td>
+<td>152.81 ms</td>
+<td>52.04 ms</td>
+</tr>
+</table>
+<p>We consider this a good intermediate stage for the Windows port. There is still work to be done. For example, we are not yet providing users with a blessed path for building addon modules in MS Visual Studio.  Work will continue in later releases.</p>
+<p>For users upgrading code bases from v0.4 to v0.6 <a href="https://github.com/joyent/node/wiki/API-changes-between-v0.4-and-v0.6">we&#8217;ve documented</a> most of the issues that you will run into. Most people find the change painless. Despite the long list of changes most core APIs remain untouched. </p>
+<p>Our release cycle will be tightened dramatically now. Expect to see a new stable branch in January. We wish to eventually have our releases in sync with Chrome and V8&#8242;s 6 week cycle.</p>
+<p>Thank you to everyone who contributed code, tests, docs, or sent in bug reports.</p>
+<p>Here are the changes between v0.5.12 and v0.6.0:</p>
+<p>2011.11.04, Version 0.6.0 (stable)</p>
+<ul>
+<li>print undefined on undefined values in REPL (Nathan Rajlich)</li>
+<li>doc improvements (koichik, seebees, bnoordhuis, Maciej Małecki, Jacob Kragh)</li>
+<li>support native addon loading in windows (Bert Belder)</li>
+<li>rename getNetworkInterfaces() to networkInterfaces() (bnoordhuis)</li>
+<li>add pending accepts knob for windows (igorzi)</li>
+<li>http.request(url.parse(x)) (seebees)</li>
+<li>#1929 zlib Respond to &#8216;resume&#8217; events properly (isaacs)</li>
+<li>stream.pipe: Remove resume and pause events</li>
+<li>test fixes for windows (igorzi)</li>
+<li>build system improvements (bnoordhuis)</li>
+<li>#1936 tls: does not emit &#8216;end&#8217; from EncryptedStream (koichik)</li>
+<li>#758 tls: add address(), remoteAddress/remotePort</li>
+<li>#1399 http: emit Error object after .abort() (bnoordhuis)</li>
+<li>#1999 fs: make mkdir() default to 0777 permissions (bnoordhuis)</li>
+<li>#2001 fix pipe error codes</li>
+<li>#2002 Socket.write should reset timeout timer</li>
+<li>stdout and stderr are blocking when associated with file too.</li>
+<li>remote debugger support on windows (Bert Belder)</li>
+<li>convenience methods for zlib (Matt Robenolt)</li>
+<li>process.kill support on windows (igorzi)</li>
+<li>process.uptime() support on windows (igorzi)</li>
+<li>Return IPv4 addresses before IPv6 addresses from getaddrinfo</li>
+<li>util.inspect improvements (Nathan Rajlich)</li>
+<li>cluster module api changes</li>
+<li>Downgrade V8 to 3.6.6.6</li>
+</ul>
+<p>Download: <a href="http://nodejs.org/dist/v0.6.0/node-v0.6.0.tar.gz">http://nodejs.org/dist/v0.6.0/node-v0.6.0.tar.gz</a></p>
+<p>Windows Executable: <a href="http://nodejs.org/dist/v0.6.0/node.exe">http://nodejs.org/dist/v0.6.0/node.exe</a></p>
+<p>Website: <a href="http://nodejs.org/docs/v0.6.0/">http://nodejs.org/docs/v0.6.0/</a></p>
+<p>Documentation: <a href="http://nodejs.org/docs/v0.6.0/api/">http://nodejs.org/docs/v0.6.0/api/</a></p>
+<br />  <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gocomments/nodeblog.wordpress.com/340/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/comments/nodeblog.wordpress.com/340/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godelicious/nodeblog.wordpress.com/340/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/delicious/nodeblog.wordpress.com/340/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gofacebook/nodeblog.wordpress.com/340/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/facebook/nodeblog.wordpress.com/340/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gotwitter/nodeblog.wordpress.com/340/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/twitter/nodeblog.wordpress.com/340/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gostumble/nodeblog.wordpress.com/340/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/stumble/nodeblog.wordpress.com/340/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godigg/nodeblog.wordpress.com/340/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/digg/nodeblog.wordpress.com/340/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/goreddit/nodeblog.wordpress.com/340/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/reddit/nodeblog.wordpress.com/340/" /></a> <img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=blog.nodejs.org&amp;blog=21260551&amp;post=340&amp;subd=nodeblog&amp;ref=&amp;feed=1" width="1" height="1" />]]></content:encoded>
+			<wfw:commentRss>http://blog.nodejs.org/2011/11/05/node-v0-6-0/feed/</wfw:commentRss>
+		<slash:comments>29</slash:comments>
+	
+		<media:content url="http://1.gravatar.com/avatar/b00bca6ed4657a9c9ea2e40585f454d9?s=96&#38;d=identicon&#38;r=G" medium="image">
+			<media:title type="html">ryandahl</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>Version 0.6 Coming Soon</title>
+		<link>http://blog.nodejs.org/2011/10/25/version-0-6/</link>
+		<comments>http://blog.nodejs.org/2011/10/25/version-0-6/#comments</comments>
+		<pubDate>Tue, 25 Oct 2011 22:26:23 +0000</pubDate>
+		<dc:creator>ryandahl</dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+
+		<guid isPermaLink="false">http://blog.nodejs.org/?p=335</guid>
+		<description><![CDATA[Version 0.6.0 will be released next week. Please spend some time this week upgrading your code to v0.5.10. Report any API differences at https://github.com/joyent/node/wiki/API-changes-between-v0.4-and-v0.6 or report a bug to us at http://github.com/joyent/node/issues if you hit problems. The API changes between &#8230; <a href="http://blog.nodejs.org/2011/10/25/version-0-6/">Continue reading <span class="meta-nav">&#8594;</span></a><img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=blog.nodejs.org&amp;blog=21260551&amp;post=335&amp;subd=nodeblog&amp;ref=&amp;feed=1" width="1" height="1" />]]></description>
+			<content:encoded><![CDATA[<p>Version 0.6.0 will be released next week. Please spend some time this week upgrading your code to v0.5.10. Report any API differences at <a href="https://github.com/joyent/node/wiki/API-changes-between-v0.4-and-v0.6">https://github.com/joyent/node/wiki/API-changes-between-v0.4-and-v0.6</a> or report a bug to us at <a href="http://github.com/joyent/node/issues">http://github.com/joyent/node/issues</a> if you hit problems.</p>
+<p>The API changes between v0.4.12 and v0.5.10 are 99% cosmetic, minor, and easy to fix. Most people are able to migrate their code in 10 minutes. Don&#8217;t fear.</p>
+<p>Once you&#8217;ve ported your code to v0.5.10 please help out by testing third party modules. Make bug reports. Encourage authors to publish new versions of their modules. Go through the list of modules at <a href="http://search.npmjs.org/">http://search.npmjs.org/</a> and try out random ones. This is especially encouraged of Windows users!</p>
+<br />  <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gocomments/nodeblog.wordpress.com/335/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/comments/nodeblog.wordpress.com/335/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godelicious/nodeblog.wordpress.com/335/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/delicious/nodeblog.wordpress.com/335/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gofacebook/nodeblog.wordpress.com/335/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/facebook/nodeblog.wordpress.com/335/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gotwitter/nodeblog.wordpress.com/335/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/twitter/nodeblog.wordpress.com/335/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gostumble/nodeblog.wordpress.com/335/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/stumble/nodeblog.wordpress.com/335/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godigg/nodeblog.wordpress.com/335/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/digg/nodeblog.wordpress.com/335/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/goreddit/nodeblog.wordpress.com/335/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/reddit/nodeblog.wordpress.com/335/" /></a> <img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=blog.nodejs.org&amp;blog=21260551&amp;post=335&amp;subd=nodeblog&amp;ref=&amp;feed=1" width="1" height="1" />]]></content:encoded>
+			<wfw:commentRss>http://blog.nodejs.org/2011/10/25/version-0-6/feed/</wfw:commentRss>
+		<slash:comments>7</slash:comments>
+	
+		<media:content url="http://1.gravatar.com/avatar/b00bca6ed4657a9c9ea2e40585f454d9?s=96&#38;d=identicon&#38;r=G" medium="image">
+			<media:title type="html">ryandahl</media:title>
+		</media:content>
+	</item>
+		<item>
+		<title>Node v0.5.10</title>
+		<link>http://blog.nodejs.org/2011/10/21/node-v0-5-10/</link>
+		<comments>http://blog.nodejs.org/2011/10/21/node-v0-5-10/#comments</comments>
+		<pubDate>Sat, 22 Oct 2011 02:12:31 +0000</pubDate>
+		<dc:creator>ryandahl</dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+
+		<guid isPermaLink="false">http://blog.nodejs.org/?p=332</guid>
+		<description><![CDATA[2011.10.21, Version 0.5.10 (unstable) Remove cmake build system, support for Cygwin, legacy code base, process.ENV, process.ARGV, process.memoryUsage().vsize, os.openOSHandle Documentation improvments (Igor Zinkovsky, Bert Belder, Ilya Dmitrichenko, koichik, Maciej Małecki, Guglielmo Ferri, isaacs) Performance improvements (Daniel Ennis, Bert Belder, Ben Noordhuis) &#8230; <a href="http://blog.nodejs.org/2011/10/21/node-v0-5-10/">Continue reading <span class="meta-nav">&#8594;</span></a><img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=blog.nodejs.org&amp;blog=21260551&amp;post=332&amp;subd=nodeblog&amp;ref=&amp;feed=1" width="1" height="1" />]]></description>
+			<content:encoded><![CDATA[<p>2011.10.21, Version 0.5.10 (unstable)</p>
+<ul>
+<li>Remove cmake build system, support for Cygwin, legacy code base, process.ENV, process.ARGV, process.memoryUsage().vsize, os.openOSHandle</li>
+<li>Documentation improvments (Igor Zinkovsky, Bert Belder, Ilya Dmitrichenko, koichik, Maciej Małecki, Guglielmo Ferri, isaacs)</li>
+<li>Performance improvements (Daniel Ennis, Bert Belder, Ben Noordhuis) </li>
+<li>Long process.title support (Ben Noordhuis)</li>
+<li>net: register net.Server callback only once (Simen Brekken)</li>
+<li>net: fix connect queue bugs (Ben Noordhuis)</li>
+<li>debugger: fix backtrace err handling (Fedor Indutny)</li>
+<li>Use getaddrinfo instead of c-ares for dns.lookup</li>
+<li>Emit &#8216;end&#8217; from crypto streams on close</li>
+<li>repl: print out `undefined` (Nathan Rajlich)</li>
+<li>#1902 buffer: use NO_NULL_TERMINATION flag (koichik)</li>
+<li>#1907 http: Added support for HTTP PATCH verb (Thomas Parslow)</li>
+<li>#1644 add GetCPUInfo on windows (Karl Skomski)</li>
+<li>#1484, #1834, #1482, #771 Don&#8217;t use a separate context for the repl.  (isaacs)</li>
+<li>#1882 zlib Update &#8216;availOutBefore&#8217; value, and test (isaacs)</li>
+<li>#1888 child_process.fork: don&#8217;t modify args (koichik)</li>
+<li>#1516 tls: requestCert unusable with Firefox and Chrome (koichik)</li>
+<li>#1467 tls: The TLS API is inconsistent with the TCP API (koichik)</li>
+<li>#1894 net: fix error handling in listen() (koichik)</li>
+<li>#1860 console.error now goes through uv_tty_t</li>
+<li>Upgrade V8 to 3.7.0</li>
+<li>Upgrade GYP to r1081</li>
+</ul>
+<p>Download: <a href="http://nodejs.org/dist/v0.5.10/node-v0.5.10.tar.gz">http://nodejs.org/dist/v0.5.10/node-v0.5.10.tar.gz</a></p>
+<p>Windows Executable: <a href="http://nodejs.org/dist/v0.5.10/node.exe">http://nodejs.org/dist/v0.5.10/node.exe</a></p>
+<p>Website: <a href="http://nodejs.org/docs/v0.5.10/">http://nodejs.org/docs/v0.5.10/</a></p>
+<p>Documentation: <a href="http://nodejs.org/docs/v0.5.10/api/">http://nodejs.org/docs/v0.5.10/api/</a></p>
+<br />  <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gocomments/nodeblog.wordpress.com/332/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/comments/nodeblog.wordpress.com/332/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godelicious/nodeblog.wordpress.com/332/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/delicious/nodeblog.wordpress.com/332/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gofacebook/nodeblog.wordpress.com/332/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/facebook/nodeblog.wordpress.com/332/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gotwitter/nodeblog.wordpress.com/332/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/twitter/nodeblog.wordpress.com/332/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/gostumble/nodeblog.wordpress.com/332/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/stumble/nodeblog.wordpress.com/332/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/godigg/nodeblog.wordpress.com/332/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/digg/nodeblog.wordpress.com/332/" /></a> <a rel="nofollow" href="http://feeds.wordpress.com/1.0/goreddit/nodeblog.wordpress.com/332/"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/reddit/nodeblog.wordpress.com/332/" /></a> <img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=blog.nodejs.org&amp;blog=21260551&amp;post=332&amp;subd=nodeblog&amp;ref=&amp;feed=1" width="1" height="1" />]]></content:encoded>
+			<wfw:commentRss>http://blog.nodejs.org/2011/10/21/node-v0-5-10/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+	
+		<media:content url="http://1.gravatar.com/avatar/b00bca6ed4657a9c9ea2e40585f454d9?s=96&#38;d=identicon&#38;r=G" medium="image">
+			<media:title type="html">ryandahl</media:title>
+		</media:content>
+	</item>
+	</channel>
+</rss>
