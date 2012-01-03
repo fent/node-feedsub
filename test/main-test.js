@@ -131,13 +131,16 @@ describe('Read feed without emitOnStart', function() {
 
 describe('Use skipHours', function() {
   // mock Date
-  Date = function() {
-    return {
-      getHours: function() {
-        return 4;
-      }
+  var lastDate = Date;
+  before(function() {
+    Date = function() {
+      return {
+        getHours: function() {
+          return 4;
+        }
+      };
     };
-  };
+  });
 
   var host = 'http://www.google.com'
     , path = '/reader/public/atom/'
@@ -170,6 +173,62 @@ describe('Use skipHours', function() {
 
       done();
     });
+  });
+
+  after(function() {
+    Date = lastDate;
+  });
+});
+
+
+describe('Use skipDays', function() {
+  // mock Date
+  var lastDate = Date;
+  before(function() {
+    Date = function() {
+      return {
+        getDay: function() {
+          return 6; // Saturday
+        }
+      };
+    };
+  });
+
+  var host = 'http://www.luegle.com'
+    , path = '/reader/public/atom/'
+    , reader = new FeedSub(host + path, {
+        emitOnStart: true, skipDays: true
+      })
+    , itemCount = 0
+    , itemsEvents = 0
+
+  reader.on('item', function() {
+    itemCount++;
+  });
+
+  reader.on('items', function() {
+    itemsEvents++;
+  });
+
+  nock(host)
+    .get(path)
+    .replyWithFile(200, __dirname + '/nodeblog.xml')
+
+  it('Should return no items', function(done) {
+    reader.read(function(err, items) {
+      if (err) throw err;
+      assert.ok(!err);
+      assert.ok(Array.isArray(items));
+      assert.equal(items.length, 0);
+      assert.equal(itemCount, 0);
+      assert.equal(itemsEvents, 0);
+
+      done();
+    });
+  });
+
+  after(function() {
+    Date = lastDate;
   });
 });
 
