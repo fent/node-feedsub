@@ -2,7 +2,7 @@
 
 FeedSub subscribes to a remote RSS/Atom/JSON feed and notifies you of any new items it reads.
 
-It works by checking the feed every once in a while, comparing the date of the document, if it's the same as the last date, it stops downloading it and parsing the xml. If it's an updated document, then it looks through it top to bottom recording all the new items. Once it finds something it has already read, it stops downloading and parsing the document.
+It works by checking the feed every once in a while, comparing the date of the document via a conditional GET if supported. Otherwise it looks for a date tag in the feed. If it's the same as the last date, it stops downloading it and parsing the xml/json. If it's an updated document, then it looks through it top to bottom taking note of all the new items. Once it finds something it has already read, it stops downloading and parsing the document.
 
 
 # Usage
