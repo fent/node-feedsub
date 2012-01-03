@@ -99,7 +99,7 @@ Emitted when there is an error downloading or parsing the feed. Not emitted if `
 
 #Tests
 
-Tests are written with [expresso](http://visionmedia.github.com/expresso/)
+Tests are written with [mocha](http://visionmedia.github.com/mocha/)
 
 ```bash
 npm test
