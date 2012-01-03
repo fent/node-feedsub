@@ -37,6 +37,7 @@ describe('Read the old RSS feed first', function() {
 
       itemCount = 0;
       itemsEvents = 0;
+
       done();
     });
   });
@@ -53,11 +54,13 @@ describe('Read the old RSS feed first', function() {
         assert.ok(!err);
         assert.ok(Array.isArray(items));
         assert.equal(items.length, 0);
+
         assert.equal(itemCount, 0);
         assert.equal(itemsEvents, 0);
 
         itemCount = 0;
         itemsEvents = 0;
+
         done();
       });
     });
@@ -75,11 +78,13 @@ describe('Read the old RSS feed first', function() {
           assert.ok(!err);
           assert.ok(Array.isArray(items));
           assert.equal(items.length, 3, '3 new items');
+
           assert.equal(itemCount, 3);
           assert.equal(itemsEvents, 1);
 
           itemCount = 0;
           itemsEvents = 0;
+
           done();
         });
       });
@@ -114,8 +119,10 @@ describe('Read feed without emitOnStart', function() {
       assert.ok(!err);
       assert.ok(Array.isArray(items));
       assert.equal(items.length, 0);
+
       assert.equal(itemCount, 0);
       assert.equal(itemsEvents, 0);
+
       done();
     });
   });
@@ -160,6 +167,7 @@ describe('Use skipHours', function() {
       assert.equal(items.length, 0);
       assert.equal(itemCount, 0);
       assert.equal(itemsEvents, 0);
+
       done();
     });
   });
@@ -197,6 +205,7 @@ describe('Same title but different pubdate', function() {
 
       itemCount = 0;
       itemsEvents = 0;
+
       done();
     });
   });
@@ -219,6 +228,7 @@ describe('Same title but different pubdate', function() {
 
         itemCount = 0;
         itemsEvents = 0;
+
         done();
       });
     });
