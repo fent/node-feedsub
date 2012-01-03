@@ -54,6 +54,8 @@ describe('Conditional GET', function() {
   describe('Read feed again', function() {
     nock(host)
       .get(path)
+      .matchHeader('if-modified-since', now)
+      .matchHeader('etag', etag)
       .replyWithFile(304, __dirname + '/rss2old.xml', headers)
 
     it('Should not return any new items', function(done) {

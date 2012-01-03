@@ -2,7 +2,7 @@
   "name": "feedsub",
   "description": "Reads online RSS/Atom/JSON feeds notifying on new items.",
   "keywords": ["feed", "rss", "atom", "json", "subscribe"],
-  "version": "0.0.10",
+  "version": "0.1.0",
   "repository": {
     "type": "git",
     "url": "git://github.com/fent/node-feedsub.git"
@@ -20,7 +20,7 @@
     "underscore": "1.1.x"
   },
   "devDependencies": {
-    "nock": "0.6.x",
+    "nock": "0.7.x",
     "mocha": "0.7.x"
   },
   "licenses": [ {
