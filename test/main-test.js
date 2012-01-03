@@ -194,8 +194,8 @@ describe('Use skipDays', function() {
     };
   });
 
-  var host = 'http://www.luegle.com'
-    , path = '/reader/public/atom/'
+  var host = 'http://blog.nodejs.org'
+    , path = '/feed/'
     , reader = new FeedSub(host + path, {
         emitOnStart: true, skipDays: true
       })
