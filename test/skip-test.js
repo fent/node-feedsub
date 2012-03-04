@@ -1,6 +1,11 @@
 var FeedSub = require('..')
   , nock = require('nock')
   , assert = require('assert')
+  , path = require('path')
+
+
+var file1 = path.join(__dirname, 'aninews.rss')
+  , file2 = path.join(__dirname, 'nodeblog.xml')
 
 
 describe('Use skipHours', function() {
@@ -34,7 +39,7 @@ describe('Use skipHours', function() {
 
   nock(host)
     .get(path)
-    .replyWithFile(200, __dirname + '/aninews.rss')
+    .replyWithFile(200, file1)
 
   it('Should return no items', function(done) {
     reader.read(function(err, items) {
@@ -86,7 +91,7 @@ describe('Use skipDays', function() {
 
   nock(host)
     .get(path)
-    .replyWithFile(200, __dirname + '/nodeblog.xml')
+    .replyWithFile(200, file2)
 
   it('Should return no items', function(done) {
     reader.read(function(err, items) {

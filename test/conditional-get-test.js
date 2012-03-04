@@ -1,6 +1,10 @@
 var FeedSub = require('..')
   , nock = require('nock')
   , assert = require('assert')
+  , path = require('path')
+
+
+var rss2old = path.join(__dirname, 'rss2old.xml')
 
 
 describe('Conditional GET', function() {
@@ -28,7 +32,7 @@ describe('Conditional GET', function() {
   };
   nock(host)
     .get(path)
-    .replyWithFile(200, __dirname + '/rss2old.xml', headers)
+    .replyWithFile(200, rss2old, headers)
 
   it('Read all items in feed', function(done) {
     reader.read(function(err, items) {
@@ -56,7 +60,7 @@ describe('Conditional GET', function() {
       .get(path)
       .matchHeader('if-modified-since', now)
       .matchHeader('etag', etag)
-      .replyWithFile(304, __dirname + '/rss2old.xml', headers)
+      .replyWithFile(304, rss2old, headers)
 
     it('Should not return any new items', function(done) {
       reader.read(function(err, items) {
