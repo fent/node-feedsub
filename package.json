@@ -16,7 +16,7 @@
     "node": "*"
   },
   "dependencies": {
-    "feedme": "0.1.x",
+    "feedme": "0.2.x",
     "underscore": "1.1.x"
   },
   "devDependencies": {
