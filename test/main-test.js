@@ -1,6 +1,13 @@
 var FeedSub = require('..')
   , nock = require('nock')
   , assert = require('assert')
+  , path = require('path')
+
+
+var feedold = path.join(__dirname, 'feedold.xml')
+  , feednew = path.join(__dirname, 'feednew.xml')
+  , rss2old = path.join(__dirname, 'rss2old.xml')
+  , rss2new = path.join(__dirname, 'rss2new.xml');
 
 
 describe('Read the old RSS feed first', function() {
@@ -21,7 +28,7 @@ describe('Read the old RSS feed first', function() {
 
   nock(host)
     .get(path)
-    .replyWithFile(200, __dirname + '/feedold.xml')
+    .replyWithFile(200, feedold)
 
 
   it('Reads all items in feed', function(done) {
@@ -46,7 +53,7 @@ describe('Read the old RSS feed first', function() {
   describe('Read feed again', function() {
     nock(host)
       .get(path)
-      .replyWithFile(200, __dirname + '/feedold.xml')
+      .replyWithFile(200, feedold)
 
     it('Does not return any new items', function(done) {
       reader.read(function(err, items) {
@@ -69,7 +76,7 @@ describe('Read the old RSS feed first', function() {
     describe('Read updated feed', function() {
       nock(host)
         .get(path)
-        .replyWithFile(200, __dirname + '/feednew.xml')
+        .replyWithFile(200, feednew)
 
 
       it('Returns some new items', function(done) {
@@ -111,7 +118,7 @@ describe('Read feed without emitOnStart', function() {
 
   nock(host)
     .get(path)
-    .replyWithFile(200, __dirname + '/feedold.xml')
+    .replyWithFile(200, feedold)
 
   it('Should return no items', function(done) {
     reader.read(function(err, items) {
@@ -146,7 +153,7 @@ describe('Same title but different pubdate', function() {
 
   nock(host)
     .get(path)
-    .replyWithFile(200, __dirname + '/rss2old.xml')
+    .replyWithFile(200, rss2old)
 
   it('Read all items in feed', function(done) {
     reader.read(function(err, items) {
@@ -169,7 +176,7 @@ describe('Same title but different pubdate', function() {
   describe('Read feed again', function() {
     nock(host)
       .get(path)
-      .replyWithFile(200, __dirname + '/rss2old.xml')
+      .replyWithFile(200, rss2old)
 
     it('Should not return any new items', function(done) {
       reader.read(function(err, items) {
@@ -192,7 +199,7 @@ describe('Same title but different pubdate', function() {
     describe('Read the new updated feed', function() {
       nock(host)
         .get(path)
-        .replyWithFile(200, __dirname + '/rss2new.xml')
+        .replyWithFile(200, rss2new)
 
       it('1 new item with different pubdate', function(done) {
         reader.read(function(err, items) {
