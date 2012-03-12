@@ -48,7 +48,7 @@ describe('Use skipHours', function() {
       assert.ok(Array.isArray(items));
       assert.equal(items.length, 0);
       assert.equal(itemCount, 0);
-      assert.equal(itemsEvents, 0);
+      assert.equal(itemsEvents, 1);
 
       done();
     });
@@ -100,7 +100,7 @@ describe('Use skipDays', function() {
       assert.ok(Array.isArray(items));
       assert.equal(items.length, 0);
       assert.equal(itemCount, 0);
-      assert.equal(itemsEvents, 0);
+      assert.equal(itemsEvents, 1);
 
       done();
     });

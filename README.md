@@ -50,7 +50,7 @@ Creates a new instance of FeedSub. `options` defaults to.
   history: [],
 
   // maximum size of `history` array
-  maxHistory: 50,
+  maxHistory: 10,
 
   // some feeds have a `skipHours` tag with a list of
   // hours in which the feed should not be read.
