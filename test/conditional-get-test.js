@@ -44,8 +44,8 @@ describe('Conditional GET', function() {
       assert.equal(itemCount, 4);
       assert.equal(itemsEvents, 1);
 
-      assert.equal(reader.getOpts['If-Modified-Since'], now);
-      assert.equal(reader.getOpts['If-None-Match'], etag);
+      assert.equal(reader.getOpts.headers['If-Modified-Since'], now);
+      assert.equal(reader.getOpts.headers['If-None-Match'], etag);
 
       itemCount = 0;
       itemsEvents = 0;
@@ -59,7 +59,7 @@ describe('Conditional GET', function() {
     nock(host)
       .get(path)
       .matchHeader('if-modified-since', now)
-      .matchHeader('etag', etag)
+      .matchHeader('if-none-match', etag)
       .replyWithFile(304, rss2old, headers)
 
     it('Should not return any new items', function(done) {
@@ -70,7 +70,7 @@ describe('Conditional GET', function() {
         assert.equal(items.length, 0);
 
         assert.equal(itemCount, 0);
-        assert.equal(itemsEvents, 0);
+        assert.equal(itemsEvents, 1);
 
         itemCount = 0;
         itemsEvents = 0;

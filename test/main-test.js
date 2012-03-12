@@ -63,7 +63,7 @@ describe('Read the old RSS feed first', function() {
         assert.equal(items.length, 0);
 
         assert.equal(itemCount, 0);
-        assert.equal(itemsEvents, 0);
+        assert.equal(itemsEvents, 1);
 
         itemCount = 0;
         itemsEvents = 0;
@@ -151,7 +151,7 @@ describe('Same title but different pubdate', function() {
         assert.equal(items.length, 0);
 
         assert.equal(itemCount, 0);
-        assert.equal(itemsEvents, 0);
+        assert.equal(itemsEvents, 1);
 
         itemCount = 0;
         itemsEvents = 0;
