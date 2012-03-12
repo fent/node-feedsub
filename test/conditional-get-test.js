@@ -4,7 +4,7 @@ var FeedSub = require('..')
   , path = require('path')
 
 
-var rss2old = path.join(__dirname, 'rss2old.xml')
+var rss2old = path.join(__dirname, 'assets', 'rss2old.xml')
 
 
 describe('Conditional GET', function() {

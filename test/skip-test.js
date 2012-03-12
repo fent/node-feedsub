@@ -4,8 +4,8 @@ var FeedSub = require('..')
   , path = require('path')
 
 
-var file1 = path.join(__dirname, 'aninews.rss')
-  , file2 = path.join(__dirname, 'nodeblog.xml')
+var file1 = path.join(__dirname, 'assets', 'aninews.rss')
+  , file2 = path.join(__dirname, 'assets', 'nodeblog.xml')
 
 
 describe('Use skipHours', function() {
