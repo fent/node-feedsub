@@ -4,10 +4,10 @@ var FeedSub = require('..')
   , path = require('path')
 
 
-var feedold = path.join(__dirname, 'feedold.xml')
-  , feednew = path.join(__dirname, 'feednew.xml')
-  , rss2old = path.join(__dirname, 'rss2old.xml')
-  , rss2new = path.join(__dirname, 'rss2new.xml');
+var feedold = path.join(__dirname, 'assets', 'feedold.xml')
+  , feednew = path.join(__dirname, 'assets', 'feednew.xml')
+  , rss2old = path.join(__dirname, 'assets', 'rss2old.xml')
+  , rss2new = path.join(__dirname, 'assets', 'rss2new.xml');
 
 
 describe('Read the old RSS feed first', function() {

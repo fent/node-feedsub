@@ -4,7 +4,7 @@ var FeedSub = require('..')
   , path = require('path')
 
 
-var feedold = path.join(__dirname, 'feedold.xml')
+var feedold = path.join(__dirname, 'assets', 'feedold.xml')
 
 
 describe('Read feed without emitOnStart', function() {
