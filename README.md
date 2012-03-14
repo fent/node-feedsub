@@ -46,9 +46,6 @@ Creates a new instance of FeedSub. `options` defaults to.
   // keeps track of last date of the feed
   lastDate: null,
 
-  // keeps track of last items read from the feed
-  history: [],
-
   // maximum size of `history` array
   maxHistory: 10,
 
@@ -86,7 +83,7 @@ Emitted whenever there is a new item.
 
 ###Event: 'items'
 `function (items, date) { }`
-Emits all new items from one request in one array, and the date from the feed at that specific request. Useful if you want to keep track of `options.lastDate` and `options.history`.
+Emits all new items from one request in one array, and the date from the feed at that specific request. Useful if you want to keep track of `options.lastDate`.
 
 ###Event: 'error'
 Emitted when there is an error downloading or parsing the feed. Not emitted if `callback` is given for `read` or `readInterval`.
