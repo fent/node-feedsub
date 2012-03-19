@@ -22,8 +22,8 @@ reader.on('item', function(item) {
 reader.start();
 ```
 
-#API
-###new FeedSub(feed, [options])
+# API
+### new FeedSub(feed, [options])
 Creates a new instance of FeedSub. `options` defaults to.
 
 ```javascript
@@ -62,39 +62,39 @@ Creates a new instance of FeedSub. `options` defaults to.
 }
 ```
 
-###reader.read([callback(err, items)])
+### reader.read([callback(err, items)])
 Reads the feed. Calls `callback` with possible error or new items discovered if provided. Causes `reader` to emit new item events.
 
-###reader.readInterval([callback(err, items)], interval)
+### reader.readInterval([callback(err, items)], interval)
 Calls `reader.read` every `interval` milliseconds. If `callback` is an integer, it is considered the `interval`.
 
-###reader.start()
+### reader.start()
 Calls `reader.readInterval` with the `options.interval` from the constructor.
 
-###reader.options
+### reader.options
 Options that were passed to the constructor along with any defaults are kept here.
 
-###reader.stop()
+### reader.stop()
 Stops the reader from automatically reading the feed.
 
-###Event: 'item'
+### Event: 'item'
 `function (item) { }`
 Emitted whenever there is a new item.
 
-###Event: 'items'
+### Event: 'items'
 `function (items, date) { }`
 Emits all new items from one request in one array, and the date from the feed at that specific request. Useful if you want to keep track of `options.lastDate`.
 
-###Event: 'error'
+### Event: 'error'
 Emitted when there is an error downloading or parsing the feed. Not emitted if `callback` is given for `read` or `readInterval`.
 
 
-#Install
+# Install
 
     npm install feedsub
 
 
-#Tests
+# Tests
 
 Tests are written with [mocha](http://visionmedia.github.com/mocha/)
 
