@@ -62,19 +62,19 @@ Creates a new instance of FeedSub. `options` defaults to.
 }
 ```
 
-### reader.read([callback(err, items)])
+### FeedSub#read([callback(err, items)])
 Reads the feed. Calls `callback` with possible error or new items discovered if provided. Causes `reader` to emit new item events.
 
-### reader.readInterval([callback(err, items)], interval)
+### FeedSub#readInterval([callback(err, items)], interval)
 Calls `reader.read` every `interval` milliseconds. If `callback` is an integer, it is considered the `interval`.
 
-### reader.start()
+### FeedSub#start()
 Calls `reader.readInterval` with the `options.interval` from the constructor.
 
-### reader.options
+### FeedSub#options
 Options that were passed to the constructor along with any defaults are kept here.
 
-### reader.stop()
+### FeedSub#stop()
 Stops the reader from automatically reading the feed.
 
 ### Event: 'item'
