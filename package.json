@@ -10,7 +10,7 @@
   "author": "Roly Fentanes (https://github.com/fent)",
   "main": "./lib/feedsub.js",
   "scripts": {
-    "test": "mocha -R spec test/*-test.js"
+    "test": "mocha -R spec -t 0 test/*-test.js"
   },
   "dependencies": {
     "feedme": "0.2.x",
