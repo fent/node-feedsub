@@ -10,7 +10,7 @@
   "author": "fent (https://github.com/fent)",
   "main": "./lib/feedsub.js",
   "scripts": {
-    "test": "mocha -R spec -t 0 test/*-test.js"
+    "test": "mocha -R spec test/*-test.js"
   },
   "dependencies": {
     "feedme": "0.2.x",
@@ -19,7 +19,7 @@
     "underscore": "1.1.x"
   },
   "devDependencies": {
-    "nock": "0.10.x",
+    "nock": "0.13.x",
     "mocha": "x"
   },
   "licenses": [ {
