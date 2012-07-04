@@ -40,3 +40,38 @@ describe('Read feed without emitOnStart', function() {
     });
   });
 });
+
+
+describe('Read with emitOnStart', function() {
+  var host = 'http://feedburner.net'
+    , path = '/rss/feedme.xml'
+    , reader = new FeedSub(host + path, { emitOnStart: true })
+    , itemCount = 0
+    , itemsEvents = 0
+
+  reader.on('item', function() {
+    itemCount++;
+  });
+
+  reader.on('items', function() {
+    itemsEvents++;
+  });
+
+  nock(host)
+    .get(path)
+    .replyWithFile(200, feedold)
+
+  it('Should return some items', function(done) {
+    reader.read(function(err, items) {
+      if (err) throw err;
+      assert.ok(!err);
+      assert.ok(Array.isArray(items));
+      assert.equal(items.length, 2997);
+
+      assert.equal(itemCount, 2997);
+      assert.equal(itemsEvents, 1);
+
+      done();
+    });
+  });
+});
