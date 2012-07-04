@@ -69,7 +69,7 @@ Reads the feed. Calls `callback` with possible error or new items discovered if 
 Calls `reader.read` every `interval` milliseconds. If `callback` is an integer, it is considered the `interval`.
 
 ### FeedSub#start()
-Calls `reader.readInterval` with the `options.interval` from the constructor.
+Calls `reader.readInterval()` with the `options.interval` from the constructor.
 
 ### FeedSub#options
 Options that were passed to the constructor along with any defaults are kept here.
@@ -82,8 +82,8 @@ Stops the reader from automatically reading the feed.
 Emitted whenever there is a new item.
 
 ### Event: 'items'
-`function (items, date) { }`
-Emits all new items from one request in one array, and the date from the feed at that specific request. Useful if you want to keep track of `options.lastDate`.
+`function (items) { }`
+Emits all new items from one request in one array.
 
 ### Event: 'error'
 Emitted when there is an error downloading or parsing the feed. Not emitted if `callback` is given for `read` or `readInterval`.
