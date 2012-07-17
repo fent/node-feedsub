@@ -13,10 +13,10 @@
     "test": "mocha -R spec test/*-test.js"
   },
   "dependencies": {
-    "feedme": "0.2.x",
-    "newsemitter": "0.1.x",
-    "request": "2.9.x",
-    "underscore": "1.1.x"
+    "feedme": "~0.2.3",
+    "newsemitter": "~0.1.1",
+    "request": "~2.9.203",
+    "underscore": "~1.1.7"
   },
   "devDependencies": {
     "nock": "0.13.x",
