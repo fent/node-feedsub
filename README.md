@@ -78,14 +78,18 @@ Options that were passed to the constructor along with any defaults are kept her
 Stops the reader from automatically reading the feed.
 
 ### Event: 'item'
-`function (item) { }`
+* `Object` - Item.
+
 Emitted whenever there is a new item.
 
 ### Event: 'items'
-`function (items) { }`
+* `Array.Object` - List of items.
+
 Emits all new items from one request in one array.
 
 ### Event: 'error'
+* `Error`
+
 Emitted when there is an error downloading or parsing the feed. Not emitted if `callback` is given for `read` or `readInterval`.
 
 
