@@ -19,6 +19,7 @@ describe('Use skipHours', function() {
         }
       };
     };
+    Date.now = lastDate.now;
   });
 
   var host = 'http://www.google.com'
@@ -71,6 +72,7 @@ describe('Use skipDays', function() {
         }
       };
     };
+    Date.now = lastDate.now;
   });
 
   var host = 'http://blog.nodejs.org'
