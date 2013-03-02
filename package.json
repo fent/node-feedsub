@@ -19,7 +19,7 @@
     "underscore": "~1.1.7"
   },
   "devDependencies": {
-    "nock": "0.13.x",
+    "nock": "0.16.x",
     "mocha": "x"
   },
   "licenses": [ {
