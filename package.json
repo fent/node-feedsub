@@ -15,7 +15,7 @@
   "dependencies": {
     "feedme": "~0.2.3",
     "newsemitter": "~0.1.1",
-    "request": "~2.25.0",
+    "request": "~2.27.0",
     "underscore": "~1.5.1"
   },
   "devDependencies": {
