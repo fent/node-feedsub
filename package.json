@@ -15,12 +15,12 @@
   "dependencies": {
     "feedme": "~0.2.3",
     "newsemitter": "~0.1.1",
-    "request": "~2.30.0",
-    "underscore": "~1.5.1"
+    "request": "~2.34.0",
+    "underscore": "~1.6.0"
   },
   "devDependencies": {
-    "nock": "0.16.x",
-    "mocha": "x"
+    "nock": "~0.27.2",
+    "mocha": "~1.17.1"
   },
   "licenses": [ {
     "type": "MIT",
