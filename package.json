@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "nock": "~0.27.2",
-    "mocha": "~1.17.1"
+    "mocha": "*"
   },
   "licenses": [ {
     "type": "MIT",
