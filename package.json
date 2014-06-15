@@ -15,11 +15,11 @@
   "dependencies": {
     "feedme": "~0.2.3",
     "newsemitter": "~0.1.1",
-    "request": "~2.34.0",
+    "request": "~2.36.0",
     "underscore": "~1.6.0"
   },
   "devDependencies": {
-    "nock": "~0.27.2",
+    "nock": "~0.34.1",
     "mocha": "*"
   },
   "licenses": [ {
