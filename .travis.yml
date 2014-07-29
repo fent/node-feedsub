@@ -2,3 +2,7 @@ language: node_js
 node_js:
   - 0.10
 before_script: npm cache clean
+notifications:
+  email:
+    on_success: change
+    on_failure: change
