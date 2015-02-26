@@ -16,10 +16,10 @@
     "feedme": "~0.2.3",
     "newsemitter": "~0.1.1",
     "request": "^2.37.0",
-    "underscore": "~1.6.0"
+    "underscore": "^1.6.0"
   },
   "devDependencies": {
-    "nock": "~0.34.1",
+    "nock": "*",
     "mocha": "*"
   },
   "licenses": [ {
