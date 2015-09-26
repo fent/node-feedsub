@@ -1,8 +1,14 @@
 {
   "name": "feedsub",
   "description": "Reads online RSS/Atom/JSON feeds notifying on new items.",
-  "keywords": ["feed", "rss", "atom", "json", "subscribe"],
-  "version": "0.2.8",
+  "keywords": [
+    "feed",
+    "rss",
+    "atom",
+    "json",
+    "subscribe"
+  ],
+  "version": "0.2.9",
   "repository": {
     "type": "git",
     "url": "git://github.com/fent/node-feedsub.git"
@@ -22,9 +28,10 @@
     "nock": "*",
     "mocha": "*"
   },
-  "licenses": [ {
-    "type": "MIT",
-    "url" : "http://github.com/fent/node-feedsub/raw/master/LICENSE"
-  }]
-
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://github.com/fent/node-feedsub/raw/master/LICENSE"
+    }
+  ]
 }
