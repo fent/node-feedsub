@@ -13,7 +13,7 @@
     "test": "mocha -R spec test/*-test.js"
   },
   "dependencies": {
-    "feedme": "~0.2.3",
+    "feedme": "~0.3.0",
     "newsemitter": "~0.1.1",
     "request": "^2.37.0",
     "underscore": "^1.6.0"
