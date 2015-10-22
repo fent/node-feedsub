@@ -1,22 +1,22 @@
-var FeedSub = require('..')
-  , nock = require('nock')
-  , assert = require('assert')
-  , path = require('path')
+var FeedSub = require('..');
+var nock = require('nock');
+var assert = require('assert');
+var path = require('path');
 
 
-var file1 = path.join(__dirname, 'assets', 'googlefeed.xml')
-  , file2 = path.join(__dirname, 'assets', 'googlefeedupdated.xml')
+var file1 = path.join(__dirname, 'assets', 'googlefeed.xml');
+var file2 = path.join(__dirname, 'assets', 'googlefeedupdated.xml');
 
 
 describe('Read all published/updated items with readEveryItem', function() {
 
-  var host = 'https://www.blogger.com'
-    , path = '/feeds/10861780/posts/default'
-    , reader = new FeedSub(host + path, {
-        emitOnStart: true, readEveryItem: true
-      })
-    , itemCount = 0
-    , itemsEvents = 0
+  var host = 'https://www.blogger.com';
+  var path = '/feeds/10861780/posts/default';
+  var reader = new FeedSub(host + path, {
+    emitOnStart: true, readEveryItem: true
+  });
+  var itemCount = 0;
+  var itemsEvents = 0;
 
   reader.on('item', function() {
     itemCount++;
@@ -28,11 +28,12 @@ describe('Read all published/updated items with readEveryItem', function() {
 
   nock(host)
     .get(path)
-    .replyWithFile(200, file1)
+    .replyWithFile(200, file1);
 
   it('Should return all items', function(done) {
     reader.read(function(err, items) {
       if (err) throw err;
+
       assert.ok(Array.isArray(items));
       assert.equal(items.length, 6);
       assert.equal(itemCount, 6);
@@ -46,11 +47,12 @@ describe('Read all published/updated items with readEveryItem', function() {
   describe('Read updated feed', function() {
     nock(host)
       .get(path)
-      .replyWithFile(200, file2)
+      .replyWithFile(200, file2);
 
     it('Should return all updated items', function(done) {
       reader.read(function(err, items) {
         if (err) throw err;
+
         assert.ok(Array.isArray(items));
         assert.equal(items.length, 3);
         assert.equal(itemCount, 3);
