@@ -1,39 +1,40 @@
-var FeedSub = require('..')
-  , nock = require('nock')
-  , assert = require('assert')
-  , path = require('path')
+var FeedSub = require('..');
+var nock = require('nock');
+var assert = require('assert');
+var path = require('path');
 
 
-var feedold = path.join(__dirname, 'assets', 'feedold.xml')
-  , feednew = path.join(__dirname, 'assets', 'feednew.xml')
-  , rss2old = path.join(__dirname, 'assets', 'rss2old.xml')
-  , rss2new = path.join(__dirname, 'assets', 'rss2new.xml');
+var feedold = path.join(__dirname, 'assets', 'feedold.xml');
+var feednew = path.join(__dirname, 'assets', 'feednew.xml');
+var rss2old = path.join(__dirname, 'assets', 'rss2old.xml');
+var rss2new = path.join(__dirname, 'assets', 'rss2new.xml');
 
 
 describe('Read the old RSS feed first', function() {
-  var host = 'http://feedsite.info'
-    , path = '/rss/feed.xml'
-    , reader = new FeedSub(host + path, { emitOnStart: true })
-    , itemCount = 0
-    , itemsEvents = 0
+  var host = 'http://feedsite.info';
+  var path = '/rss/feed.xml';
+  var reader = new FeedSub(host + path, { emitOnStart: true });
+  var itemCount = 0;
+  var itemsEvents = 0;
 
 
-  reader.on('item', function(item) {
+  reader.on('item', function() {
     itemCount++;
   });
 
-  reader.on('items', function(items) {
+  reader.on('items', function() {
     itemsEvents++;
   });
 
   nock(host)
     .get(path)
-    .replyWithFile(200, feedold)
+    .replyWithFile(200, feedold);
 
 
   it('Reads all items in feed', function(done) {
     reader.read(function(err, items) {
       if (err) throw err;
+
       assert.ok(Array.isArray(items));
       assert.equal(items.length, 2997,
                    'Callback gets correct number of items');
@@ -52,11 +53,12 @@ describe('Read the old RSS feed first', function() {
   describe('Read feed again', function() {
     nock(host)
       .get(path)
-      .replyWithFile(200, feedold)
+      .replyWithFile(200, feedold);
 
     it('Does not return any new items', function(done) {
       reader.read(function(err, items) {
         if (err) throw err;
+
         assert.ok(Array.isArray(items));
         assert.equal(items.length, 0);
 
@@ -69,17 +71,18 @@ describe('Read the old RSS feed first', function() {
         done();
       });
     });
-    // read the new feed this time
+    // Read the new feed this time.
 
     describe('Read updated feed', function() {
       nock(host)
         .get(path)
-        .replyWithFile(200, feednew)
+        .replyWithFile(200, feednew);
 
 
       it('Returns some new items', function(done) {
         reader.read(function(err, items) {
           if (err) throw err;
+
           assert.ok(Array.isArray(items));
           assert.equal(items.length, 3, '3 new items');
 
@@ -99,11 +102,11 @@ describe('Read the old RSS feed first', function() {
 
 
 describe('Same title but different pubdate', function() {
-  var host = 'http://feedburner.info'
-    , path = '/rss'
-    , reader = new FeedSub(host + path, { emitOnStart: true })
-    , itemCount = 0
-    , itemsEvents = 0
+  var host = 'http://feedburner.info';
+  var path = '/rss';
+  var reader = new FeedSub(host + path, { emitOnStart: true });
+  var itemCount = 0;
+  var itemsEvents = 0;
 
   reader.on('item', function() {
     itemCount++;
@@ -115,7 +118,7 @@ describe('Same title but different pubdate', function() {
 
   nock(host)
     .get(path)
-    .replyWithFile(200, rss2old)
+    .replyWithFile(200, rss2old);
 
   it('Read all items in feed', function(done) {
     reader.read(function(err, items) {
@@ -138,11 +141,12 @@ describe('Same title but different pubdate', function() {
   describe('Read feed again', function() {
     nock(host)
       .get(path)
-      .replyWithFile(200, rss2old)
+      .replyWithFile(200, rss2old);
 
     it('Should not return any new items', function(done) {
       reader.read(function(err, items) {
         if (err) throw err;
+
         assert.ok(!err);
         assert.ok(Array.isArray(items));
         assert.equal(items.length, 0);
@@ -161,11 +165,12 @@ describe('Same title but different pubdate', function() {
     describe('Read the new updated feed', function() {
       nock(host)
         .get(path)
-        .replyWithFile(200, rss2new)
+        .replyWithFile(200, rss2new);
 
       it('1 new item with different pubdate', function(done) {
         reader.read(function(err, items) {
           if (err) throw err;
+
           assert.ok(!err);
           assert.ok(Array.isArray(items));
           assert.equal(items.length, 1);
