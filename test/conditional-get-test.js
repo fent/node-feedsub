@@ -1,18 +1,18 @@
-var FeedSub = require('..')
-  , nock = require('nock')
-  , assert = require('assert')
-  , path = require('path')
+var FeedSub = require('..');
+var nock = require('nock');
+var assert = require('assert');
+var path = require('path');
 
 
-var rss2old = path.join(__dirname, 'assets', 'rss2old.xml')
+var rss2old = path.join(__dirname, 'assets', 'rss2old.xml');
 
 
 describe('Conditional GET', function() {
-  var host = 'http://feedburner.info'
-    , path = '/rss'
-    , reader = new FeedSub(host + path, { emitOnStart: true })
-    , itemCount = 0
-    , itemsEvents = 0
+  var host = 'http://feedburner.info';
+  var path = '/rss';
+  var reader = new FeedSub(host + path, { emitOnStart: true });
+  var itemCount = 0;
+  var itemsEvents = 0;
 
   reader.on('item', function() {
     itemCount++;
@@ -23,21 +23,18 @@ describe('Conditional GET', function() {
   });
 
 
-  // reply with headers
+  // Reply with headers.
   var now = new Date().toGMTString();
   var etag = '"asdfghjklpoiuytrewq"';
-  var headers = {
-      'last-modified': now
-    , 'etag': etag
-  };
+  var headers = { 'last-modified': now, 'etag': etag };
   nock(host)
     .get(path)
-    .replyWithFile(200, rss2old, headers)
+    .replyWithFile(200, rss2old, headers);
 
   it('Read all items in feed', function(done) {
     reader.read(function(err, items) {
       if (err) throw err;
-      assert.ok(!err);
+
       assert.ok(Array.isArray(items));
       assert.equal(items.length, 4);
 
@@ -60,12 +57,12 @@ describe('Conditional GET', function() {
       .get(path)
       .matchHeader('if-modified-since', now)
       .matchHeader('if-none-match', etag)
-      .replyWithFile(304, rss2old, headers)
+      .replyWithFile(304, rss2old, headers);
 
     it('Should not return any new items', function(done) {
       reader.read(function(err, items) {
         if (err) throw err;
-        assert.ok(!err);
+
         assert.ok(Array.isArray(items));
         assert.equal(items.length, 0);
 

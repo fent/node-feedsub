@@ -1,15 +1,17 @@
-var FeedSub = require('..')
-  , nock = require('nock')
-  , assert = require('assert')
-  , path = require('path')
+/* jshint freeze:true */
+
+var FeedSub = require('..');
+var nock    = require('nock');
+var assert  = require('assert');
+var path    = require('path');
 
 
-var file1 = path.join(__dirname, 'assets', 'aninews.rss')
-  , file2 = path.join(__dirname, 'assets', 'nodeblog.xml')
+var file1 = path.join(__dirname, 'assets', 'aninews.rss');
+var file2 = path.join(__dirname, 'assets', 'nodeblog.xml');
 
 
 describe('Use skipHours', function() {
-  // mock Date
+  // Mock Date.
   var lastDate = Date;
   before(function() {
     Date = function() {
@@ -22,13 +24,13 @@ describe('Use skipHours', function() {
     Date.now = lastDate.now;
   });
 
-  var host = 'http://www.google.com'
-    , path = '/reader/public/atom/'
-    , reader = new FeedSub(host + path, {
-        emitOnStart: true, skipHours: true
-      })
-    , itemCount = 0
-    , itemsEvents = 0
+  var host = 'http://www.google.com';
+  var path = '/reader/public/atom/';
+  var reader = new FeedSub(host + path, {
+    emitOnStart: true, skipHours: true
+  });
+  var itemCount = 0;
+  var itemsEvents = 0;
 
   reader.on('item', function() {
     itemCount++;
@@ -40,12 +42,11 @@ describe('Use skipHours', function() {
 
   nock(host)
     .get(path)
-    .replyWithFile(200, file1)
+    .replyWithFile(200, file1);
 
   it('Should return no items', function(done) {
     reader.read(function(err, items) {
       if (err) throw err;
-      assert.ok(!err);
       assert.ok(Array.isArray(items));
       assert.equal(items.length, 0);
       assert.equal(itemCount, 0);
@@ -62,7 +63,7 @@ describe('Use skipHours', function() {
 
 
 describe('Use skipDays', function() {
-  // mock Date
+  // Mock Date.
   var lastDate = Date;
   before(function() {
     Date = function() {
@@ -75,13 +76,13 @@ describe('Use skipDays', function() {
     Date.now = lastDate.now;
   });
 
-  var host = 'http://blog.nodejs.org'
-    , path = '/feed/'
-    , reader = new FeedSub(host + path, {
-        emitOnStart: true, skipDays: true
-      })
-    , itemCount = 0
-    , itemsEvents = 0
+  var host = 'http://blog.nodejs.org';
+  var path = '/feed/';
+  var reader = new FeedSub(host + path, {
+    emitOnStart: true, skipDays: true
+  });
+  var itemCount = 0;
+  var itemsEvents = 0;
 
   reader.on('item', function() {
     itemCount++;
@@ -93,12 +94,11 @@ describe('Use skipDays', function() {
 
   nock(host)
     .get(path)
-    .replyWithFile(200, file2)
+    .replyWithFile(200, file2);
 
   it('Should return no items', function(done) {
     reader.read(function(err, items) {
       if (err) throw err;
-      assert.ok(!err);
       assert.ok(Array.isArray(items));
       assert.equal(items.length, 0);
       assert.equal(itemCount, 0);
