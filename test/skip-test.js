@@ -45,7 +45,6 @@ describe('Use skipHours', function() {
   it('Should return no items', function(done) {
     reader.read(function(err, items) {
       if (err) throw err;
-      assert.ok(!err);
       assert.ok(Array.isArray(items));
       assert.equal(items.length, 0);
       assert.equal(itemCount, 0);
@@ -98,7 +97,6 @@ describe('Use skipDays', function() {
   it('Should return no items', function(done) {
     reader.read(function(err, items) {
       if (err) throw err;
-      assert.ok(!err);
       assert.ok(Array.isArray(items));
       assert.equal(items.length, 0);
       assert.equal(itemCount, 0);

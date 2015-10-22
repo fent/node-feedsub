@@ -34,7 +34,6 @@ describe('Read the old RSS feed first', function() {
   it('Reads all items in feed', function(done) {
     reader.read(function(err, items) {
       if (err) throw err;
-      assert.ok(!err);
       assert.ok(Array.isArray(items));
       assert.equal(items.length, 2997,
                    'Callback gets correct number of items');
@@ -58,7 +57,6 @@ describe('Read the old RSS feed first', function() {
     it('Does not return any new items', function(done) {
       reader.read(function(err, items) {
         if (err) throw err;
-        assert.ok(!err);
         assert.ok(Array.isArray(items));
         assert.equal(items.length, 0);
 
@@ -82,7 +80,6 @@ describe('Read the old RSS feed first', function() {
       it('Returns some new items', function(done) {
         reader.read(function(err, items) {
           if (err) throw err;
-          assert.ok(!err);
           assert.ok(Array.isArray(items));
           assert.equal(items.length, 3, '3 new items');
 
