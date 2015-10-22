@@ -1,7 +1,8 @@
 var FeedSub = require('..');
-var nock = require('nock');
-var assert = require('assert');
-var path = require('path');
+var nock    = require('nock');
+var sinon   = require('sinon');
+var assert  = require('assert');
+var path    = require('path');
 
 
 var feedold = path.join(__dirname, 'assets', 'feedold.xml');
@@ -11,16 +12,11 @@ describe('Read feed without emitOnStart', function() {
   var host = 'http://feedburner.net';
   var path = '/rss/feedme.xml';
   var reader = new FeedSub(host + path, { emitOnStart: false });
-  var itemCount = 0;
-  var itemsEvents = 0;
+  var itemSpy = sinon.spy();
+  var itemsSpy = sinon.spy();
 
-  reader.on('item', function() {
-    itemCount++;
-  });
-
-  reader.on('items', function() {
-    itemsEvents++;
-  });
+  reader.on('item', itemSpy);
+  reader.on('items', itemsSpy);
 
   nock(host)
     .get(path)
@@ -33,8 +29,8 @@ describe('Read feed without emitOnStart', function() {
       assert.ok(Array.isArray(items));
       assert.equal(items.length, 0);
 
-      assert.equal(itemCount, 0);
-      assert.equal(itemsEvents, 1);
+      assert.equal(itemSpy.callCount, 0);
+      assert.equal(itemsSpy.callCount, 1);
 
       done();
     });
@@ -46,16 +42,11 @@ describe('Read with emitOnStart', function() {
   var host = 'http://feedburner.net';
   var path = '/rss/feedme.xml';
   var reader = new FeedSub(host + path, { emitOnStart: true });
-  var itemCount = 0;
-  var itemsEvents = 0;
+  var itemSpy = sinon.spy();
+  var itemsSpy = sinon.spy();
 
-  reader.on('item', function() {
-    itemCount++;
-  });
-
-  reader.on('items', function() {
-    itemsEvents++;
-  });
+  reader.on('item', itemSpy);
+  reader.on('items', itemsSpy);
 
   nock(host)
     .get(path)
@@ -68,8 +59,8 @@ describe('Read with emitOnStart', function() {
       assert.ok(Array.isArray(items));
       assert.equal(items.length, 2997);
 
-      assert.equal(itemCount, 2997);
-      assert.equal(itemsEvents, 1);
+      assert.equal(itemSpy.callCount, 2997);
+      assert.equal(itemsSpy.callCount, 1);
 
       done();
     });

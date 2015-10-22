@@ -1,7 +1,8 @@
 var FeedSub = require('..');
-var nock = require('nock');
-var assert = require('assert');
-var path = require('path');
+var nock    = require('nock');
+var sinon   = require('sinon');
+var assert  = require('assert');
+var path    = require('path');
 
 
 var rss2old = path.join(__dirname, 'assets', 'rss2old.xml');
@@ -11,17 +12,11 @@ describe('Conditional GET', function() {
   var host = 'http://feedburner.info';
   var path = '/rss';
   var reader = new FeedSub(host + path, { emitOnStart: true });
-  var itemCount = 0;
-  var itemsEvents = 0;
+  var itemSpy = sinon.spy();
+  var itemsSpy = sinon.spy();
 
-  reader.on('item', function() {
-    itemCount++;
-  });
-
-  reader.on('items', function() {
-    itemsEvents++;
-  });
-
+  reader.on('item', itemSpy);
+  reader.on('items', itemsSpy);
 
   // Reply with headers.
   var now = new Date().toGMTString();
@@ -38,14 +33,14 @@ describe('Conditional GET', function() {
       assert.ok(Array.isArray(items));
       assert.equal(items.length, 4);
 
-      assert.equal(itemCount, 4);
-      assert.equal(itemsEvents, 1);
+      assert.equal(itemSpy.callCount, 4);
+      assert.equal(itemsSpy.callCount, 1);
 
       assert.equal(reader.getOpts.headers['If-Modified-Since'], now);
       assert.equal(reader.getOpts.headers['If-None-Match'], etag);
 
-      itemCount = 0;
-      itemsEvents = 0;
+      itemSpy.reset();
+      itemsSpy.reset();
 
       done();
     });
@@ -66,11 +61,8 @@ describe('Conditional GET', function() {
         assert.ok(Array.isArray(items));
         assert.equal(items.length, 0);
 
-        assert.equal(itemCount, 0);
-        assert.equal(itemsEvents, 1);
-
-        itemCount = 0;
-        itemsEvents = 0;
+        assert.equal(itemSpy.callCount, 0);
+        assert.equal(itemsSpy.callCount, 1);
 
         done();
       });
