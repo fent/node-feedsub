@@ -4,7 +4,9 @@ FeedSub subscribes to a remote RSS/Atom/JSON feed and notifies you of any new it
 
 It works by checking the feed every once in a while, comparing the date of the document via a conditional GET if supported. Otherwise it looks for a date tag in the feed. If it's the same as the last date, it stops downloading it and parsing the xml/json. If it's an updated document, then it looks through it top to bottom taking note of all the new items. Once it finds something it has already read, it stops downloading and parsing the document.
 
-[![Build Status](https://secure.travis-ci.org/fent/node-feedsub.png)](http://travis-ci.org/fent/node-feedsub) [![Dependency Status](https://gemnasium.com/fent/node-feedsub.svg)](https://gemnasium.com/fent/node-feedsub)
+[![Build Status](https://secure.travis-ci.org/fent/node-feedsub.svg)](http://travis-ci.org/fent/node-feedsub)
+[![Dependency Status](https://gemnasium.com/fent/node-feedsub.svg)](https://gemnasium.com/fent/node-feedsub)
+[![codecov](https://codecov.io/gh/fent/node-feedsub/branch/master/graph/badge.svg)](https://codecov.io/gh/fent/node-feedsub)
 
 # Usage
 

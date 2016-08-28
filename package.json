@@ -16,7 +16,7 @@
   "author": "fent (https://github.com/fent)",
   "main": "./lib/feedsub.js",
   "scripts": {
-    "test": "mocha -t 4000"
+    "test": "istanbul cover node_modules/.bin/_mocha -- -t 2000 test/*-test.js"
   },
   "dependencies": {
     "feedme": "~0.3.0",
@@ -25,6 +25,7 @@
     "underscore": "^1.6.0"
   },
   "devDependencies": {
+    "istanbul": "*",
     "nock": "*",
     "mocha": "*",
     "sinon": "*"
