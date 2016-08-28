@@ -1,6 +1,7 @@
 var FeedSub = require('..');
 var nock    = require('nock');
 var sinon   = require('sinon');
+var muk     = require('muk');
 var assert  = require('assert');
 var path    = require('path');
 
@@ -13,16 +14,8 @@ var file2 = path.join(__dirname, 'assets', 'nodeblog.xml');
 
 describe('Use skipHours', function() {
   // Mock Date.
-  var lastDate = Date;
   before(function() {
-    Date = function() {
-      return {
-        getHours: function() {
-          return 4;
-        }
-      };
-    };
-    Date.now = lastDate.now;
+    muk(Date.prototype, 'getHours', function() { return 4; });
   });
 
   var host = 'http://www.google.com';
@@ -42,7 +35,7 @@ describe('Use skipHours', function() {
 
   it('Should return no items', function(done) {
     reader.read(function(err, items) {
-      if (err) throw err;
+      if (err) return done(err);
       assert.ok(Array.isArray(items));
       assert.equal(items.length, 0);
       assert.equal(itemSpy.callCount, 0);
@@ -52,24 +45,14 @@ describe('Use skipHours', function() {
     });
   });
 
-  after(function() {
-    Date = lastDate;
-  });
+  after(muk.restore);
 });
 
 
 describe('Use skipDays', function() {
   // Mock Date.
-  var lastDate = Date;
   before(function() {
-    Date = function() {
-      return {
-        getDay: function() {
-          return 6; // Saturday
-        }
-      };
-    };
-    Date.now = lastDate.now;
+    muk(Date.prototype, 'getDay', function() { return 6; });
   });
 
   var host = 'http://blog.nodejs.org';
@@ -89,7 +72,7 @@ describe('Use skipDays', function() {
 
   it('Should return no items', function(done) {
     reader.read(function(err, items) {
-      if (err) throw err;
+      if (err) return done(err);
       assert.ok(Array.isArray(items));
       assert.equal(items.length, 0);
       assert.equal(itemSpy.callCount, 0);
@@ -99,7 +82,5 @@ describe('Use skipDays', function() {
     });
   });
 
-  after(function() {
-    Date = lastDate;
-  });
+  after(muk.restore);
 });

@@ -28,7 +28,7 @@ describe('Conditional GET', function() {
 
   it('Read all items in feed', function(done) {
     reader.read(function(err, items) {
-      if (err) throw err;
+      if (err) return done(err);
 
       assert.ok(Array.isArray(items));
       assert.equal(items.length, 4);
@@ -56,7 +56,7 @@ describe('Conditional GET', function() {
 
     it('Should not return any new items', function(done) {
       reader.read(function(err, items) {
-        if (err) throw err;
+        if (err) return done(err);
 
         assert.ok(Array.isArray(items));
         assert.equal(items.length, 0);
