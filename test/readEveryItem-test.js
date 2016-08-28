@@ -28,7 +28,7 @@ describe('Read all published/updated items with readEveryItem', function() {
 
   it('Should return all items', function(done) {
     reader.read(function(err, items) {
-      if (err) throw err;
+      if (err) return done(err);
 
       assert.ok(Array.isArray(items));
       assert.equal(items.length, 6);
@@ -49,7 +49,7 @@ describe('Read all published/updated items with readEveryItem', function() {
 
     it('Should return all updated items', function(done) {
       reader.read(function(err, items) {
-        if (err) throw err;
+        if (err) return done(err);
 
         assert.ok(Array.isArray(items));
         assert.equal(items.length, 3);

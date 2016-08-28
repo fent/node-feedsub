@@ -24,7 +24,7 @@ describe('Read feed without emitOnStart', function() {
 
   it('Should return no items', function(done) {
     reader.read(function(err, items) {
-      if (err) throw err;
+      if (err) return done(err);
 
       assert.ok(Array.isArray(items));
       assert.equal(items.length, 0);
@@ -54,7 +54,7 @@ describe('Read with emitOnStart', function() {
 
   it('Should return some items', function(done) {
     reader.read(function(err, items) {
-      if (err) throw err;
+      if (err) return done(err);
 
       assert.ok(Array.isArray(items));
       assert.equal(items.length, 2997);

@@ -16,7 +16,7 @@
   "author": "Roly Fentanes (https://github.com/fent)",
   "main": "./lib/feedsub.js",
   "scripts": {
-    "test": "istanbul cover node_modules/.bin/_mocha -- -t 2000 test/*-test.js"
+    "test": "istanbul cover node_modules/.bin/_mocha -- -t 4000 test/*-test.js"
   },
   "dependencies": {
     "feedme": "~0.3.0",
@@ -28,6 +28,7 @@
     "istanbul": "*",
     "nock": "*",
     "mocha": "*",
+    "muk": "*",
     "sinon": "*"
   },
   "licenses": [
