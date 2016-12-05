@@ -31,10 +31,5 @@
     "muk": "*",
     "sinon": "*"
   },
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "http://github.com/fent/node-feedsub/raw/master/LICENSE"
-    }
-  ]
+  "license": "MIT"
 }
