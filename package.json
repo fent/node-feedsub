@@ -15,6 +15,9 @@
   },
   "author": "Roly Fentanes (https://github.com/fent)",
   "main": "./lib/feedsub.js",
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "test": "istanbul cover node_modules/.bin/_mocha -- -t 4000 test/*-test.js"
   },
