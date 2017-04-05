@@ -103,7 +103,7 @@ Emitted when there is an error downloading or parsing the feed. Not emitted if `
 
 # Tests
 
-Tests are written with [mocha](http://visionmedia.github.com/mocha/)
+Tests are written with [mocha](https://mochajs.org)
 
 ```bash
 npm test
