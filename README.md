@@ -58,13 +58,13 @@ Creates a new instance of FeedSub. `options` defaults to.
   skipHours: false,
 
   // If you'd like to specify exactly what hours to skip.
-  hours: [],
+  hoursToSkip: [],
 
   // same as `skipHours`, but with days
   skipDays: false,
 
   // Specify exactly what days to skip, ex: ['Saturday', 'Sunday'].
-  days: [],
+  daysToSkip: [],
 
   // options object passed to the http(s).get function
   requestOpts: {}
