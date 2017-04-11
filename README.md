@@ -31,28 +31,28 @@ Creates a new instance of FeedSub. `options` defaults to.
 
 ```javascript
 {
-  // number of minutes to wait between checking the feed for new items
+  // Number of minutes to wait between checking the feed for new items.
   interval: 10,
 
-  // some feeds contain a `ttl` tag that specifies the
-  // number of minutes to cache the feed
-  // setting this to true will ignore that
+  // Some feeds contain a `ttl` tag that specifies the
+  // number of minutes to cache the feed.
+  // Setting this to true will ignore that.
   forceInterval: false,
 
-  // if true, calls `reader.start()` on instanstiation
+  // If true, calls `reader.start()` on instanstiation.
   autoStart: false, 
 
-  // emits items on the very first request
-  // after which, it should consider those items read
+  // Emits items on the very first request.
+  // After which, it should consider those items read.
   emitOnStart: false,
 
-  // keeps track of last date of the feed
+  // Keeps track of last date of the feed.
   lastDate: null,
 
-  // maximum size of `history` array
+  // Maximum size of `history` array.
   maxHistory: 10,
 
-  // some feeds have a `skipHours` tag with a list of
+  // Some feeds have a `skipHours` tag with a list of
   // hours in which the feed should not be read.
   // if this is set to true and the feed has that tag, it obeys that rule
   skipHours: false,
@@ -60,13 +60,13 @@ Creates a new instance of FeedSub. `options` defaults to.
   // If you'd like to specify exactly what hours to skip.
   hoursToSkip: [],
 
-  // same as `skipHours`, but with days
+  // Same as `skipHours`, but with days.
   skipDays: false,
 
   // Specify exactly what days to skip, ex: ['Saturday', 'Sunday'].
   daysToSkip: [],
 
-  // options object passed to the http(s).get function
+  // Options object passed to the http(s).get function.
   requestOpts: {}
 }
 ```
