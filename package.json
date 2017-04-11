@@ -23,8 +23,7 @@
   },
   "dependencies": {
     "feedme": "~1.0.0",
-    "newsemitter": "~0.2.0",
-    "request": "^2.37.0"
+    "newsemitter": "~0.2.0"
   },
   "devDependencies": {
     "istanbul": "*",
