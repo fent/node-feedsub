@@ -26,11 +26,11 @@
     "newsemitter": "~0.2.0"
   },
   "devDependencies": {
-    "istanbul": "*",
-    "nock": "*",
-    "mocha": "*",
-    "muk": "*",
-    "sinon": "*"
+    "istanbul": "^0.4.5",
+    "mocha": "^4.0.1",
+    "muk": "^0.5.3",
+    "nock": "^9.0.24",
+    "sinon": "^4.0.1"
   },
   "engines": {
     "node": ">=4"
