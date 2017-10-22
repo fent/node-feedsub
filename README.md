@@ -11,13 +11,13 @@ It works by checking the feed every once in a while, comparing the date of the d
 # Usage
 
 ```javascript
-var FeedSub = require('feedsub');
+const FeedSub = require('feedsub');
 
 var reader = new FeedSub('http://rss.cnn.com/rss/cnn_latest.rss', {
-  interval: 10 // check feed every 10 minutes
+  interval: 10 // Check feed every 10 minutes.
 });
 
-reader.on('item', function(item) {
+reader.on('item', (item) => {
   console.log('Got item!');
   console.dir(item);
 });
@@ -39,7 +39,7 @@ Creates a new instance of FeedSub. `options` defaults to.
   // Setting this to true will ignore that.
   forceInterval: false,
 
-  // If true, calls `reader.start()` on instanstiation.
+  // If true, calls `reader.start()` when initialized.
   autoStart: false, 
 
   // Emits items on the very first request.
