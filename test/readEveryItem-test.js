@@ -1,15 +1,15 @@
-var FeedSub = require('..');
-var nock    = require('nock');
-var sinon   = require('sinon');
-var assert  = require('assert');
-var path    = require('path');
+const FeedSub = require('..');
+const nock    = require('nock');
+const sinon   = require('sinon');
+const assert  = require('assert');
+const path    = require('path');
 
 
-var file1 = path.join(__dirname, 'assets', 'googlefeed.xml');
-var file2 = path.join(__dirname, 'assets', 'googlefeedupdated.xml');
+const file1 = path.join(__dirname, 'assets', 'googlefeed.xml');
+const file2 = path.join(__dirname, 'assets', 'googlefeedupdated.xml');
 
 
-describe('Read all published/updated items with readEveryItem', function() {
+describe('Read all published/updated items with readEveryItem', () => {
 
   var host = 'https://www.blogger.com';
   var path = '/feeds/10861780/posts/default';
@@ -26,8 +26,8 @@ describe('Read all published/updated items with readEveryItem', function() {
     .get(path)
     .replyWithFile(200, file1);
 
-  it('Should return all items', function(done) {
-    reader.read(function(err, items) {
+  it('Should return all items', (done) => {
+    reader.read((err, items) => {
       if (err) return done(err);
 
       assert.ok(Array.isArray(items));
@@ -42,13 +42,13 @@ describe('Read all published/updated items with readEveryItem', function() {
     });
   });
   
-  describe('Read updated feed', function() {
+  describe('Read updated feed', () => {
     nock(host)
       .get(path)
       .replyWithFile(200, file2);
 
-    it('Should return all updated items', function(done) {
-      reader.read(function(err, items) {
+    it('Should return all updated items', (done) => {
+      reader.read((err, items) => {
         if (err) return done(err);
 
         assert.ok(Array.isArray(items));

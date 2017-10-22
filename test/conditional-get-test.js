@@ -1,14 +1,14 @@
-var FeedSub = require('..');
-var nock    = require('nock');
-var sinon   = require('sinon');
-var assert  = require('assert');
-var path    = require('path');
+const FeedSub = require('..');
+const nock    = require('nock');
+const sinon   = require('sinon');
+const assert  = require('assert');
+const path    = require('path');
 
 
-var rss2old = path.join(__dirname, 'assets', 'rss2old.xml');
+const rss2old = path.join(__dirname, 'assets', 'rss2old.xml');
 
 
-describe('Conditional GET', function() {
+describe('Conditional GET', () => {
   var host = 'http://feedburner.info';
   var path = '/rss';
   var reader = new FeedSub(host + path, { emitOnStart: true });
@@ -26,8 +26,8 @@ describe('Conditional GET', function() {
     .get(path)
     .replyWithFile(200, rss2old, headers);
 
-  it('Read all items in feed', function(done) {
-    reader.read(function(err, items) {
+  it('Read all items in feed', (done) => {
+    reader.read((err, items) => {
       if (err) return done(err);
 
       assert.ok(Array.isArray(items));
@@ -47,15 +47,15 @@ describe('Conditional GET', function() {
   });
 
 
-  describe('Read feed again', function() {
+  describe('Read feed again', () => {
     nock(host)
       .get(path)
       .matchHeader('if-modified-since', now)
       .matchHeader('if-none-match', etag)
       .replyWithFile(304, rss2old, headers);
 
-    it('Should not return any new items', function(done) {
-      reader.read(function(err, items) {
+    it('Should not return any new items', (done) => {
+      reader.read((err, items) => {
         if (err) return done(err);
 
         assert.ok(Array.isArray(items));

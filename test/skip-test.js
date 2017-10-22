@@ -1,21 +1,21 @@
-var FeedSub = require('..');
-var nock    = require('nock');
-var sinon   = require('sinon');
-var muk     = require('muk');
-var assert  = require('assert');
-var path    = require('path');
+const FeedSub = require('..');
+const nock    = require('nock');
+const sinon   = require('sinon');
+const muk     = require('muk');
+const assert  = require('assert');
+const path    = require('path');
 
 
-var file1 = path.join(__dirname, 'assets', 'aninews.rss');
-var file2 = path.join(__dirname, 'assets', 'nodeblog.xml');
+const file1 = path.join(__dirname, 'assets', 'aninews.rss');
+const file2 = path.join(__dirname, 'assets', 'nodeblog.xml');
 
 /* jshint freeze:true */
 
 
-describe('Use skipHours', function() {
+describe('Use skipHours', () => {
   // Mock Date.
-  before(function() {
-    muk(Date.prototype, 'getHours', function() { return 4; });
+  before(() => {
+    muk(Date.prototype, 'getHours', () => 4);
   });
 
   var host = 'http://www.google.com';
@@ -33,8 +33,8 @@ describe('Use skipHours', function() {
     .get(path)
     .replyWithFile(200, file1);
 
-  it('Should return no items', function(done) {
-    reader.read(function(err, items) {
+  it('Should return no items', (done) => {
+    reader.read((err, items) => {
       if (err) return done(err);
       assert.ok(Array.isArray(items));
       assert.equal(items.length, 0);
@@ -49,10 +49,10 @@ describe('Use skipHours', function() {
 });
 
 
-describe('Use skipDays', function() {
+describe('Use skipDays', () => {
   // Mock Date.
-  before(function() {
-    muk(Date.prototype, 'getDay', function() { return 6; });
+  before(() => {
+    muk(Date.prototype, 'getDay', () => 6);
   });
 
   var host = 'http://blog.nodejs.org';
@@ -70,8 +70,8 @@ describe('Use skipDays', function() {
     .get(path)
     .replyWithFile(200, file2);
 
-  it('Should return no items', function(done) {
-    reader.read(function(err, items) {
+  it('Should return no items', (done) => {
+    reader.read((err, items) => {
       if (err) return done(err);
       assert.ok(Array.isArray(items));
       assert.equal(items.length, 0);

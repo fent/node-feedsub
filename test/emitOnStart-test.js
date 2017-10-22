@@ -1,14 +1,14 @@
-var FeedSub = require('..');
-var nock    = require('nock');
-var sinon   = require('sinon');
-var assert  = require('assert');
-var path    = require('path');
+const FeedSub = require('..');
+const nock    = require('nock');
+const sinon   = require('sinon');
+const assert  = require('assert');
+const path    = require('path');
 
 
-var feedold = path.join(__dirname, 'assets', 'feedold.xml');
+const feedold = path.join(__dirname, 'assets', 'feedold.xml');
 
 
-describe('Read feed without emitOnStart', function() {
+describe('Read feed without emitOnStart', () => {
   var host = 'http://feedburner.net';
   var path = '/rss/feedme.xml';
   var reader = new FeedSub(host + path, { emitOnStart: false });
@@ -22,8 +22,8 @@ describe('Read feed without emitOnStart', function() {
     .get(path)
     .replyWithFile(200, feedold);
 
-  it('Should return no items', function(done) {
-    reader.read(function(err, items) {
+  it('Should return no items', (done) => {
+    reader.read((err, items) => {
       if (err) return done(err);
 
       assert.ok(Array.isArray(items));
@@ -38,7 +38,7 @@ describe('Read feed without emitOnStart', function() {
 });
 
 
-describe('Read with emitOnStart', function() {
+describe('Read with emitOnStart', () => {
   var host = 'http://feedburner.net';
   var path = '/rss/feedme.xml';
   var reader = new FeedSub(host + path, { emitOnStart: true });
@@ -52,8 +52,8 @@ describe('Read with emitOnStart', function() {
     .get(path)
     .replyWithFile(200, feedold);
 
-  it('Should return some items', function(done) {
-    reader.read(function(err, items) {
+  it('Should return some items', (done) => {
+    reader.read((err, items) => {
       if (err) return done(err);
 
       assert.ok(Array.isArray(items));
