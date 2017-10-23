@@ -22,8 +22,8 @@
     "test": "istanbul cover node_modules/.bin/_mocha -- -t 4000 test/*-test.js"
   },
   "dependencies": {
-    "feedme": "~1.0.0",
-    "newsemitter": "~0.3.0"
+    "feedme": "^1.0.0",
+    "newsemitter": "^0.3.0"
   },
   "devDependencies": {
     "istanbul": "^0.4.5",
