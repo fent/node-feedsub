@@ -36,8 +36,8 @@ describe('Read the old RSS feed first', () => {
         'Correct number of item events emitted');
       assert.equal(itemsSpy.callCount, 1);
 
-      itemSpy.reset();
-      itemsSpy.reset();
+      itemSpy.resetHistory();
+      itemsSpy.resetHistory();
 
       done();
     });
@@ -59,8 +59,8 @@ describe('Read the old RSS feed first', () => {
         assert.equal(itemSpy.callCount, 0);
         assert.equal(itemsSpy.callCount, 1);
 
-        itemSpy.reset();
-        itemsSpy.reset();
+        itemSpy.resetHistory();
+        itemsSpy.resetHistory();
 
         done();
       });
@@ -117,8 +117,8 @@ describe('Same title but different pubdate', () => {
       assert.equal(itemSpy.callCount, 4);
       assert.equal(itemsSpy.callCount, 1);
 
-      itemSpy.reset();
-      itemsSpy.reset();
+      itemSpy.resetHistory();
+      itemsSpy.resetHistory();
 
       done();
     });
@@ -141,8 +141,8 @@ describe('Same title but different pubdate', () => {
         assert.equal(itemSpy.callCount, 0);
         assert.equal(itemsSpy.callCount, 1);
 
-        itemSpy.reset();
-        itemsSpy.reset();
+        itemSpy.resetHistory();
+        itemsSpy.resetHistory();
 
         done();
       });

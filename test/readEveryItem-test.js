@@ -35,8 +35,8 @@ describe('Read all published/updated items with readEveryItem', () => {
       assert.equal(itemSpy.callCount, 6);
       assert.equal(itemsSpy.callCount, 1);
 
-      itemSpy.reset();
-      itemsSpy.reset();
+      itemSpy.resetHistory();
+      itemsSpy.resetHistory();
 
       done();
     });

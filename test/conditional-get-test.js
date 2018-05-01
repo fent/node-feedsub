@@ -39,8 +39,8 @@ describe('Conditional GET', () => {
       assert.equal(reader.getOpts.headers['If-Modified-Since'], now);
       assert.equal(reader.getOpts.headers['If-None-Match'], etag);
 
-      itemSpy.reset();
-      itemsSpy.reset();
+      itemSpy.resetHistory();
+      itemsSpy.resetHistory();
 
       done();
     });
