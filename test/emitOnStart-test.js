@@ -9,11 +9,11 @@ const feedold = path.join(__dirname, 'assets', 'feedold.xml');
 
 
 describe('Read feed without emitOnStart', () => {
-  var host = 'http://feedburner.net';
-  var path = '/rss/feedme.xml';
-  var reader = new FeedSub(host + path, { emitOnStart: false });
-  var itemSpy = sinon.spy();
-  var itemsSpy = sinon.spy();
+  const host = 'http://feedburner.net';
+  const path = '/rss/feedme.xml';
+  const reader = new FeedSub(host + path, { emitOnStart: false });
+  const itemSpy = sinon.spy();
+  const itemsSpy = sinon.spy();
 
   reader.on('item', itemSpy);
   reader.on('items', itemsSpy);
@@ -39,11 +39,11 @@ describe('Read feed without emitOnStart', () => {
 
 
 describe('Read with emitOnStart', () => {
-  var host = 'http://feedburner.net';
-  var path = '/rss/feedme.xml';
-  var reader = new FeedSub(host + path, { emitOnStart: true });
-  var itemSpy = sinon.spy();
-  var itemsSpy = sinon.spy();
+  const host = 'http://feedburner.net';
+  const path = '/rss/feedme.xml';
+  const reader = new FeedSub(host + path, { emitOnStart: true });
+  const itemSpy = sinon.spy();
+  const itemsSpy = sinon.spy();
 
   reader.on('item', itemSpy);
   reader.on('items', itemsSpy);

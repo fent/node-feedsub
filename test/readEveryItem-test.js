@@ -10,14 +10,13 @@ const file2 = path.join(__dirname, 'assets', 'googlefeedupdated.xml');
 
 
 describe('Read all published/updated items with readEveryItem', () => {
-
-  var host = 'https://www.blogger.com';
-  var path = '/feeds/10861780/posts/default';
-  var reader = new FeedSub(host + path, {
+  const host = 'https://www.blogger.com';
+  const path = '/feeds/10861780/posts/default';
+  const reader = new FeedSub(host + path, {
     emitOnStart: true, readEveryItem: true
   });
-  var itemSpy = sinon.spy();
-  var itemsSpy = sinon.spy();
+  const itemSpy = sinon.spy();
+  const itemsSpy = sinon.spy();
 
   reader.on('item', itemSpy);
   reader.on('items', itemsSpy);

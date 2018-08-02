@@ -12,11 +12,11 @@ const rss2new = path.join(__dirname, 'assets', 'rss2new.xml');
 
 
 describe('Read the old RSS feed first', () => {
-  var host = 'http://feedsite.info';
-  var path = '/rss/feed.xml';
-  var reader = new FeedSub(host + path, { emitOnStart: true });
-  var itemSpy = sinon.spy();
-  var itemsSpy = sinon.spy();
+  const host = 'http://feedsite.info';
+  const path = '/rss/feed.xml';
+  const reader = new FeedSub(host + path, { emitOnStart: true });
+  const itemSpy = sinon.spy();
+  const itemsSpy = sinon.spy();
 
   reader.on('item', itemSpy);
   reader.on('items', itemsSpy);
@@ -93,11 +93,11 @@ describe('Read the old RSS feed first', () => {
 
 
 describe('Same title but different pubdate', () => {
-  var host = 'http://feedburner.info';
-  var path = '/rss';
-  var reader = new FeedSub(host + path, { emitOnStart: true });
-  var itemSpy = sinon.spy();
-  var itemsSpy = sinon.spy();
+  const host = 'http://feedburner.info';
+  const path = '/rss';
+  const reader = new FeedSub(host + path, { emitOnStart: true });
+  const itemSpy = sinon.spy();
+  const itemsSpy = sinon.spy();
 
   reader.on('item', itemSpy);
   reader.on('items', itemsSpy);

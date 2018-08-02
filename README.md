@@ -13,7 +13,7 @@ It works by checking the feed every once in a while, comparing the date of the d
 ```javascript
 const FeedSub = require('feedsub');
 
-var reader = new FeedSub('http://rss.cnn.com/rss/cnn_latest.rss', {
+let reader = new FeedSub('http://rss.cnn.com/rss/cnn_latest.rss', {
   interval: 10 // Check feed every 10 minutes.
 });
 

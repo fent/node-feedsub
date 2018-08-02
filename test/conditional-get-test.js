@@ -9,19 +9,19 @@ const rss2old = path.join(__dirname, 'assets', 'rss2old.xml');
 
 
 describe('Conditional GET', () => {
-  var host = 'http://feedburner.info';
-  var path = '/rss';
-  var reader = new FeedSub(host + path, { emitOnStart: true });
-  var itemSpy = sinon.spy();
-  var itemsSpy = sinon.spy();
+  const host = 'http://feedburner.info';
+  const path = '/rss';
+  const reader = new FeedSub(host + path, { emitOnStart: true });
+  const itemSpy = sinon.spy();
+  const itemsSpy = sinon.spy();
 
   reader.on('item', itemSpy);
   reader.on('items', itemsSpy);
 
   // Reply with headers.
-  var now = new Date().toGMTString();
-  var etag = '"asdfghjklpoiuytrewq"';
-  var headers = { 'last-modified': now, 'etag': etag };
+  let now = new Date().toGMTString();
+  let etag = '"asdfghjklpoiuytrewq"';
+  let headers = { 'last-modified': now, 'etag': etag };
   nock(host)
     .get(path)
     .replyWithFile(200, rss2old, headers);

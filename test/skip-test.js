@@ -9,22 +9,19 @@ const path    = require('path');
 const file1 = path.join(__dirname, 'assets', 'aninews.rss');
 const file2 = path.join(__dirname, 'assets', 'nodeblog.xml');
 
-/* jshint freeze:true */
-
-
 describe('Use skipHours', () => {
   // Mock Date.
   before(() => {
     muk(Date.prototype, 'getHours', () => 4);
   });
 
-  var host = 'http://www.google.com';
-  var path = '/reader/public/atom/';
-  var reader = new FeedSub(host + path, {
+  const host = 'http://www.google.com';
+  const path = '/reader/public/atom/';
+  const reader = new FeedSub(host + path, {
     emitOnStart: true, skipHours: true
   });
-  var itemSpy = sinon.spy();
-  var itemsSpy = sinon.spy();
+  const itemSpy = sinon.spy();
+  const itemsSpy = sinon.spy();
 
   reader.on('item', itemSpy);
   reader.on('items', itemsSpy);
@@ -55,13 +52,13 @@ describe('Use skipDays', () => {
     muk(Date.prototype, 'getDay', () => 6);
   });
 
-  var host = 'http://blog.nodejs.org';
-  var path = '/feed/';
-  var reader = new FeedSub(host + path, {
+  const host = 'http://blog.nodejs.org';
+  const path = '/feed/';
+  const reader = new FeedSub(host + path, {
     emitOnStart: true, skipDays: true
   });
-  var itemSpy = sinon.spy();
-  var itemsSpy = sinon.spy();
+  const itemSpy = sinon.spy();
+  const itemsSpy = sinon.spy();
 
   reader.on('item', itemSpy);
   reader.on('items', itemsSpy);
