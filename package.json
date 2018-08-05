@@ -22,16 +22,16 @@
     "test": "istanbul cover node_modules/.bin/_mocha -- -t 4000 test/*-test.js"
   },
   "dependencies": {
-    "feedme": "^1.0.0",
+    "feedme": "^1.2.0",
     "miniget": "^1.3.0",
-    "newsemitter": "^0.3.0"
+    "newsemitter": "^0.3.1"
   },
   "devDependencies": {
     "istanbul": "^0.4.5",
-    "mocha": "^5.0.0",
+    "mocha": "^5.2.0",
     "muk": "^0.5.3",
-    "nock": "^9.0.24",
-    "sinon": "^6.0.0"
+    "nock": "^9.4.4",
+    "sinon": "^6.1.4"
   },
   "engines": {
     "node": ">=4"
