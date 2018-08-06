@@ -9,20 +9,20 @@ const feedold = path.join(__dirname, 'assets', 'feedold.xml');
 
 
 describe('Read feed without emitOnStart', () => {
-  const host = 'http://feedburner.net';
-  const path = '/rss/feedme.xml';
-  const reader = new FeedSub(host + path, { emitOnStart: false });
-  const itemSpy = sinon.spy();
-  const itemsSpy = sinon.spy();
-
-  reader.on('item', itemSpy);
-  reader.on('items', itemsSpy);
-
-  nock(host)
-    .get(path)
-    .replyWithFile(200, feedold);
-
   it('Should return no items', (done) => {
+    const host = 'http://feedburner.net';
+    const path = '/rss/feedme.xml';
+    const reader = new FeedSub(host + path, { emitOnStart: false });
+    const itemSpy = sinon.spy();
+    const itemsSpy = sinon.spy();
+
+    reader.on('item', itemSpy);
+    reader.on('items', itemsSpy);
+
+    let scope = nock(host)
+      .get(path)
+      .replyWithFile(200, feedold);
+
     reader.read((err, items) => {
       if (err) return done(err);
 
@@ -32,6 +32,7 @@ describe('Read feed without emitOnStart', () => {
       assert.equal(itemSpy.callCount, 0);
       assert.equal(itemsSpy.callCount, 1);
 
+      scope.done();
       done();
     });
   });
@@ -39,20 +40,20 @@ describe('Read feed without emitOnStart', () => {
 
 
 describe('Read with emitOnStart', () => {
-  const host = 'http://feedburner.net';
-  const path = '/rss/feedme.xml';
-  const reader = new FeedSub(host + path, { emitOnStart: true });
-  const itemSpy = sinon.spy();
-  const itemsSpy = sinon.spy();
-
-  reader.on('item', itemSpy);
-  reader.on('items', itemsSpy);
-
-  nock(host)
-    .get(path)
-    .replyWithFile(200, feedold);
-
   it('Should return some items', (done) => {
+    const host = 'http://feedburner.net';
+    const path = '/rss/feedme.xml';
+    const reader = new FeedSub(host + path, { emitOnStart: true });
+    const itemSpy = sinon.spy();
+    const itemsSpy = sinon.spy();
+
+    reader.on('item', itemSpy);
+    reader.on('items', itemsSpy);
+
+    let scope = nock(host)
+      .get(path)
+      .replyWithFile(200, feedold);
+
     reader.read((err, items) => {
       if (err) return done(err);
 
@@ -62,6 +63,7 @@ describe('Read with emitOnStart', () => {
       assert.equal(itemSpy.callCount, 2997);
       assert.equal(itemsSpy.callCount, 1);
 
+      scope.done();
       done();
     });
   });

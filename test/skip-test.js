@@ -15,22 +15,22 @@ describe('Use skipHours', () => {
     muk(Date.prototype, 'getHours', () => 4);
   });
 
-  const host = 'http://www.google.com';
-  const path = '/reader/public/atom/';
-  const reader = new FeedSub(host + path, {
-    emitOnStart: true, skipHours: true
-  });
-  const itemSpy = sinon.spy();
-  const itemsSpy = sinon.spy();
-
-  reader.on('item', itemSpy);
-  reader.on('items', itemsSpy);
-
-  nock(host)
-    .get(path)
-    .replyWithFile(200, file1);
-
   it('Should return no items', (done) => {
+    const host = 'http://www.google.com';
+    const path = '/reader/public/atom/';
+    const reader = new FeedSub(host + path, {
+      emitOnStart: true, skipHours: true
+    });
+    const itemSpy = sinon.spy();
+    const itemsSpy = sinon.spy();
+
+    reader.on('item', itemSpy);
+    reader.on('items', itemsSpy);
+
+    let scope = nock(host)
+      .get(path)
+      .replyWithFile(200, file1);
+
     reader.read((err, items) => {
       if (err) return done(err);
       assert.ok(Array.isArray(items));
@@ -38,6 +38,7 @@ describe('Use skipHours', () => {
       assert.equal(itemSpy.callCount, 0);
       assert.equal(itemsSpy.callCount, 1);
 
+      scope.done();
       done();
     });
   });
@@ -52,22 +53,22 @@ describe('Use skipDays', () => {
     muk(Date.prototype, 'getDay', () => 6);
   });
 
-  const host = 'http://blog.nodejs.org';
-  const path = '/feed/';
-  const reader = new FeedSub(host + path, {
-    emitOnStart: true, skipDays: true
-  });
-  const itemSpy = sinon.spy();
-  const itemsSpy = sinon.spy();
-
-  reader.on('item', itemSpy);
-  reader.on('items', itemsSpy);
-
-  nock(host)
-    .get(path)
-    .replyWithFile(200, file2);
-
   it('Should return no items', (done) => {
+    const host = 'http://blog.nodejs.org';
+    const path = '/feed/';
+    const reader = new FeedSub(host + path, {
+      emitOnStart: true, skipDays: true
+    });
+    const itemSpy = sinon.spy();
+    const itemsSpy = sinon.spy();
+
+    reader.on('item', itemSpy);
+    reader.on('items', itemsSpy);
+
+    let scope = nock(host)
+      .get(path)
+      .replyWithFile(200, file2);
+
     reader.read((err, items) => {
       if (err) return done(err);
       assert.ok(Array.isArray(items));
@@ -75,6 +76,7 @@ describe('Use skipDays', () => {
       assert.equal(itemSpy.callCount, 0);
       assert.equal(itemsSpy.callCount, 1);
 
+      scope.done();
       done();
     });
   });

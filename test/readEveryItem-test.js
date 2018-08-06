@@ -10,22 +10,22 @@ const file2 = path.join(__dirname, 'assets', 'googlefeedupdated.xml');
 
 
 describe('Read all published/updated items with readEveryItem', () => {
-  const host = 'https://www.blogger.com';
-  const path = '/feeds/10861780/posts/default';
-  const reader = new FeedSub(host + path, {
-    emitOnStart: true, readEveryItem: true
-  });
-  const itemSpy = sinon.spy();
-  const itemsSpy = sinon.spy();
+  it('Should return all updated items', (done) => {
+    const host = 'https://www.blogger.com';
+    const path = '/feeds/10861780/posts/default';
+    const reader = new FeedSub(host + path, {
+      emitOnStart: true, readEveryItem: true
+    });
+    const itemSpy = sinon.spy();
+    const itemsSpy = sinon.spy();
 
-  reader.on('item', itemSpy);
-  reader.on('items', itemsSpy);
+    reader.on('item', itemSpy);
+    reader.on('items', itemsSpy);
 
-  nock(host)
-    .get(path)
-    .replyWithFile(200, file1);
+    let scope1 = nock(host)
+      .get(path)
+      .replyWithFile(200, file1);
 
-  it('Should return all items', (done) => {
     reader.read((err, items) => {
       if (err) return done(err);
 
@@ -36,17 +36,12 @@ describe('Read all published/updated items with readEveryItem', () => {
 
       itemSpy.resetHistory();
       itemsSpy.resetHistory();
+      scope1.done();
 
-      done();
-    });
-  });
-  
-  describe('Read updated feed', () => {
-    nock(host)
-      .get(path)
-      .replyWithFile(200, file2);
+      let scope2 = nock(host)
+        .get(path)
+        .replyWithFile(200, file2);
 
-    it('Should return all updated items', (done) => {
       reader.read((err, items) => {
         if (err) return done(err);
 
@@ -54,6 +49,7 @@ describe('Read all published/updated items with readEveryItem', () => {
         assert.equal(items.length, 3);
         assert.equal(itemSpy.callCount, 3);
         assert.equal(itemsSpy.callCount, 1);
+        scope2.done();
         done();
       });
     });

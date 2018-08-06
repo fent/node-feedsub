@@ -11,22 +11,24 @@ const rss2old = path.join(__dirname, 'assets', 'rss2old.xml');
 describe('Conditional GET', () => {
   const host = 'http://feedburner.info';
   const path = '/rss';
-  const reader = new FeedSub(host + path, { emitOnStart: true });
-  const itemSpy = sinon.spy();
-  const itemsSpy = sinon.spy();
-
-  reader.on('item', itemSpy);
-  reader.on('items', itemsSpy);
 
   // Reply with headers.
   let now = new Date().toGMTString();
   let etag = '"asdfghjklpoiuytrewq"';
   let headers = { 'last-modified': now, 'etag': etag };
-  nock(host)
-    .get(path)
-    .replyWithFile(200, rss2old, headers);
 
-  it('Read all items in feed', (done) => {
+  it('Should not return new items on second read', (done) => {
+    let scope1 = nock(host)
+      .get(path)
+      .replyWithFile(200, rss2old, headers);
+
+    const reader = new FeedSub(host + path, { emitOnStart: true });
+    const itemSpy = sinon.spy();
+    const itemsSpy = sinon.spy();
+
+    reader.on('item', itemSpy);
+    reader.on('items', itemsSpy);
+
     reader.read((err, items) => {
       if (err) return done(err);
 
@@ -42,19 +44,14 @@ describe('Conditional GET', () => {
       itemSpy.resetHistory();
       itemsSpy.resetHistory();
 
-      done();
-    });
-  });
+      scope1.done();
 
+      let scope2 = nock(host)
+        .get(path)
+        .matchHeader('if-modified-since', now)
+        .matchHeader('if-none-match', etag)
+        .replyWithFile(304, rss2old, headers);
 
-  describe('Read feed again', () => {
-    nock(host)
-      .get(path)
-      .matchHeader('if-modified-since', now)
-      .matchHeader('if-none-match', etag)
-      .replyWithFile(304, rss2old, headers);
-
-    it('Should not return any new items', (done) => {
       reader.read((err, items) => {
         if (err) return done(err);
 
@@ -64,9 +61,9 @@ describe('Conditional GET', () => {
         assert.equal(itemSpy.callCount, 0);
         assert.equal(itemsSpy.callCount, 1);
 
+        scope2.done();
         done();
       });
     });
-
   });
 });
