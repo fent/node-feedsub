@@ -8,25 +8,51 @@ const path    = require('path');
 describe('Use skipHours', () => {
   const feed = path.join(__dirname, 'assets', 'skiphours.rss');
   describe('With hours that match time now', () => {
-    it('Should return no items', (done) => {
-      muk(Date.prototype, 'getHours', () => 4);
-      after(muk.restore);
-      const host = 'http://www.google.com';
-      const path = '/reader/public/atom/';
-      const reader = new FeedSub(host + path, {
-        emitOnStart: true, skipHours: true
+    describe('With `emitOnStart`', () => {
+      it('Should return some items', (done) => {
+        muk(Date.prototype, 'getHours', () => 4);
+        after(muk.restore);
+        const host = 'http://www.google.com';
+        const path = '/reader/public/atom/';
+        const reader = new FeedSub(host + path, {
+          emitOnStart: true, skipHours: true
+        });
+
+        const scope = nock(host)
+          .get(path)
+          .replyWithFile(200, feed);
+
+        reader.read((err, items) => {
+          assert.ifError(err);
+          assert.ok(Array.isArray(items));
+          assert.equal(items.length, 20);
+          scope.done();
+          done();
+        });
       });
+    });
 
-      const scope = nock(host)
-        .get(path)
-        .replyWithFile(200, feed);
+    describe('Without `emitOnStart`', () => {
+      it('Should return no items', (done) => {
+        muk(Date.prototype, 'getHours', () => 4);
+        after(muk.restore);
+        const host = 'http://www.google.com';
+        const path = '/reader/public/atom/';
+        const reader = new FeedSub(host + path, {
+          emitOnStart: false, skipHours: true
+        });
 
-      reader.read((err, items) => {
-        assert.ifError(err);
-        assert.ok(Array.isArray(items));
-        assert.equal(items.length, 0);
-        scope.done();
-        done();
+        const scope = nock(host)
+          .get(path)
+          .replyWithFile(200, feed);
+
+        reader.read((err, items) => {
+          assert.ifError(err);
+          assert.ok(Array.isArray(items));
+          assert.equal(items.length, 0);
+          scope.done();
+          done();
+        });
       });
     });
   });
@@ -65,7 +91,7 @@ describe('Use skipDays', () => {
     const host = 'http://blog.nodejs.org';
     const path = '/feed/';
     const reader = new FeedSub(host + path, {
-      emitOnStart: true, skipDays: true
+      emitOnStart: false, skipDays: true
     });
 
     const scope = nock(host)
