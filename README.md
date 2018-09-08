@@ -66,7 +66,7 @@ Creates a new instance of FeedSub. `options` defaults to.
   // Specify exactly what days to skip, ex: ['Saturday', 'Sunday'].
   daysToSkip: [],
 
-  // Options object passed to the http(s).get function.
+  // Options object passed to [miniget](https://github.com/fent/node-miniget).
   requestOpts: {}
 }
 ```
@@ -74,11 +74,8 @@ Creates a new instance of FeedSub. `options` defaults to.
 ### FeedSub#read([callback(err, items)])
 Reads the feed. Calls `callback` with possible error or new items discovered if provided. Causes `reader` to emit new item events.
 
-### FeedSub#readInterval([callback(err, items)], interval)
-Calls `reader.read` every `interval` milliseconds. If `callback` is an integer, it is considered the `interval`.
-
 ### FeedSub#start()
-Calls `reader.readInterval()` with the `options.interval` from the constructor.
+Starts checking the feed for any new items. It checks right away, and then, every `options.interval` minutes.
 
 ### FeedSub#options
 Options that were passed to the constructor along with any defaults are kept here.
