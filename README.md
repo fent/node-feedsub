@@ -34,7 +34,7 @@ Creates a new instance of FeedSub. `options` defaults to.
   // Number of minutes to wait between checking the feed for new items.
   interval: 10,
 
-  // Some feeds contain a `ttl` tag that specifies the
+  // Some feeds contain a `ttl` tag that specify the
   // number of minutes to cache the feed.
   // Setting this to true will ignore that.
   forceInterval: false,
