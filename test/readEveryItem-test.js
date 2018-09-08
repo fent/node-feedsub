@@ -27,7 +27,7 @@ describe('Read all published/updated items with readEveryItem', () => {
       .replyWithFile(200, file1);
 
     reader.read((err, items) => {
-      if (err) return done(err);
+      assert.ifError(err);
 
       assert.ok(Array.isArray(items));
       assert.equal(items.length, 6);
@@ -43,8 +43,7 @@ describe('Read all published/updated items with readEveryItem', () => {
         .replyWithFile(200, file2);
 
       reader.read((err, items) => {
-        if (err) return done(err);
-
+        assert.ifError(err);
         assert.ok(Array.isArray(items));
         assert.equal(items.length, 3);
         assert.equal(itemSpy.callCount, 3);
@@ -54,5 +53,4 @@ describe('Read all published/updated items with readEveryItem', () => {
       });
     });
   });
-  
 });

@@ -30,7 +30,7 @@ describe('Conditional GET', () => {
     reader.on('items', itemsSpy);
 
     reader.read((err, items) => {
-      if (err) return done(err);
+      assert.ifError(err);
 
       assert.ok(Array.isArray(items));
       assert.equal(items.length, 4);
@@ -53,7 +53,7 @@ describe('Conditional GET', () => {
         .replyWithFile(304, rss2old, headers);
 
       reader.read((err, items) => {
-        if (err) return done(err);
+        assert.ifError(err);
 
         assert.ok(Array.isArray(items));
         assert.equal(items.length, 0);
