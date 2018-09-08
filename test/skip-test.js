@@ -27,7 +27,15 @@ describe('Use skipHours', () => {
           assert.ok(Array.isArray(items));
           assert.equal(items.length, 20);
           scope.done();
-          done();
+
+          process.nextTick(() => {
+            reader.read((err, items) => {
+              assert.ifError(err);
+              assert.ok(Array.isArray(items));
+              assert.equal(items.length, 0);
+              done();
+            });
+          });
         });
       });
     });
