@@ -34,7 +34,7 @@
     "sinon": "^6.1.4"
   },
   "engines": {
-    "node": ">=4"
+    "node": ">=6"
   },
   "license": "MIT"
 }
