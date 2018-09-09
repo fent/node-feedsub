@@ -19,8 +19,31 @@ describe('Compressed feed with gzip', () => {
       reqheaders: { 'Accept-Encoding': /\bgzip\b/ }
     })
       .get(path)
-      .reply(200, fs.createReadStream(feed).pipe(new zlib.createGzip()), {
-        'Content-Encoding': 'gzip'
+      .reply(200, fs.createReadStream(feed).pipe(zlib.createGzip()), {
+        'content-encoding': 'gzip'
+      });
+
+    reader.read((err, items) => {
+      assert.ifError(err);
+      assert.ok(Array.isArray(items));
+      assert.equal(items.length, 4);
+      scope.done();
+    });
+  });
+});
+
+describe('Compressed feed with deflate', () => {
+  it('Able to parse and read feed', () => {
+    const host = 'http://feedburner.info';
+    const path = '/rss';
+    const reader = new FeedSub(host + path, { emitOnStart: true });
+
+    const scope = nock(host, {
+      reqheaders: { 'Accept-Encoding': /\bgzip\b/ }
+    })
+      .get(path)
+      .reply(200, fs.createReadStream(feed).pipe(zlib.createDeflate()), {
+        'content-encoding': 'deflate'
       });
 
     reader.read((err, items) => {
