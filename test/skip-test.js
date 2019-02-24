@@ -1,6 +1,6 @@
 const FeedSub = require('..');
 const nock    = require('nock');
-const muk     = require('muk');
+const muk     = require('muk-prop');
 const assert  = require('assert');
 const path    = require('path');
 
