@@ -6,7 +6,7 @@ It works by checking the feed every once in a while, comparing the date of the d
 
 [![Build Status](https://secure.travis-ci.org/fent/node-feedsub.svg)](http://travis-ci.org/fent/node-feedsub)
 [![Dependency Status](https://david-dm.org/fent/node-feedsub.svg)](https://david-dm.org/fent/node-feedsub)
-[![codecov](https://codecov.io/gh/fent/node-feedsub/branch/master/graph/badge.svg)](https://codecov.io/gh/fent/node-feedsub)
+[![codecov](https://codecov.io/gh/fent/node-feedsub/branch/master/graph/badge.svg)](https://codecov.io/gh/fent/node-feedsub) [![Greenkeeper badge](https://badges.greenkeeper.io/fent/node-feedsub.svg)](https://greenkeeper.io/)
 
 # Usage
 
