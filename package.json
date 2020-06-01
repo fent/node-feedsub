@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "feedme": "^1.2.0",
-    "miniget": "^1.5.0",
+    "miniget": "^2.0.0",
     "newsemitter": "^1.0.0"
   },
   "devDependencies": {
