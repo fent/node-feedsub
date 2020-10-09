@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" media="screen" href="/~d/styles/rss2full.xsl"?>
+<?xml-stylesheet type="text/css" media="screen" href="http://feeds.feedburner.com/~d/styles/itemcontent.css"?>
+<rss xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0">
+  <channel>
+    <copyright>Copyright 1998 - 2020 DPG Online Services B.V.</copyright>
+    <pubDate>Fri, 09 Oct 2020 01:32:00 GMT</pubDate>
+    <lastBuildDate>Thu, 08 Oct 2020 16:48:07 GMT</lastBuildDate>
+    <docs>https://tweakers.net/reviews/76</docs>
+    <description>Tweakers is de grootste hardwaresite en techcommunity van Nederland.</description>
+    <image>
+      <link>https://tweakers.net/</link>
+      <title>Tweakers</title>
+      <url>https://tweakers.net/g/if/logo.gif</url>
+      <height/>
+      <width/>
+      <description>Tweakers</description>
+    </image>
+    <language>nl-nl</language>
+    <link>https://tweakers.net/downloads</link>
+    <title>Tweakers Downloads</title>
+    <webMaster>gathering@tweakers.net</webMaster>
+    <atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="self" type="application/rss+xml" href="http://feeds.feedburner.com/tweakers/meuktracker"/>
+    <feedburner:info xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0" uri="tweakers/meuktracker"/>
+    <atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="hub" href="http://pubsubhubbub.appspot.com/"/>
+    <xhtml:meta xmlns:xhtml="http://www.w3.org/1999/xhtml" name="robots" content="noindex"/>
+    <item>
+      <title>ScreenToGif 2.27.3</title>
+      <link>https://tweakers.net/downloads/53146/screentogif-2273.html</link>
+      <description>Versie 2.27.3 van ScreenToGif is uitgekomen. Met deze opensourceapplicatie kunnen de handelingen op het scherm of de beelden van de webcam worden opgenomen. Het resultaat kan eventueel worden bewerkt met de ingebakken editor en vervolgens worden opgeslagen als een geanimeerde gif-afbeelding of filmbestand. Het programma is ideaal voor het maken van korte instructievideo's Het programma is afhankelijk van .Net 4.8 en de download is dan ook minimaal. Ook kan het worden gebruikt zonder het eerst te hoeven installeren. ScreenToGif wordt actief ontwikkeld en regelmatig verschijnen er nieuwe versies. De changelog voor deze uitgave ziet er als volgt uit: What's new?</description>
+      <author>Bart van Klaveren</author>
+      <category>Software-update - : Software</category>
+      <comments>https://tweakers.net/downloads/53146/screentogif-2273.html#reacties</comments>
+      <guid isPermaLink="false">https://tweakers.net/downloads/53146</guid>
+      <pubDate>Thu, 01 Oct 2020 19:31:54 GMT</pubDate>
+    </item>
+    <item>
+      <title>Calibre 5.1</title>
+      <link>https://tweakers.net/downloads/53148/calibre-51.html</link>
+      <description>Versie 5.1 van Calibre is uitgekomen. Dit opensource-e-bookbeheerprogramma is beschikbaar voor Windows, Linux en macOS. Het kan onder meer alle relevante informatie en omslagafbeeldingen opzoeken, en e-boeken converteren om ze geschikt te maken voor de diverse soorten e-readers. Verder kan het programma kranten, tijdschriften en nieuwsartikelen op basis van rss-feeds omzetten in e-bookformaat. Ook kunnen met Calibre boeken worden aangeschaft bij de bekende webwinkels. In versie 5.0 is onder meer de overstap naar Python 3 gemaakt, zijn er diverse verbeteringen in de e-bookviewer aangebracht en is er nu ook een dark mode voor de e-bookviewer en contentserver. In versie 5.1 zijn verder nog de volgende veranderingen en verbeteringen aangebracht: New features</description>
+      <author>Bart van Klaveren</author>
+      <category>Software-update - : Software</category>
+      <comments>https://tweakers.net/downloads/53148/calibre-51.html#reacties</comments>
+      <guid isPermaLink="false">https://tweakers.net/downloads/53148</guid>
+      <pubDate>Fri, 02 Oct 2020 05:42:36 GMT</pubDate>
+    </item>
+    <item>
+      <title>Mp3tag 3.03</title>
+      <link>https://tweakers.net/downloads/53150/mp3tag-303.html</link>
+      <description>Florian Heidenreich heeft versie 3.03 van Mp3tag uitgebracht. Met dit programma kunnen de metatags van de meest gangbare muziekformaten worden aangepast. Ondersteuning is aanwezig voor ID3v1, ID3v2.3, ID3v2.4, mp4, wma, Vorbis-comments en Ape-tags. Verder kunnen de bestandsnamen aan de hand van die tags worden aangepast en kunnen playlists worden gegenereerd. In deze uitgave zijn de volgende veranderingen en verbeteringen aangebracht: New:</description>
+      <author>Bart van Klaveren</author>
+      <category>Software-update - : Software</category>
+      <comments>https://tweakers.net/downloads/53150/mp3tag-303.html#reacties</comments>
+      <guid isPermaLink="false">https://tweakers.net/downloads/53150</guid>
+      <pubDate>Fri, 02 Oct 2020 18:09:32 GMT</pubDate>
+    </item>
+    <item>
+      <title>Beyond Compare 4.3.7 build 25063</title>
+      <link>https://tweakers.net/downloads/53152/beyond-compare-437-build-25063.html</link>
+      <description>Scooter Software heeft versie 4.3.7 van Beyond Compare uitgebracht. Met dit zeer uitgebreide programma, dat beschikbaar is voor Windows, Linux en macOS, kunnen bestanden met elkaar worden vergeleken. Daarnaast is het mogelijk om complete folders, ftp-locaties en archieven te vergelijken. Beyond Compare is beschikbaar in een standaard- en een pro-uitvoering, voor prijzen die beginnen bij 30 dollar. De onderlinge verschillen kunnen op deze pagina worden gevonden. Sinds versie 4.3.3 zijn de volgende veranderingen en verbeteringen aangebracht:</description>
+      <author>Bart van Klaveren</author>
+      <category>Software-update - : Software</category>
+      <comments>https://tweakers.net/downloads/53152/beyond-compare-437-build-25063.html#reacties</comments>
+      <guid isPermaLink="false">https://tweakers.net/downloads/53152</guid>
+      <pubDate>Fri, 02 Oct 2020 18:14:59 GMT</pubDate>
+    </item>
+    <item>
+      <title>Turris OS 5.1.1</title>
+      <link>https://tweakers.net/downloads/53104/turris-os-511.html</link>
+      <description>Het Tsjechische CZ.NIC heeft een nieuwe versie van zijn Turris OS uitgebracht met 5.1.1 als versienummer. Dit is de firmware voor de opensourcerouters Turris 1.x, Turris MOX en Turris Omnia. Het is gebaseerd op OpenWRT en zal volgens de makers levenslang van veiligheidsupdates worden voorzien. In een recente blog wordt de geschiedenis over de ontwikkeling van deze routers uiteengezet. De beknopte aankondiging van deze uitgave ziet er als volgt uit: Turris OS 5.1.1 is out Dear Turris users, It is a pleasure to announce to you that we released Turris OS 5.1.1 from the Testing branch to all of you! The most interesting change in this release is that is based on top of OpenWrt 19.07.4, which was released a few days ago. There are fixes for Sentinel logging and suppressed error message in logs about /proc/cmdline while using Foris/ReForis and a few fixes for security vulnerabilities found in ffmpeg, zmq, libxml2. As always, we appreciate any feedback for this release. Turris OS 5.0 We have released a new version of Turris OS – 5.0, which is based on the Linux distribution OpenWrt 19.07.3. The latest release of the operating system provides basic support for the WPA3 standard, which is, however, not set by default and requires the installation of additional packages. The big news is the gradual redesign of the Foris website (reForis). Currently, it is possible to set the snaphost integration in the graphical interface or redirection to a custom DNS server, which we have not set either. With the release of Turris OS 5.0, we also prepared an experimental guide for migration from Turris OS 3.x. You can find the specific instructions in the manual available in our documentation.</description>
+      <author>Japke Rosink</author>
+      <category>Software-update - : Software</category>
+      <comments>https://tweakers.net/downloads/53104/turris-os-511.html#reacties</comments>
+      <guid isPermaLink="false">https://tweakers.net/downloads/53104</guid>
+      <pubDate>Fri, 02 Oct 2020 21:39:19 GMT</pubDate>
+    </item>
+    <item>
+      <title>Intel (U)HD Graphics Driver 27.20.100.8783</title>
+      <link>https://tweakers.net/downloads/53154/intel-uhd-graphics-driver-27201008783.html</link>
+      <description>Intel heeft voor het Windows 10-platform nieuwe videodrivers uitgebracht voor de ingebakken gpu van de processors uit de Skylake-, Kaby Lake (Refresh)-, Coffee Lake (Refresh)-, Ice Lake-, Tiger Lake-, Amber Lake-, Apollo Lake-, Comet Lake-, Gemini Lake- en Whiskey Lake-generaties. Dat zijn de Intel UHD Graphics, Intel HD Graphics, Intel Iris Plus Graphics, Intel Iris Pro Graphics en de Intel Iris Xe Graphics. Het versienummer is vastgezet op 27.20.100.8783. De lijst met veranderingen ziet er als volgt uit: Intel Iris Xe Graphics New Features:</description>
+      <author>Japke Rosink</author>
+      <category>Driver-update - : Driver</category>
+      <comments>https://tweakers.net/downloads/53154/intel-uhd-graphics-driver-27201008783.html#reacties</comments>
+      <guid isPermaLink="false">https://tweakers.net/downloads/53154</guid>
+      <pubDate>Fri, 02 Oct 2020 21:49:12 GMT</pubDate>
+    </item>
+    <item>
+      <title>MobileIron Core 10.8.0.0</title>
+      <link>https://tweakers.net/downloads/53156/mobileiron-core-10800.html</link>
+      <description>MobileIron Core richt zich op mdm, het beheren van devices, en mam, het beheren van applicaties op deze devices. Tegenwoordig kun je dit ook onder enterprise mobility management, kortweg emm, plaatsen. Daarnaast kan MobileIron Core worden gecombineerd met andere producten om de functionaliteit uit te breiden, zoals Sentry voor beveiligde dataoverdracht en de Secure Workspace-apps met onder andere Help@Work, waarmee bijvoorbeeld een helpdesk van afstand kan meekijken op het scherm van een iOS- of Android-toestel. MobileIron heeft even geleden versie 10.8.0.0 van zijn Core uitgebracht met de volgende aanpassingen: General features and enhancements This release includes the following new features and enhancements that are common to all platforms.</description>
+      <author>Japke Rosink</author>
+      <category>Software-update - : Software</category>
+      <comments>https://tweakers.net/downloads/53156/mobileiron-core-10800.html#reacties</comments>
+      <guid isPermaLink="false">https://tweakers.net/downloads/53156</guid>
+      <pubDate>Fri, 02 Oct 2020 22:07:50 GMT</pubDate>
+    </item>
+    <item>
+      <title>Visual Studio Code 1.49.3</title>
+      <link>https://tweakers.net/downloads/53162/visual-studio-code-1493.html</link>
+      <description>Microsoft heeft een derde update voor Visual Studio Code uitgebracht. Visual Studio Code is een opensourcecode-editor met ondersteuning voor IntelliSense, debugging, Git en code snippets. Downloads zijn beschikbaar voor Windows, Linux en macOS. Ondersteuning voor de gangbare script- en programmeertalen is aanwezig en het kan daarnaast via extensies uitgebreid worden. In deze uitgave het volgende beveiligingsprobleem is verholpen: The 1.49.3 update addresses these issues:</description>
+      <author>Bart van Klaveren</author>
+      <category>Software-update - : Software</category>
+      <comments>https://tweakers.net/downloads/53162/visual-studio-code-1493.html#reacties</comments>
+      <guid isPermaLink="false">https://tweakers.net/downloads/53162</guid>
+      <pubDate>Sat, 03 Oct 2020 08:15:39 GMT</pubDate>
+    </item>
+    <item>
+      <title>MediaMonkey 4.1.30.1913</title>
+      <link>https://tweakers.net/downloads/53160/mediamonkey-41301913.html</link>
+      <description>Ventis Media heeft versie 4.1.30 van MediaMonkey uitgebracht. MediaMonkey is een mediaspeler met een uitgebreide lijst mogelijkheden. Zo kan het de meest gangbare audiobestanden afspelen, kunnen audio-cd's naar ogg, mp3, flac en wma worden geript en kunnen tags worden bewerkt of automatisch van internet worden geplukt. Verder schrikt het programma niet terug voor een collectie van meer dan 50.000 bestanden en kan er met een draagbare muziekspeler worden gesynchroniseerd. Het programma is verkrijgbaar in een gratis standaardversie en in een iets meer dan 24 euro kostende Gold-versie, die enkele extra mogelijkheden heeft, waaronder het kunnen aanmaken van collecties, automatisch converteren en levelen van muzieknummers en rippen met Accurate. Er worden met deze uitgave zoals gebruikelijk geen uitgavenotities meegeleverd, maar in de bugtracker zijn de volgende tickets gesloten: All changes/fixes in feature/bug tracker</description>
+      <author>Bart van Klaveren</author>
+      <category>Software-update - : Software</category>
+      <comments>https://tweakers.net/downloads/53160/mediamonkey-41301913.html#reacties</comments>
+      <guid isPermaLink="false">https://tweakers.net/downloads/53160</guid>
+      <pubDate>Sat, 03 Oct 2020 09:50:36 GMT</pubDate>
+    </item>
+    <item>
+      <title>Umbraco CMS 8.8</title>
+      <link>https://tweakers.net/downloads/53158/umbraco-cms-88.html</link>
+      <description>Umbraco is een contentmanagementsysteem voor het bewerken en beheren van dynamische webpagina's. Het geheel is geschreven in C# en draait op een Microsoft-infrastructuur. Er zit een positieve en proactieve community achter met ruim 50.000 geregistreerde gebruikers en ontwikkelaars en die zorgen voor een stabiele stroom aan releases. Dinsdag is versie 8.8 van Umbraco uitgekomen en de belangrijkste veranderingen die hierin zijn aangebracht zijn hieronder voor je op een rijtje gezet. Cropping images in the Grid</description>
+      <author>Bart van Klaveren</author>
+      <category>Software-update - : Software</category>
+      <comments>https://tweakers.net/downloads/53158/umbraco-cms-88.html#reacties</comments>
+      <guid isPermaLink="false">https://tweakers.net/downloads/53158</guid>
+      <pubDate>Sat, 03 Oct 2020 10:01:37 GMT</pubDate>
+    </item>
+    <item>
+      <title>FreeFileSync 11.2</title>
+      <link>https://tweakers.net/downloads/53164/freefilesync-112.html</link>
+      <description>Versie 11.2 van FreeFileSync is uitgekomen. Met dit opensourceprogramma kan een back-up worden gemaakt of de inhoud van twee verschillende locaties worden gesynchroniseerd. Het is beschikbaar voor Windows, Linux en macOS, is niet afhankelijk van zaken als Java of een .Net Framework en is bovendien licht in gebruik. De Windows-installer bevat aparte 32bit- en 64bit-versies, en biedt ook de mogelijkheid om een portable versie te installeren. Sinds versie 11.24 zijn de volgende veranderingen en verbeteringen aangebracht: Changes in FreeFileSync version 11.2</description>
+      <author>Bart van Klaveren</author>
+      <category>Software-update - : Software</category>
+      <comments>https://tweakers.net/downloads/53164/freefilesync-112.html#reacties</comments>
+      <guid isPermaLink="false">https://tweakers.net/downloads/53164</guid>
+      <pubDate>Sat, 03 Oct 2020 10:08:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>Nextcloud 20.0.0</title>
+      <link>https://tweakers.net/downloads/53166/nextcloud-2000.html</link>
+      <description>Versie 20 van Nextcloud is uitgekomen. Met dit programma is het mogelijk om in eigen beheer cloudopslag te draaien. Nextcloud is ontstaan nadat een groot aantal ontwikkelaars bij ownCloud zijn weggelopen en opnieuw zijn begonnen. Alle onderdelen, inclusief de enterprisefunctionaliteit, worden als open source aangeboden en het verdienmodel is gelijk aan wat Red Hat doet, namelijk het leveren van betaalde ondersteuning voor grote klanten. De release notes voor deze uitgave zien er als volgt uit: The three biggest features we introduce are:</description>
+      <author>Bart van Klaveren</author>
+      <category>Software-update - : Software</category>
+      <comments>https://tweakers.net/downloads/53166/nextcloud-2000.html#reacties</comments>
+      <guid isPermaLink="false">https://tweakers.net/downloads/53166</guid>
+      <pubDate>Sat, 03 Oct 2020 14:37:07 GMT</pubDate>
+    </item>
+    <item>
+      <title>7+ Taskbar Tweaker 5.9.1.4 bèta</title>
+      <link>https://tweakers.net/downloads/53168/7+-taskbar-tweaker-5914-beta.html</link>
+      <description>Versie 5.9.1.4 van 7+ Taskbar Tweaker is uitgekomen, een versie die als bèta wordt aangeboden. Met dit programma kan de taakbalk van Windows 7 en hoger worden aangepast. Zo kan worden aangegeven welke programma's wel of niet worden gegroepeerd, kan de volgorde van items worden aangepast en kunnen verschillende schermen tegelijk geminimaliseerd of gesloten worden. Om deze bèta te kunnen gebruiken moet je wel ooit een keer een donatie aan de auteur hebben gedaan. In deze uitgave is ondersteuning toegevoegd voor de nieuwste Windows 10 Insider Preview-build. De changelog voor de hele 5.9.1-bètaserie ziet er als volgt uit: Changes in version 5.9.1.4 bèta:</description>
+      <author>Bart van Klaveren</author>
+      <category>Software-update - : Software</category>
+      <comments>https://tweakers.net/downloads/53168/7+-taskbar-tweaker-5914-beta.html#reacties</comments>
+      <guid isPermaLink="false">https://tweakers.net/downloads/53168</guid>
+      <pubDate>Sat, 03 Oct 2020 15:08:53 GMT</pubDate>
+    </item>
+    <item>
+      <title>MKVToolnix 51.0.0</title>
+      <link>https://tweakers.net/downloads/53170/mkvtoolnix-5100.html</link>
+      <description>Moritz Bunkus heeft versie 51 van MKVToolNix uitgebracht. Met dit opensourceprogramma kunnen matroska-bestanden bekeken, bewerkt en worden geconverteerd. Zo kunnen geluidssporen en ondertiteling worden toegevoegd, verwijderd of juist als standaard worden ingesteld. MKVToolNix is een verzameling afzonderlijke commandline-tools, maar er wordt ook een grafische gebruikersinterface meegeleverd. Downloads zijn beschikbaar voor Windows, macOS en diverse Linux-distributies. De changelog voor deze uitgave ziet er als volgt uit: New features and enhancements</description>
+      <author>Bart van Klaveren</author>
+      <category>Software-update - : Software</category>
+      <comments>https://tweakers.net/downloads/53170/mkvtoolnix-5100.html#reacties</comments>
+      <guid isPermaLink="false">https://tweakers.net/downloads/53170</guid>
+      <pubDate>Sun, 04 Oct 2020 13:21:21 GMT</pubDate>
+    </item>
+    <item>
+      <title>DiskCatalogMaker 8.2.5</title>
+      <link>https://tweakers.net/downloads/53088/diskcatalogmaker-825.html</link>
+      <description>DiskCatalogMaker is een programma voor macOS waarmee een catalogusbestand voor al je schijven kan worden aangemaakt. Daarna is deze catalogus razendsnel te doorzoeken, zonder de schijven eerst weer aan te hoeven sluiten, in een speler te doen of via een netwerk te verbinden. Een archief met honderden usb-sticks, cd's, dvd's en bd's met miljoenen lemma's doorzoeken gaat in een fractie van een seconde. Het werkt met alle mogelijke schijven, van floppy's tot usb-sticks, meerdere volumes op één schijf en netwerk-volumes. Een licentie kost net geen veertig dollar en het programma kan dertig dagen voor aanschaf worden geprobeerd. Veranderingen in versie 8.2.5:</description>
+      <author>Bart van Klaveren</author>
+      <category>Software-update - : Software</category>
+      <comments>https://tweakers.net/downloads/53088/diskcatalogmaker-825.html#reacties</comments>
+      <guid isPermaLink="false">https://tweakers.net/downloads/53088</guid>
+      <pubDate>Sun, 04 Oct 2020 14:29:48 GMT</pubDate>
+    </item>
+    <item>
+      <title>PeaZip 7.4.2</title>
+      <link>https://tweakers.net/downloads/53174/peazip-742.html</link>
+      <description>Versie 7.4.2 van PeaZip is verschenen. Dit archiveringsprogramma wordt onder een opensourcelicentie beschikbaar gesteld, en downloads zijn beschikbaar voor Windows en Linux. Het programma wil zich van de concurrentie onderscheiden door zich te specialiseren in veiligheid. Het versleutelen van data is dan ook een van de voornaamste functies van het eigen pea-formaat. PeaZip kan 7z-, bz2-, gz-, paq/lpaq-, pea-, quad-, tar-, upx- en zip-bestanden creëren, en diverse bestandsformaten uitpakken, waaronder ace, arj, cab, deb, iso, lha, rar en rpm. In deze uitgave zijn de volgende verbeteringen aangebracht: Backend</description>
+      <author>Bart van Klaveren</author>
+      <category>Software-update - : Software</category>
+      <comments>https://tweakers.net/downloads/53174/peazip-742.html#reacties</comments>
+      <guid isPermaLink="false">https://tweakers.net/downloads/53174</guid>
+      <pubDate>Mon, 05 Oct 2020 13:44:57 GMT</pubDate>
+    </item>
+    <item>
+      <title>Radeon Software for Linux 20.40</title>
+      <link>https://tweakers.net/downloads/53176/radeon-software-for-linux-2040.html</link>
+      <description>AMD heeft een nieuwe versie van zijn Radeon Software voor Linux vrijgegeven. Deze drivers zijn voornamelijk bedoeld voor enterprise Linux distributions zoals Red Hat Enterprise Linux, CentOS, Ubuntu LTS en SUSE Linux Enterprise. In deze uitgave is ondersteuning toegevoegd voor de Radeon RX 5300, en Ubuntu 18.04.5 en RHEL 7.9 Radeon Software for Linux 20.40 Highlights</description>
+      <author>Bart van Klaveren</author>
+      <category>Driver-update - : Driver</category>
+      <comments>https://tweakers.net/downloads/53176/radeon-software-for-linux-2040.html#reacties</comments>
+      <guid isPermaLink="false">https://tweakers.net/downloads/53176</guid>
+      <pubDate>Mon, 05 Oct 2020 14:40:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>Python 3.9.0</title>
+      <link>https://tweakers.net/downloads/53178/python-390.html</link>
+      <description>Python is een objectgeoriënteerde programmeertaal die kan worden gebruikt om eenvoudige tot complexe, platformonafhankelijke applicaties te ontwikkelen. Het is in de jaren negentig ontworpen door Guido van Rossum, die destijds in Amsterdam voor het CWI werkte. Guido, die als BDFL betrokken was bij de ontwikkeling van Python en tevens voor Dropbox heeft gewerkt, is inmiddels met pensioen. Het ontwikkelteam heeft versies 3.9.0 van Python uitgegeven en de belangrijkste verbeteringen die daarin zijn aangebracht zijn hieronder voor je op een rijtje gezet: Some of the new major new features and changes in Python 3.9 are:</description>
+      <author>Bart van Klaveren</author>
+      <category>Software-update - : Software</category>
+      <comments>https://tweakers.net/downloads/53178/python-390.html#reacties</comments>
+      <guid isPermaLink="false">https://tweakers.net/downloads/53178</guid>
+      <pubDate>Mon, 05 Oct 2020 17:56:52 GMT</pubDate>
+    </item>
+    <item>
+      <title>GlassWire 2.2.258</title>
+      <link>https://tweakers.net/downloads/53180/glasswire-22258.html</link>
+      <description>Versie 2.2.258 van GlassWire is uitgekomen. GlassWire is een programma waar in overzichtelijke grafieken inzicht wordt gegeven over het netwerkverkeer op de pc. Ook kan het waarschuwen wanneer er contact met bekende kwaadaardige domeinen wordt gemaakt of als er ongebruikelijke activiteiten plaatsvinden en deze eventueel blokkeren. Naast de gratis versie kunnen er voor een eenmalig bedrag een Basic-, Pro-, of Elite-versie worden aangeschaft, die meer verbindingen naar andere computers op kunnen zetten en de historie langer kunnen opslaan. In deze uitgave zijn de volgende veranderingen en verbeteringen aangebracht: Changes in version 2.2.258:</description>
+      <author>Bart van Klaveren</author>
+      <category>Software-update - : Software</category>
+      <comments>https://tweakers.net/downloads/53180/glasswire-22258.html#reacties</comments>
+      <guid isPermaLink="false">https://tweakers.net/downloads/53180</guid>
+      <pubDate>Tue, 06 Oct 2020 11:45:42 GMT</pubDate>
+    </item>
+    <item>
+      <title>Malwarebytes 4.2.1.186</title>
+      <link>https://tweakers.net/downloads/53182/malwarebytes-421186.html</link>
+      <description>Malwarebytes heeft een update voor versie 4.2.1 van zijn gelijknamige antivirusprogramma uitgebracht. Dit programma is gericht op het bestrijden van malware, zoals bijvoorbeeld kwaadaardige software die zich als bonafide antivirus- of antispywareoplossing voordoet, maar in werkelijkheid minder goede bedoelingen heeft, zoals ransom- of scareware. Naast de gratis uitvoering is er een betaalde variant, die extra functionaliteit biedt, waaronder realtime-bescherming. In deze uitgave treffen we de volgende veranderingen en verbeteringen aan: Improvements</description>
+      <author>Bart van Klaveren</author>
+      <category>Software-update - : Software</category>
+      <comments>https://tweakers.net/downloads/53182/malwarebytes-421186.html#reacties</comments>
+      <guid isPermaLink="false">https://tweakers.net/downloads/53182</guid>
+      <pubDate>Tue, 06 Oct 2020 11:49:36 GMT</pubDate>
+    </item>
+    <item>
+      <title>Enpass 6.5.1</title>
+      <link>https://tweakers.net/downloads/53184/enpass-651.html</link>
+      <description>Versie 6.5.1 van Enpass voor Windows is uitgekomen. Enpass is een wachtwoordmanager voor Windows, macOS, Linux en diverse mobile platformen. Het programma stelt je in staat om eenvoudig bij websites in te loggen en je wachtwoorden te beheren. Zo kunnen nieuwe wachtwoorden worden gegenereerd, laat het weten of een wachtwoord zwak is, oud is, of vaker wordt gebruikt. Data wordt versleuteld lokaal opgeslagen, maar synchroniseren via diensten als iCloud, Dropbox, Google Drive of OneDrive is ook mogelijk. Enpass is gratis te gebruiken op de desktop, alleen voor de mobiele cliënt wordt een eenmalige bijdrage verlangd als er meer dan 25 wachtwoorden worden opgeslagen. De changelog voor deze uitgave ziet er als volgt uit: Improvements:</description>
+      <author>Bart van Klaveren</author>
+      <category>Software-update - : Software</category>
+      <comments>https://tweakers.net/downloads/53184/enpass-651.html#reacties</comments>
+      <guid isPermaLink="false">https://tweakers.net/downloads/53184</guid>
+      <pubDate>Tue, 06 Oct 2020 11:57:28 GMT</pubDate>
+    </item>
+    <item>
+      <title>doPDF 10.9.130</title>
+      <link>https://tweakers.net/downloads/53188/dopdf-109130.html</link>
+      <description>Softland heeft een nieuwe versie van doPDF uitgebracht. Dit programma installeert zich op het systeem als een printerdriver en maakt het mogelijk om vanuit elk programma met een printfunctie op eenvoudige wijze pdf-documenten te maken. DoPDF is gratis voor privé- en commercieel gebruik, heeft geen Ghostscript nodig om zijn werk te kunnen doen en voegt geen watermerk of advertentie toe. Alleen in het scherm voor het kiezen van de locatie waarnaar het pdf-document moet worden weggeschreven, is een vermelding te zien naar novaPDF. Dat is een soortgelijk programma van dezelfde makers met uitgebreidere opties, dat echter niet gratis is. Sinds de vorige vermelding in de Downloads zijn de volgende veranderingen en verbeteringen doorgevoerd: Changes in doPDF 10.9.130:</description>
+      <author>Bart van Klaveren</author>
+      <category>Software-update - : Software</category>
+      <comments>https://tweakers.net/downloads/53188/dopdf-109130.html#reacties</comments>
+      <guid isPermaLink="false">https://tweakers.net/downloads/53188</guid>
+      <pubDate>Tue, 06 Oct 2020 16:18:46 GMT</pubDate>
+    </item>
+    <item>
+      <title>Syncthing 1.10.0</title>
+      <link>https://tweakers.net/downloads/53190/syncthing-1100.html</link>
+      <description>Versie 1.10.0 van Syncthing is uitgekomen. Syncthing is een opensourceprogramma waarmee bestanden tussen twee computers kunnen worden gesynchroniseerd. Dit gebeurt net als bij BitTorrent Sync zonder dat er een centrale server tussen zit, zoals dat wel het geval is bij opslagdiensten als bijvoorbeeld Dropbox, Google Drive, OneDrive en iCloud. De software is onder meer beschikbaar voor Windows, Linux, macOS en Android. Ook zijn er packages voor Synology en Qnap. In deze uitgave zijn de volgende veranderingen en verbeteringen aangebracht: Syncthing 1.10.0</description>
+      <author>Bart van Klaveren</author>
+      <category>Software-update - : Software</category>
+      <comments>https://tweakers.net/downloads/53190/syncthing-1100.html#reacties</comments>
+      <guid isPermaLink="false">https://tweakers.net/downloads/53190</guid>
+      <pubDate>Tue, 06 Oct 2020 16:22:42 GMT</pubDate>
+    </item>
+    <item>
+      <title>BurnAware 13.8</title>
+      <link>https://tweakers.net/downloads/53194/burnaware-138.html</link>
+      <description>Versie 13.8 van het cd-, dvd- en blu-ray-brandprogramma BurnAware is uitgekomen. Dit programma is beschikbaar in een Free-versie en in betaalde Premium- en Professional-edities, met prijzen van respectievelijk 20 en 40 dollar. Deze uitvoeringen hebben extra functionaliteit, zoals voor het kopiëren van schijfjes en het rippen van audio-cd's. Op deze pagina worden de verschillende edities tegen elkaar afgezet. De gratis versie wordt gebundeld met optionele extra's, hier staat een versie waar die niet in zitten. In deze uitgave zijn de volgende veranderingen en verbeteringen doorgevoerd: New features</description>
+      <author>Bart van Klaveren</author>
+      <category>Software-update - : Software</category>
+      <comments>https://tweakers.net/downloads/53194/burnaware-138.html#reacties</comments>
+      <guid isPermaLink="false">https://tweakers.net/downloads/53194</guid>
+      <pubDate>Tue, 06 Oct 2020 17:37:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>OBS Studio 26.0.2</title>
+      <link>https://tweakers.net/downloads/53196/obs-studio-2602.html</link>
+      <description>Versie 26.0.1 van OBS Studio is uitgekomen en kort daarop ook 26.0.2. Open Broadcaster Software Studio is opensource en crossplatform software bedoeld voor het opnemen en streamen van videobeelden van een of meer bronnen, zoals een webcam, microfoon, mediabestanden en de desktop. In versie 25 van OBS Studio is onder meer ondersteuning toegevoegd voor spellen die op Vulkan draaien. Sinds versie 26.0 zijn de volgende verbeteringen aangebracht: 26.0.2 Hotfix Changes</description>
+      <author>Bart van Klaveren</author>
+      <category>Software-update - : Software</category>
+      <comments>https://tweakers.net/downloads/53196/obs-studio-2602.html#reacties</comments>
+      <guid isPermaLink="false">https://tweakers.net/downloads/53196</guid>
+      <pubDate>Tue, 06 Oct 2020 17:41:23 GMT</pubDate>
+    </item>
+    <item>
+      <title>Thunderbird 78.3.2</title>
+      <link>https://tweakers.net/downloads/53198/thunderbird-7832.html</link>
+      <description>De Mozilla Foundation heeft versie 78.3.2 van Thunderbird uitgebracht. Thunderbird is een opensourceclient voor e-mail en nieuwsgroepen, met features als ondersteuning voor verschillende mail- en newsaccounts, een spamfilter, spellingscontrole en een aanpasbaar uiterlijk. In versie 78 treffen we onder meer een donkere modus aan en zijn ook andere onderdelen van de interface, zoals de iconen en het scherm voor het opstellen van een e-mail, onder handen genomen. Verder is de kalender-add-on Lightning nu standaard onderdeel van het programma, is er een nieuwe wizard voor het eerste gebruik en worden alleen nog MailExtensions-add-ons ondersteund. De changelog voor deze uitgave ziet er als volgt uit: Changes</description>
+      <author>Bart van Klaveren</author>
+      <category>Software-update - : Software</category>
+      <comments>https://tweakers.net/downloads/53198/thunderbird-7832.html#reacties</comments>
+      <guid isPermaLink="false">https://tweakers.net/downloads/53198</guid>
+      <pubDate>Wed, 07 Oct 2020 03:56:26 GMT</pubDate>
+    </item>
+    <item>
+      <title>Google Chrome 86.0.4240.75</title>
+      <link>https://tweakers.net/downloads/53200/google-chrome-860424075.html</link>
+      <description>Google heeft versie 86 van zijn webbrowser Chrome uitgebracht. Google Chrome is beschikbaar voor Windows, Linux en macOS. Er zijn ook versies voor Android en iOS, maar die volgen een iets ander releaseschema. In versie 86 is het onder meer eenvoudiger om uitgelekte wachtwoorden te wijzigen, zijn accusparende maatregelen toegevoegd voor tabs die op de achtergrond draaien en geeft het een waarschuwing wanneer een onveilig formulier wordt ingevuld op een https-pagina. De belangrijkste veranderingen die in versie 86 zijn aangebracht, naast de gebruikelijke bug- en security fixes, zijn hieronder voor je op een rijtje gezet.</description>
+      <author>Bart van Klaveren</author>
+      <category>Software-update - : Software</category>
+      <comments>https://tweakers.net/downloads/53200/google-chrome-860424075.html#reacties</comments>
+      <guid isPermaLink="false">https://tweakers.net/downloads/53200</guid>
+      <pubDate>Wed, 07 Oct 2020 04:15:38 GMT</pubDate>
+    </item>
+    <item>
+      <title>Calibre 5.2</title>
+      <link>https://tweakers.net/downloads/53202/calibre-52.html</link>
+      <description>Iets vroeger in de week dan we gewend zijn is versie 5.2 van Calibre uitgekomen. Dit opensource-e-bookbeheerprogramma is beschikbaar voor Windows 8 en hoger, Linux en macOS. Het kan onder meer alle relevante informatie en omslagafbeeldingen opzoeken, en e-boeken converteren om ze geschikt te maken voor de diverse soorten e-readers. Verder kan het programma kranten, tijdschriften en nieuwsartikelen op basis van rss-feeds omzetten in e-bookformaat. Ook kunnen met Calibre boeken worden aangeschaft bij de bekende webwinkels. In versie 5.0 is onder meer de overstap naar Python 3 gemaakt, zijn er diverse verbeteringen in de e-bookviewer aangebracht en is er nu ook een dark mode voor de e-bookviewer en contentserver. In versie 5.2 zijn verder nog de volgende veranderingen en verbeteringen aangebracht: New features</description>
+      <author>Bart van Klaveren</author>
+      <category>Software-update - : Software</category>
+      <comments>https://tweakers.net/downloads/53202/calibre-52.html#reacties</comments>
+      <guid isPermaLink="false">https://tweakers.net/downloads/53202</guid>
+      <pubDate>Wed, 07 Oct 2020 14:31:23 GMT</pubDate>
+    </item>
+    <item>
+      <title>YUMI 2.0.7.5</title>
+      <link>https://tweakers.net/downloads/53204/yumi-2075.html</link>
+      <description>Versie 2.0.7.5 van YUMI is uitgekomen. YUMI staat voor Your Universal Multiboot Installer en is een Windows-programma waarmee de installatie-iso's van een groot aantal Linux-distributies op een usb-stick geplaatst kunnen worden. Daarnaast is er ondersteuning voor Windows-installatie-cd's, antivirus-rescue-cd's en andere tools. Daardoor hoeven die niet meer eerst op een cd of dvd gebrand te worden, maar kan de installatie vanaf de zelfstartende usb-stick worden uitgevoerd. Wat YUMI onderscheidt, is dat er verschillende iso's kunnen worden toegevoegd, die als keuzes in een bootmenu terechtkomen. In deze uitgave zijn de volgende veranderingen en verbeteringen doorgevoerd: Update to support;</description>
+      <author>Bart van Klaveren</author>
+      <category>Software-update - : Software</category>
+      <comments>https://tweakers.net/downloads/53204/yumi-2075.html#reacties</comments>
+      <guid isPermaLink="false">https://tweakers.net/downloads/53204</guid>
+      <pubDate>Wed, 07 Oct 2020 14:44:16 GMT</pubDate>
+    </item>
+    <item>
+      <title>Plex Media Server 1.20.2.3402</title>
+      <link>https://tweakers.net/downloads/53206/plex-media-server-12023402.html</link>
+      <description>Plex heeft versie 1.20.2.3402 van Plex Media Server uitgebracht. Deze versie was eerder al voor houders van de betaalde PlexPass beschikbaar, maar kan inmiddels door iedereen worden gedownload. Plex Media Server is een mediaserver voor Windows, Linux, FreeBSD, macOS en diverse nas-apparaten. De software kan content serveren aan clients op dezelfde machine, binnen het lokale netwerk of via internet. Clientsoftware is beschikbaar voor de eerder genoemde besturingssystemen maar content kan ook worden bekeken op bijvoorbeeld iOS, Android, Google TV en Chromecast. Het programma is gratis te gebruiken en heeft daarnaast PlexPass, een betaalde dienst die toegang tot 'premium features' en eerder tot nieuwe versies geeft. De changelog sinds versie 1.20.1.3252 ziet er als volgt uit:</description>
+      <author>Bart van Klaveren</author>
+      <category>Software-update - : Software</category>
+      <comments>https://tweakers.net/downloads/53206/plex-media-server-12023402.html#reacties</comments>
+      <guid isPermaLink="false">https://tweakers.net/downloads/53206</guid>
+      <pubDate>Wed, 07 Oct 2020 19:00:26 GMT</pubDate>
+    </item>
+    <item>
+      <title>GIMP 2.10.22</title>
+      <link>https://tweakers.net/downloads/53186/gimp-21022.html</link>
+      <description>Versie 2.10.22 van het opensource-fotobewerkingsprogramma GIMP is uitgekomen. De naam GIMP is een afkorting voor 'GNU Image Manipulation Program'. De software is beschikbaar voor diverse besturingssystemen, waaronder Windows, FreeBSD, Linux, macOS en Solaris. Nieuw in versie 2.10 is onder meer de GEGL-image processing engine, kan het canvas worden geroteerd en treffen we diverse nieuwe en verbeterde tools aan. De complete releasenotes voor versie 2.10.22 kunnen op deze pagina worden gevonden. Dit zijn in het kort de belangrijkste verbeteringen:</description>
+      <author>Bart van Klaveren</author>
+      <category>Software-update - : Software</category>
+      <comments>https://tweakers.net/downloads/53186/gimp-21022.html#reacties</comments>
+      <guid isPermaLink="false">https://tweakers.net/downloads/53186</guid>
+      <pubDate>Wed, 07 Oct 2020 19:02:19 GMT</pubDate>
+    </item>
+    <item>
+      <title>GeForce Game Ready Driver 456.71 WHQL</title>
+      <link>https://tweakers.net/downloads/53208/geforce-game-ready-driver-45671-whql.html</link>
+      <description>Nvidia heeft nieuwe stabiele GeForce-drivers uitgebracht. De drivers dragen versienummer 456.71 WHQL, zijn geschikt voor Windows 7 en hoger, en kunnen worden gebruikt op kaarten gebaseerd op de Kepler-architectuur of nieuwer. Deze uitgave bevat onder meer ondersteuning voor de open bèta van Call of Duty: Black Ops Cold War. Daarnaast zijn er natuurlijk ook weer enkele problemen verholpen. De complete release notes staan hieronder: Game Ready for Call of Duty: Black Ops Cold War PC Beta</description>
+      <author>Bart van Klaveren</author>
+      <category>Driver-update - : Driver</category>
+      <comments>https://tweakers.net/downloads/53208/geforce-game-ready-driver-45671-whql.html#reacties</comments>
+      <guid isPermaLink="false">https://tweakers.net/downloads/53208</guid>
+      <pubDate>Thu, 08 Oct 2020 10:30:34 GMT</pubDate>
+    </item>
+    <item>
+      <title>AIMP 4.70 build 2233</title>
+      <link>https://tweakers.net/downloads/53210/aimp-470-build-2233.html</link>
+      <description>Er is een update voor versie 4.70 van AIMP uitgekomen. Deze gratis, lichtgewicht mediaspeler van Russische makelij heeft ondersteuning voor de populairste muziekformaten. Het uiterlijk heeft wat weg van het bekende Winamp en is door middel van skins aan te passen. AIMP heeft een 18-kanaalsequalizer aan boord en ondersteunt plug-ins. Verder kan het programma cd's rippen, muziekbestanden converteren en tags bewerken. In deze uitgave zijn de volgende veranderingen en verbeteringen aangebracht: Changes:</description>
+      <author>Bart van Klaveren</author>
+      <category>Software-update - : Software</category>
+      <comments>https://tweakers.net/downloads/53210/aimp-470-build-2233.html#reacties</comments>
+      <guid isPermaLink="false">https://tweakers.net/downloads/53210</guid>
+      <pubDate>Thu, 08 Oct 2020 10:56:24 GMT</pubDate>
+    </item>
+    <item>
+      <title>SOGo 5.0.1</title>
+      <link>https://tweakers.net/downloads/53218/sogo-501.html</link>
+      <description>Versie 5.0.1 van SOGo is uitgekomen. Scalable OpenGroupware.org maakt gebruik van de broncode van OpenGroupware.org en richt zich op het delen van agenda's, contactpersonen en e-mails. Daarnaast is het volgens de ontwikkelaars goed schaalbaar en kan het via een webinterface worden aangesproken. Verder worden aangepaste versies van Mozilla Thunderbird en Lightning meegeleverd als client. Er kunnen ook andere clients worden gebruikt, zoals Microsoft Outlook, of mobiele apparaten zoals een BlackBerry. Voor meer informatie verwijzen we naar deze pagina, waar de documentatie te vinden is. In deze uitgave zijn de volgende veranderingen en verbeteringen aangebracht: Bug Fixes</description>
+      <author>Bart van Klaveren</author>
+      <category>Software-update - : Software</category>
+      <comments>https://tweakers.net/downloads/53218/sogo-501.html#reacties</comments>
+      <guid isPermaLink="false">https://tweakers.net/downloads/53218</guid>
+      <pubDate>Thu, 08 Oct 2020 10:59:55 GMT</pubDate>
+    </item>
+    <item>
+      <title>Joomla! 3.9.22</title>
+      <link>https://tweakers.net/downloads/53216/joomla-3922.html</link>
+      <description>Versie 3.9.22 van Joomla! is uitgekomen, een versie die diverse beveiligingsproblemen en fouten moet verhelpen. Joomla! is een dynamisch, in php geschreven contentmanagementsysteem, dat kan worden gebruikt om bijvoorbeeld een weblog, website of samenwerkingssite te maken. Om het programma in het Nederlands te gebruiken kun je onder andere op Joomla Community terecht. In deze uitgave zijn diverse problemen verholpen, waaronder de volgende: Bug fixes and Improvements</description>
+      <author>Bart van Klaveren</author>
+      <category>Software-update - : Software</category>
+      <comments>https://tweakers.net/downloads/53216/joomla-3922.html#reacties</comments>
+      <guid isPermaLink="false">https://tweakers.net/downloads/53216</guid>
+      <pubDate>Thu, 08 Oct 2020 11:03:45 GMT</pubDate>
+    </item>
+    <item>
+      <title>Postbox 7.0.31</title>
+      <link>https://tweakers.net/downloads/53214/postbox-7031.html</link>
+      <description>Versie 7.0.31 van Postbox is uitgekomen. Postbox is een e-mailclient voor Windows en macOS, die zijn oorsprong heeft in Mozilla's Thunderbird. Het heeft uitgebreide mogelijkheden, zoals een gemeenschappelijke inbox voor verschillende e-mailaccounts, quick reply, signatures en het openen van mails in tabs. Daarnaast heeft het een uitgebreide contactmanager en veel zoekmogelijkheden. Vanaf versie 7.0 kan er naast de levenslange licentie ook een jaarlijks abonnement worden afgenomen. In versie 7.0.31 zijn de volgende veranderingen en verbeteringen aangebracht: Postbox 7.0.31:</description>
+      <author>Bart van Klaveren</author>
+      <category>Software-update - : Software</category>
+      <comments>https://tweakers.net/downloads/53214/postbox-7031.html#reacties</comments>
+      <guid isPermaLink="false">https://tweakers.net/downloads/53214</guid>
+      <pubDate>Thu, 08 Oct 2020 12:25:46 GMT</pubDate>
+    </item>
+    <item>
+      <title>Home Assistant Core 0.116.0</title>
+      <link>https://tweakers.net/downloads/53212/home-assistant-core-01160.html</link>
+      <description>Versie 0.116 van Home Assistant Core is uitgebracht. Home Assistant Core is een opensourceplatform voor home-automation dat draait onder Python 3. Het draait via Hassbian op een Raspberry Pi 3 of een Linux-, macOS- of Windows-computer. Het ondersteunt het detecteren van apparaten, zoals Nest-thermostaten, Philips Hue, Belkin WeMo-schakelaars, Mr. Coffee-koffiezetapparaten, de slimme schakelaars van IKEA en het mqtt-protocol. Daarnaast kan het waar mogelijk deze apparaten aansturen en automatisering toepassen. Voor meer informatie verwijzen we naar deze pagina en ons Forum. De aankondiging voor deze uitgave is hieronder te vinden. 0.116: Entities card row editor, restore snapshots and performance metrics</description>
+      <author>Bart van Klaveren</author>
+      <category>Software-update - : Software</category>
+      <comments>https://tweakers.net/downloads/53212/home-assistant-core-01160.html#reacties</comments>
+      <guid isPermaLink="false">https://tweakers.net/downloads/53212</guid>
+      <pubDate>Thu, 08 Oct 2020 12:29:34 GMT</pubDate>
+    </item>
+    <item>
+      <title>LibreOffice 7.0.2</title>
+      <link>https://tweakers.net/downloads/53220/libreoffice-702.html</link>
+      <description>De Document Foundation heeft versie 7.0.2 van LibreOffice uitgebracht. Dit opensource-officepakket is ontstaan als afsplitsing van OpenOffice en wordt geleverd met tekstverwerker Writer, spreadsheetprogramma Calc, presentatieprogramma Impress, tekenprogramma Draw, databaseprogramma Base en Formula, een applicatie om wetenschappelijke notaties mee te maken. In versie 7.0 treffen we onder meer ondersteuning voor versie 1.3 van het OpenDocument Format aan, moeten de Skia graphics engine en Vulkan GPU-hardwareacceleratie voor verbeterde prestaties zorgen en is de compatibiliteit met docx-, xlsx- en pptx-bestanden verder verbeterd. Versie 7.0.1 kende twee release-candidates, waarin in totaal 131 verbeteringen zijn aangebracht. Bugs fixed in version 7.0.2 RC 1:</description>
+      <author>Bart van Klaveren</author>
+      <category>Software-update - : Software</category>
+      <comments>https://tweakers.net/downloads/53220/libreoffice-702.html#reacties</comments>
+      <guid isPermaLink="false">https://tweakers.net/downloads/53220</guid>
+      <pubDate>Thu, 08 Oct 2020 12:35:46 GMT</pubDate>
+    </item>
+    <item>
+      <title>CPU-Z 1.94</title>
+      <link>https://tweakers.net/downloads/53222/cpu-z-194.html</link>
+      <description>CPUID heeft versie 1.94 van CPU-Z uitgebracht voor Windows. Dit kleine programma geeft uitgebreide informatie over de processor, het moederbord en het geheugen in de computer. Daarnaast kan het programma ook informatie over de grafische kaart in de computer geven, zij het beperkt. Hiervoor kan beter GPU-Z worden gebruikt, dat ondanks een vergelijkbare naam niet van dezelfde makers is. De download bevat aparte versies voor 32bit- en 64bit-omgevingen. Sinds versie 1.92 zijn de volgende veranderingen en verbeteringen doorgevoerd: Changes in CPU-Z version 1.94</description>
+      <author>Bart van Klaveren</author>
+      <category>Software-update - : Software</category>
+      <comments>https://tweakers.net/downloads/53222/cpu-z-194.html#reacties</comments>
+      <guid isPermaLink="false">https://tweakers.net/downloads/53222</guid>
+      <pubDate>Thu, 08 Oct 2020 16:48:07 GMT</pubDate>
+    </item>
+  </channel>
+</rss>

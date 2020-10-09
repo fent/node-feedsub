@@ -2,13 +2,13 @@ const FeedSub = require('..');
 const nock    = require('nock');
 const sinon   = require('sinon');
 const assert  = require('assert');
-const path    = require('path');
+const join    = require('path').join;
 
 
-const feedold = path.join(__dirname, 'assets', 'feedold.xml');
-const feednew = path.join(__dirname, 'assets', 'feednew.xml');
-const rss2old = path.join(__dirname, 'assets', 'rss2old.xml');
-const rss2new = path.join(__dirname, 'assets', 'rss2new.xml');
+const feedold = join(__dirname, 'assets', 'feedold.xml');
+const feednew = join(__dirname, 'assets', 'feednew.xml');
+const rss2old = join(__dirname, 'assets', 'rss2old.xml');
+const rss2new = join(__dirname, 'assets', 'rss2new.xml');
 
 
 describe('Read the old RSS feed first', () => {
@@ -105,6 +105,8 @@ describe('Read the old RSS feed first', () => {
           assert.ifError(err);
           assert.ok(Array.isArray(items));
           assert.equal(items.length, 2997),
+          assert.equal(itemSpy.callCount, 2997);
+          assert.equal(itemsSpy.callCount, 1);
 
           itemSpy.resetHistory();
           itemsSpy.resetHistory();
@@ -176,11 +178,58 @@ describe('Same title but different pubdate', () => {
   });
 });
 
+describe('On a feed with newer items listed last', () => {
+  it('Reads all new items in feed', (done) => {
+    const host = 'http://feeds.feedburner.com';
+    const path = '/tweakers/meuktracker';
+    const reader = new FeedSub(host + path, { emitOnStart: true });
+    const itemSpy = sinon.spy();
+    const itemsSpy = sinon.spy();
+
+    reader.on('item', itemSpy);
+    reader.on('items', itemsSpy);
+
+    const scope1 = nock(host)
+      .get(path)
+      .replyWithFile(200, join(__dirname, 'assets/meuktracker1.xml'));
+    const scope2 = nock(host)
+      .get(path)
+      .replyWithFile(200, join(__dirname, 'assets/meuktracker2.xml'));
+
+    reader.read((err, items) => {
+      assert.ifError(err);
+
+      assert.ok(Array.isArray(items));
+      assert.equal(items.length, 39);
+
+      assert.equal(itemSpy.callCount, 39);
+      assert.equal(itemsSpy.callCount, 1);
+
+      itemSpy.resetHistory();
+      itemsSpy.resetHistory();
+      scope1.done();
+
+      reader.read((err, items) => {
+        assert.ifError(err);
+
+        assert.ok(Array.isArray(items));
+        assert.equal(items.length, 1);
+
+        assert.equal(itemSpy.callCount, 1);
+        assert.equal(itemsSpy.callCount, 1);
+
+        scope2.done();
+        done();
+      });
+    });
+  });
+});
+
 describe('With a bad feed', () => {
   let clock;
   beforeEach(() => clock = sinon.useFakeTimers());
   afterEach(() => clock.restore());
-  const feed = path.join(__dirname, 'assets', 'badfeed.xml');
+  const feed = join(__dirname, 'assets', 'badfeed.xml');
 
   describe('With `autoStart`', () => {
     it('Aborts request and emits error', (done) => {
@@ -246,8 +295,8 @@ describe('With `ttl` field', () => {
   let clock;
   beforeEach(() => clock = sinon.useFakeTimers());
   afterEach(() => clock.restore());
-  const shortttlfeed = path.join(__dirname, 'assets', 'shortttl.xml');
-  const longttlfeed = path.join(__dirname, 'assets', 'longttl.xml');
+  const shortttlfeed = join(__dirname, 'assets', 'shortttl.xml');
+  const longttlfeed = join(__dirname, 'assets', 'longttl.xml');
 
   describe('Below `interval`', () => {
     it('Checks feed again after `interval`', (done) => {
@@ -356,8 +405,8 @@ describe('With `ttl` field', () => {
 });
 
 describe('With no `date` field', () => {
-  const feed1 = path.join(__dirname, 'assets', 'nodate1.xml');
-  const feed2 = path.join(__dirname, 'assets', 'nodate2.xml');
+  const feed1 = join(__dirname, 'assets', 'nodate1.xml');
+  const feed2 = join(__dirname, 'assets', 'nodate2.xml');
 
   it('Still able to tell items apart', (done) => {
     const host = 'http://mysite.com';
