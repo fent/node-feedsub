@@ -19,7 +19,7 @@
     "lib"
   ],
   "scripts": {
-    "test": "istanbul cover node_modules/.bin/_mocha -- -t 4000 test/*-test.js"
+    "test": "nyc --reporter=lcov --reporter=text-summary mocha -- -t 4000 test/*-test.js"
   },
   "dependencies": {
     "feedme": "^1.2.0",
@@ -27,10 +27,10 @@
     "newsemitter": "^1.0.0"
   },
   "devDependencies": {
-    "istanbul": "^0.4.5",
     "mocha": "^6.0.0",
     "muk-prop": "^1.2.1",
     "nock": "^11.1.0",
+    "nyc": "^15.1.0",
     "sinon": "^8.0.0"
   },
   "engines": {
