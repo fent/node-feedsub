@@ -2,10 +2,10 @@ const FeedSub = require('..');
 const nock    = require('nock');
 const sinon   = require('sinon');
 const assert  = require('assert');
-const path    = require('path');
+const join    = require('path').join;
 
 
-const rss2old = path.join(__dirname, 'assets', 'rss2old.xml');
+const rss2old = join(__dirname, 'assets', 'rss2old.xml');
 
 
 describe('Read feed without `emitOnStart`', () => {

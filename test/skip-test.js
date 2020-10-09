@@ -2,11 +2,11 @@ const FeedSub = require('..');
 const nock    = require('nock');
 const muk     = require('muk-prop');
 const assert  = require('assert');
-const path    = require('path');
+const join    = require('path').join;
 
 
 describe('Use skipHours', () => {
-  const feed = path.join(__dirname, 'assets', 'skiphours.rss');
+  const feed = join(__dirname, 'assets', 'skiphours.rss');
   describe('With hours that match time now', () => {
     describe('With `emitOnStart`', () => {
       it('Should return some items', (done) => {
@@ -91,7 +91,7 @@ describe('Use skipHours', () => {
 });
 
 describe('Use skipDays', () => {
-  const feed = path.join(__dirname, 'assets', 'skipdays.xml');
+  const feed = join(__dirname, 'assets', 'skipdays.xml');
 
   it('Should return no items', (done) => {
     muk(Date.prototype, 'getDay', () => 6);

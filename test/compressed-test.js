@@ -1,12 +1,12 @@
 const FeedSub = require('..');
 const nock    = require('nock');
 const assert  = require('assert');
-const path    = require('path');
+const join    = require('path').join;
 const fs      = require('fs');
 const zlib    = require('zlib');
 
 
-const feed = path.join(__dirname, 'assets', 'rss2old.xml');
+const feed = join(__dirname, 'assets', 'rss2old.xml');
 
 
 describe('Compressed feed with gzip', () => {
