@@ -8,7 +8,7 @@
     "json",
     "subscribe"
   ],
-  "version": "0.7.2",
+  "version": "0.7.3",
   "repository": {
     "type": "git",
     "url": "git://github.com/fent/node-feedsub.git"
