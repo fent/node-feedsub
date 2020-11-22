@@ -22,8 +22,8 @@
     "test": "nyc --reporter=lcov --reporter=text-summary mocha -- -t 4000 test/*-test.js"
   },
   "dependencies": {
-    "feedme": "^1.2.0",
-    "miniget": "^3.0.0",
+    "feedme": "^2.0.1",
+    "miniget": "^4.0.0",
     "newsemitter": "^1.0.0"
   },
   "devDependencies": {
