@@ -19,7 +19,8 @@
     "lib"
   ],
   "scripts": {
-    "test": "nyc --reporter=lcov --reporter=text-summary mocha -- -t 4000 test/*-test.js"
+    "test": "nyc --reporter=lcov --reporter=text-summary npm run test:unit",
+    "test:unit": "mocha test/*-test.js"
   },
   "dependencies": {
     "feedme": "^2.0.1",
