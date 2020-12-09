@@ -1,17 +1,17 @@
 const FeedSub = require('..');
 const nock    = require('nock');
-const muk     = require('muk-prop');
+const sinon   = require('sinon');
 const assert  = require('assert');
 const join    = require('path').join;
 
 
 describe('Use skipHours', () => {
   const feed = join(__dirname, 'assets', 'skiphours.rss');
+  afterEach(sinon.restore);
   describe('With hours that match time now', () => {
     describe('With `emitOnStart`', () => {
       it('Should return some items', (done) => {
-        muk(Date.prototype, 'getHours', () => 4);
-        after(muk.restore);
+        sinon.stub(Date.prototype, 'getHours').returns(4);
         const host = 'http://www.google.com';
         const path = '/reader/public/atom/';
         const reader = new FeedSub(host + path, {
@@ -42,8 +42,7 @@ describe('Use skipHours', () => {
 
     describe('Without `emitOnStart`', () => {
       it('Should return no items', (done) => {
-        muk(Date.prototype, 'getHours', () => 4);
-        after(muk.restore);
+        sinon.stub(Date.prototype, 'getHours').returns(4);
         const host = 'http://www.google.com';
         const path = '/reader/public/atom/';
         const reader = new FeedSub(host + path, {
@@ -67,8 +66,7 @@ describe('Use skipHours', () => {
 
   describe('With hours that don\'t match', () => {
     it('Should return some items', (done) => {
-      muk(Date.prototype, 'getHours', () => 7);
-      after(muk.restore);
+      sinon.stub(Date.prototype, 'getHours').returns(7);
       const host = 'http://www.google.com';
       const path = '/reader/public/atom/';
       const reader = new FeedSub(host + path, {
@@ -94,8 +92,7 @@ describe('Use skipDays', () => {
   const feed = join(__dirname, 'assets', 'skipdays.xml');
 
   it('Should return no items', (done) => {
-    muk(Date.prototype, 'getDay', () => 6);
-    after(muk.restore);
+    sinon.stub(Date.prototype, 'getHours').returns(6);
     const host = 'http://blog.nodejs.org';
     const path = '/feed/';
     const reader = new FeedSub(host + path, {

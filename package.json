@@ -29,7 +29,6 @@
   },
   "devDependencies": {
     "mocha": "^6.0.0",
-    "muk-prop": "^1.2.1",
     "nock": "^11.1.0",
     "nyc": "^15.1.0",
     "sinon": "^8.0.0"
