@@ -1,8 +1,8 @@
-const EventEmitter = require('events').EventEmitter;
-const FeedMe       = require('feedme');
-const NewsEmitter  = require('newsemitter');
-const miniget      = require('miniget');
-const zlib         = require('zlib');
+import { TypedEmitter } from 'tiny-typed-emitter';
+import { default as FeedMe, FeedItem } from 'feedme';
+import NewsEmitter from 'newsemitter';
+import miniget from 'miniget';
+import zlib from 'zlib';
 
 
 // Used for the skipdays tag.
@@ -10,13 +10,43 @@ const DAYS = ['sunday', 'monday', 'tuesday', 'wednesday',
   'thursday', 'friday', 'saturday'];
 
 
-module.exports = class FeedReader extends EventEmitter {
+export interface Options {
+  interval?: number;
+  forceInterval?: boolean;
+  autoStart?: boolean;
+  emitOnStart?: boolean;
+  lastDate?: null | string;
+  history?: string[];
+  maxHistory?: number;
+  skipHours?: boolean;
+  hoursToSkip?: number[];
+  skipDays?: boolean;
+  daysToSkip?: string[];
+  requestOpts?: miniget.Options;
+}
+
+export type DefaultOptions = Required<Options>;
+
+interface FeedSubEvents {
+  'error': (err: Error) => void;
+  'item': (item: FeedItem) => void;
+  'items': (items: FeedItem[]) => void;
+}
+
+export default class FeedSub extends TypedEmitter<FeedSubEvents> {
+  public feed: string;
+  public options: DefaultOptions;
+  public news: NewsEmitter;
+  public getOpts: miniget.Options & { headers: Record<string, string> };
+  private _first: boolean;
+  private _intervalid: number;
+
   /**
    * @constructor
    * @param {string} feed
    * @param {!Object} options
    */
-  constructor(feed, options) {
+  constructor(feed: string, options?: Options) {
     super();
     this.feed = feed;
     this.options = Object.assign({
@@ -28,29 +58,32 @@ module.exports = class FeedReader extends EventEmitter {
       history       : [],
       maxHistory    : 10,
       skipHours     : false,
+      hoursToSkip   : null,
       skipDays      : false,
+      daysToSkip    : null,
+      requestOpts   : {},
     }, options);
 
     // Create news emitter.
     this.news = new NewsEmitter({
       maxHistory: this.options.maxHistory,
       manageHistory: true,
-      identifier: (item) => {
-        item = item[0];
+      identifier: (item: any[]) => {
+        let feedItem = item[0];
         return [
-          item.title,
-          item.link,
-          item.pubdate,
-          item.published,
-          item.updated
+          feedItem.title,
+          feedItem.link,
+          feedItem.pubdate,
+          feedItem.published,
+          feedItem.updated
         ].join(',');
       }
     });
 
     this.news.addHistory('item', this.options.history);
-    this.first = this.news.history.get('item').size === 0;
+    this._first = (this.news.history.get('item') as Set<string>).size === 0;
     this.getOpts = Object.assign({
-      headers: {},
+      headers: {} as Record<string, string>,
       acceptEncoding: {
         gzip: () => zlib.createGunzip(),
         deflate: () => zlib.createInflate(),
@@ -67,7 +100,7 @@ module.exports = class FeedReader extends EventEmitter {
    *
    * @param {boolean} readOnStart
    */
-  start(readOnStart) {
+  start(readOnStart?: boolean) {
     this.stop();
     let ms = this.options.interval * 60000;
     this._intervalid = setInterval(this.read.bind(this), ms);
@@ -95,16 +128,16 @@ module.exports = class FeedReader extends EventEmitter {
    *
    * @param {!Function(!Error, Array.<Object>)} callback
    */
-  read(callback) {
+  read(callback?: (err: null | Error, items?: FeedItem[]) => void) {
     let ended = false;
-    let req;
-    let items = [];
-    let newItems = [];
+    let req: miniget.Stream;
+    let items: FeedItem[] = [];
+    let newItems: FeedItem[] = [];
     let sortOrder = 0;
 
-    const error = (err) => {
+    const error = (err: Error) => {
       ended = true;
-      this.first = false;
+      this._first = false;
       if (typeof callback === 'function') {
         callback(err);
       } else {
@@ -120,10 +153,10 @@ module.exports = class FeedReader extends EventEmitter {
         newItems.reverse();
       }
       this.news.addHistory('item', newItems.map((item) => [item]));
-      if (this.first && !this.options.emitOnStart) {
+      if (this._first && !this.options.emitOnStart) {
         newItems = [];
       }
-      newItems.forEach(this.emit.bind(this, 'item'));
+      newItems.forEach(item => this.emit('item', item));
       this.emit('items', newItems);
       if (req) {
         req.destroy();
@@ -138,7 +171,7 @@ module.exports = class FeedReader extends EventEmitter {
     const now = new Date();
     const shouldSkip = () => {
       return (
-        (!this.first || !this.options.emitOnStart) &&
+        (!this._first || !this.options.emitOnStart) &&
         (this.options.hoursToSkip || this.options.daysToSkip)
       ) && (
         (this.options.hoursToSkip &&
@@ -172,8 +205,8 @@ module.exports = class FeedReader extends EventEmitter {
       }
 
       // Save date.
-      let date;
-      let getdate = text => date = text;
+      let date: string;
+      let getdate = (text: string) => date = text;
 
       // Create feed parser.
       const parser = new FeedMe();
@@ -216,7 +249,7 @@ module.exports = class FeedReader extends EventEmitter {
 
 
       // Compare date when first item is encountered.
-      const firstitem = (item) => {
+      const firstitem = (item: FeedItem) => {
         // If date is the same as last, abort.
         if (date && this.options.lastDate === date) {
           return success();
@@ -236,8 +269,8 @@ module.exports = class FeedReader extends EventEmitter {
 
       parser.once('item', firstitem);
 
-      const getItemDate = (item) => new Date(item.pubdate || item.published || 0);
-      const getItem = (item) => {
+      const getItemDate = (item: FeedItem) => +new Date(item.pubdate as string || item.published as string || 0);
+      const getItem = (item: FeedItem) => {
         if (sortOrder === 0) {
           items.push(item);
           sortOrder = getItemDate(item) - getItemDate(items[0]);
@@ -254,8 +287,8 @@ module.exports = class FeedReader extends EventEmitter {
         }
       };
 
-      const getOlderItem = (item) => {
-        if (this.first) {
+      const getOlderItem = (item: FeedItem) => {
+        if (this._first) {
           newItems.push(item);
         } else if (!ended) {
           let emitted = this.news.emit('item', item);
@@ -271,8 +304,8 @@ module.exports = class FeedReader extends EventEmitter {
       };
 
       let foundPrevItem = false;
-      const getNewerItem = (item) => {
-        if (this.first) {
+      const getNewerItem = (item: FeedItem) => {
+        if (this._first) {
           newItems.push(item);
         } else if (!foundPrevItem && !this.news.emit('item', item)) {
           foundPrevItem = true;
@@ -290,10 +323,12 @@ module.exports = class FeedReader extends EventEmitter {
           items.forEach(getOlderItem);
         }
         success();
-        this.first = false;
+        this._first = false;
       });
     });
 
     req.on('error', error);
   }
-};
+}
+
+module.exports = FeedSub;

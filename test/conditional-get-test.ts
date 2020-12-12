@@ -1,8 +1,8 @@
-const FeedSub = require('..');
-const nock    = require('nock');
-const sinon   = require('sinon');
-const assert  = require('assert');
-const join    = require('path').join;
+import FeedSub from '..';
+import nock from 'nock';
+import sinon from 'sinon';
+import assert from 'assert';
+import { join } from 'path';
 
 
 const rss2old = join(__dirname, 'assets', 'rss2old.xml');
@@ -13,7 +13,7 @@ describe('Conditional GET', () => {
   const path = '/rss';
 
   // Reply with headers.
-  let now = new Date().toGMTString();
+  let now = new Date().toUTCString();
   let etag = '"asdfghjklpoiuytrewq"';
   let headers = { 'last-modified': now, 'etag': etag };
 

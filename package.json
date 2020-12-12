@@ -14,24 +14,33 @@
     "url": "git://github.com/fent/node-feedsub.git"
   },
   "author": "fent <fentbox@gmail.com> (https://github.com/fent)",
-  "main": "./lib/feedsub.js",
+  "main": "./dist/feedsub.js",
   "files": [
-    "lib"
+    "dist"
   ],
   "scripts": {
-    "test": "nyc --reporter=lcov --reporter=text-summary npm run test:unit",
-    "test:unit": "mocha test/*-test.js"
+    "prepare": "tsc -p tsconfig.build.json",
+    "build": "tsc -p tsconfig.build.json",
+    "test": "nyc --extension .ts --reporter=lcov --reporter=text-summary npm run test:unit",
+    "test:unit": "mocha --require ts-node/register test/*-test.ts"
   },
   "dependencies": {
-    "feedme": "^2.0.1",
+    "feedme": "^2.0.2",
     "miniget": "^4.0.0",
-    "newsemitter": "^1.0.0"
+    "newsemitter": "^1.0.2"
   },
   "devDependencies": {
+    "@types/mocha": "^8.2.0",
+    "@types/nock": "^11.1.0",
+    "@types/node": "^14.14.11",
+    "@types/sinon": "^9.0.9",
     "mocha": "^6.0.0",
     "nock": "^11.1.0",
     "nyc": "^15.1.0",
-    "sinon": "^8.0.0"
+    "sinon": "^8.0.0",
+    "tiny-typed-emitter": "^2.0.3",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.2"
   },
   "engines": {
     "node": ">=10"

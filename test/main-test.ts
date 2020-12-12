@@ -1,8 +1,8 @@
-const FeedSub = require('..');
-const nock    = require('nock');
-const sinon   = require('sinon');
-const assert  = require('assert');
-const join    = require('path').join;
+import FeedSub from'..';
+import nock from'nock';
+import sinon from'sinon';
+import assert from'assert';
+import { join } from 'path';
 
 
 const feedold = join(__dirname, 'assets', 'feedold.xml');
@@ -71,7 +71,7 @@ describe('Read the old RSS feed first', () => {
         itemsSpy.resetHistory();
 
         scope1.done();
-        reader.read((err, items) => {
+        reader.read((err: null | Error, items) => {
           assert.ok(Array.isArray(items));
           assert.equal(items.length, 0);
 
@@ -226,7 +226,7 @@ describe('On a feed with newer items listed last', () => {
 });
 
 describe('With a bad feed', () => {
-  let clock;
+  let clock: sinon.SinonFakeTimers;
   beforeEach(() => clock = sinon.useFakeTimers());
   afterEach(() => clock.restore());
   const feed = join(__dirname, 'assets', 'badfeed.xml');
@@ -292,7 +292,7 @@ describe('With a bad feed', () => {
 });
 
 describe('With `ttl` field', () => {
-  let clock;
+  let clock: sinon.SinonFakeTimers;
   beforeEach(() => clock = sinon.useFakeTimers());
   afterEach(() => clock.restore());
   const shortttlfeed = join(__dirname, 'assets', 'shortttl.xml');

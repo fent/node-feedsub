@@ -73,8 +73,8 @@ Creates a new instance of FeedSub. `options` defaults to.
 ### FeedSub#read([callback(err, items)])
 Reads the feed. Calls `callback` with possible error or new items discovered if provided. Causes `reader` to emit new item events.
 
-### FeedSub#start()
-Starts checking the feed for any new items. It checks right away, and then, every `options.interval` minutes.
+### FeedSub#start(readOnStart)
+Starts checking the feed for any new items every `options.interval` minutes. If `readOnStart` is true, it checks right away.
 
 ### FeedSub#options
 Options that were passed to the constructor along with any defaults are kept here.
@@ -88,7 +88,7 @@ Stops the reader from automatically reading the feed.
 Emitted whenever there is a new item.
 
 ### Event: items
-* `Array.Object` - List of items.
+* `Array.<Object>` - List of items.
 
 Emits all new items from one request in one array.
 

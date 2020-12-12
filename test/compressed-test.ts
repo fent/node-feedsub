@@ -1,9 +1,9 @@
-const FeedSub = require('..');
-const nock    = require('nock');
-const assert  = require('assert');
-const join    = require('path').join;
-const fs      = require('fs');
-const zlib    = require('zlib');
+import FeedSub from '..';
+import nock from 'nock';
+import assert from 'assert';
+import { join } from 'path';
+import fs from 'fs';
+import zlib from 'zlib';
 
 
 const feed = join(__dirname, 'assets', 'rss2old.xml');

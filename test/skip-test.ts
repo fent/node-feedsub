@@ -1,8 +1,8 @@
-const FeedSub = require('..');
-const nock    = require('nock');
-const sinon   = require('sinon');
-const assert  = require('assert');
-const join    = require('path').join;
+import FeedSub from '..';
+import nock from 'nock';
+import sinon from 'sinon';
+import assert from 'assert';
+import { join } from 'path';
 
 
 describe('Use skipHours', () => {
