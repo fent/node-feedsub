@@ -33,6 +33,8 @@ interface FeedSubEvents {
   'items': (items: FeedItem[]) => void;
 }
 
+export { FeedItem } from 'feedme';
+
 export default class FeedSub extends TypedEmitter<FeedSubEvents> {
   public feed: string;
   public options: DefaultOptions;
