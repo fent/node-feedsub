@@ -28,7 +28,7 @@
     "feedme": "^2.0.2",
     "miniget": "^4.2.1",
     "newsemitter": "^1.0.2",
-    "tiny-typed-emitter": "^2.0.3"
+    "tiny-typed-emitter": "^2.1.0"
   },
   "devDependencies": {
     "@types/mocha": "^8.2.0",
