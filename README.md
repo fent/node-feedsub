@@ -66,7 +66,13 @@ Creates a new instance of FeedSub. `options` defaults to.
   daysToSkip: [],
 
   // Options object passed to [miniget](https://github.com/fent/node-miniget).
-  requestOpts: {}
+  requestOpts: {},
+  
+  // keys to get a unique value from items, first not null will be used 
+  uniqueKeyNames: ['guid'],
+    
+  //  force to get a unique identifier value from the item itself 
+  getUniqueValueFromItem: false,
 }
 ```
 
@@ -109,4 +115,37 @@ Tests are written with [mocha](https://mochajs.org)
 
 ```bash
 npm test
+```
+
+#Example of usage
+
+```js
+(async () => {
+    
+    const reader = new FeedSub(
+        "https://rssfeedurl"
+        , {
+            forceInterval: true,
+            emitOnStart: true,
+            maxHistory: 0,
+            uniqueKeyNames: ['guid'],
+            getValueFromItem: true,
+        });
+    
+    reader.on('items', async items => {
+        
+        console.log(items);
+    
+    });
+    
+    reader.on('error', (err) => {
+        console.log(new Date(), `Error in reader`, err);
+    });
+    reader.read();
+    
+    setInterval(() => {
+        reader.read();
+    }, 60000)
+    
+})();
 ```

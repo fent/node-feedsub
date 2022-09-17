@@ -15,7 +15,9 @@ export interface Options {
   forceInterval?: boolean;
   autoStart?: boolean;
   emitOnStart?: boolean;
+  // deprecated
   lastDate?: null | string;
+  lastUniqueIdentifierValue?: null | string;
   history?: string[];
   maxHistory?: number;
   skipHours?: boolean;
@@ -23,6 +25,9 @@ export interface Options {
   skipDays?: boolean;
   daysToSkip?: string[];
   requestOpts?: miniget.Options;
+  // order is important, first not null will be used
+  uniqueKeyNames?: [string];
+  getUniqueValueFromItem?: boolean;
 }
 
 export type DefaultOptions = Required<Options>;
@@ -56,6 +61,7 @@ export default class FeedSub extends TypedEmitter<FeedSubEvents> {
       forceInterval : false,
       autoStart     : false,
       emitOnStart   : false,
+      lastUniqueIdentifierValue      : null,
       lastDate      : null,
       history       : [],
       maxHistory    : 10,
@@ -64,7 +70,14 @@ export default class FeedSub extends TypedEmitter<FeedSubEvents> {
       skipDays      : false,
       daysToSkip    : null,
       requestOpts   : {},
+      uniqueKeyNames : ['pubdate', 'lastbuilddate', 'updated'],
+      getUniqueValueFromItem: false
     }, options);
+
+    // this is for backward compatibility, old key was a date specific, now it will be defined by client
+    if(options?.lastDate && !options.lastUniqueIdentifierValue) {
+      this.options.lastUniqueIdentifierValue = options.lastDate;
+    }
 
     // Create news emitter.
     this.news = new NewsEmitter({
@@ -206,18 +219,20 @@ export default class FeedSub extends TypedEmitter<FeedSubEvents> {
         this.getOpts.headers['If-None-Match'] = res.headers.etag;
       }
 
-      // Save date.
-      let date: string;
-      let getdate = (text: string) => date = text;
+      // Save unique key value.
+      let uniqueKeyValue: string;
+      const setUniqueKey = (text: string) => {
+        uniqueKeyValue = text;
+      }
 
       // Create feed parser.
       const parser = new FeedMe();
       parser.on('error', error);
 
       // Try to get date from one of the fields.
-      parser.once('pubdate', getdate);
-      parser.once('lastbuilddate', getdate);
-      parser.once('updated', getdate);
+      if(!this.options.getUniqueValueFromItem) {
+        this.options.uniqueKeyNames.forEach(keyName => parser.once(keyName, setUniqueKey));
+      }
 
       // Change interval time if ttl available.
       if (!this.options.forceInterval) {
@@ -250,10 +265,18 @@ export default class FeedSub extends TypedEmitter<FeedSubEvents> {
       }
 
 
-      // Compare date when first item is encountered.
+      // Compare key when first item is encountered.
       const firstitem = (item: FeedItem) => {
-        // If date is the same as last, abort.
-        if (date && this.options.lastDate === date) {
+        if(this.options.getUniqueValueFromItem) {
+          this.options.uniqueKeyNames.forEach(keyName => {
+            if(!uniqueKeyValue) {
+              uniqueKeyValue = item[keyName] as string;
+            }
+          });
+        }
+
+        // If key is the same as last, abort.
+        if (uniqueKeyValue && this.options.lastUniqueIdentifierValue === uniqueKeyValue) {
           return success();
         }
 
@@ -262,8 +285,8 @@ export default class FeedSub extends TypedEmitter<FeedSubEvents> {
         }
 
         // Continue if dates differ.
-        if (date) {
-          this.options.lastDate = date;
+        if (uniqueKeyValue) {
+          this.options.lastUniqueIdentifierValue = uniqueKeyValue;
         }
         parser.on('item', getItem);
         getItem(item);
