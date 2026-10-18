@@ -9,6 +9,8 @@ const feedold = join(__dirname, 'assets', 'feedold.xml');
 const feednew = join(__dirname, 'assets', 'feednew.xml');
 const rss2old = join(__dirname, 'assets', 'rss2old.xml');
 const rss2new = join(__dirname, 'assets', 'rss2new.xml');
+const badpubdate1 = join(__dirname, 'assets', 'badpubdate1.xml');
+const badpubdate2 = join(__dirname, 'assets', 'badpubdate2.xml');
 
 
 describe('Read the old RSS feed first', () => {
@@ -437,3 +439,48 @@ describe('With no `date` field', () => {
     });
   });
 });
+
+describe('With unparseable item pubdate', () => {
+  it('Reads all items and reads new item on update', (done) => {
+    const host = 'http://badpubdate.info';
+    const path = '/rss';
+    const reader = new FeedSub(host + path, { emitOnStart: true });
+    const itemSpy = sinon.spy();
+    const itemsSpy = sinon.spy();
+
+    reader.on('item', itemSpy);
+    reader.on('items', itemsSpy);
+
+    const scope1 = nock(host)
+      .get(path)
+      .replyWithFile(200, badpubdate1);
+    const scope2 = nock(host)
+      .get(path)
+      .replyWithFile(200, badpubdate2);
+
+    reader.read((err, items) => {
+      assert.ifError(err);
+      assert.ok(Array.isArray(items));
+      assert.equal(items.length, 3);
+      assert.equal(itemSpy.callCount, 3);
+      assert.equal(itemsSpy.callCount, 1);
+
+      itemSpy.resetHistory();
+      itemsSpy.resetHistory();
+      scope1.done();
+
+      reader.read((err, items) => {
+        assert.ifError(err);
+        assert.ok(Array.isArray(items));
+        assert.equal(items.length, 1);
+        assert.equal(itemSpy.callCount, 1);
+        assert.equal(itemsSpy.callCount, 1);
+        assert.equal(items[0].title, 'Star City');
+
+        scope2.done();
+        done();
+      });
+    });
+  });
+});
+

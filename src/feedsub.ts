@@ -271,7 +271,9 @@ export default class FeedSub extends TypedEmitter<FeedSubEvents> {
 
       parser.once('item', firstitem);
 
-      const getItemDate = (item: FeedItem) => +new Date(item.pubdate as string || item.published as string || 0);
+      const getItemDate = (item: FeedItem) =>
+        Date.parse(item.pubdate as string) || Date.parse(item.published as string) || 0;
+      
       const getItem = (item: FeedItem) => {
         if (sortOrder === 0) {
           items.push(item);
