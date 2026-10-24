@@ -11,6 +11,8 @@ const rss2old = join(__dirname, 'assets', 'rss2old.xml');
 const rss2new = join(__dirname, 'assets', 'rss2new.xml');
 const badpubdate1 = join(__dirname, 'assets', 'badpubdate1.xml');
 const badpubdate2 = join(__dirname, 'assets', 'badpubdate2.xml');
+const stalebuilddate1 = join(__dirname, 'assets', 'stalebuilddate1.xml');
+const stalebuilddate2 = join(__dirname, 'assets', 'stalebuilddate2.xml');
 
 
 describe('Read the old RSS feed first', () => {
@@ -483,4 +485,37 @@ describe('With unparseable item pubdate', () => {
     });
   });
 });
+
+describe('With unchanged `lastBuildDate`', () => {
+  it('Still detects new items when lastBuildDate is identical', (done) => {
+    const host = 'http://stalebuilddate.info';
+    const path = '/rss';
+    const reader = new FeedSub(host + path, { emitOnStart: true });
+
+    const scope1 = nock(host)
+      .get(path)
+      .replyWithFile(200, stalebuilddate1);
+    const scope2 = nock(host)
+      .get(path)
+      .replyWithFile(200, stalebuilddate2);
+
+    reader.read((err, items) => {
+      assert.ifError(err);
+      assert.ok(Array.isArray(items));
+      assert.equal(items.length, 1);
+      assert.equal(items[0].title, 'Star City');
+      scope1.done();
+
+      reader.read((err, items) => {
+        assert.ifError(err);
+        assert.ok(Array.isArray(items));
+        assert.equal(items.length, 1);
+        assert.equal(items[0].title, 'Some');
+        scope2.done();
+        done();
+      });
+    });
+  });
+});
+
 

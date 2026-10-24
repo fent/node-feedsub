@@ -252,11 +252,6 @@ export default class FeedSub extends TypedEmitter<FeedSubEvents> {
 
       // Compare date when first item is encountered.
       const firstitem = (item: FeedItem) => {
-        // If date is the same as last, abort.
-        if (date && this.options.lastDate === date) {
-          return success();
-        }
-
         if (shouldSkip()) {
           return success();
         }
