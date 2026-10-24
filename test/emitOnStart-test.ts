@@ -1,12 +1,10 @@
-import FeedSub from '..';
-import nock from 'nock';
-import sinon from 'sinon';
 import assert from 'assert';
+import nock from 'nock';
 import { join } from 'path';
-
+import sinon from 'sinon';
+import FeedSub from '..';
 
 const rss2old = join(__dirname, 'assets', 'rss2old.xml');
-
 
 describe('Read feed without `emitOnStart`', () => {
   it('Should return no items', (done) => {
@@ -19,9 +17,7 @@ describe('Read feed without `emitOnStart`', () => {
     reader.on('item', itemSpy);
     reader.on('items', itemsSpy);
 
-    const scope = nock(host)
-      .get(path)
-      .replyWithFile(200, rss2old);
+    const scope = nock(host).get(path).replyWithFile(200, rss2old);
 
     reader.read((err, items) => {
       assert.ifError(err);
@@ -39,7 +35,7 @@ describe('Read feed without `emitOnStart`', () => {
 
   describe('With `autoStart`', () => {
     let clock: sinon.SinonFakeTimers;
-    beforeEach(() => clock = sinon.useFakeTimers());
+    beforeEach(() => (clock = sinon.useFakeTimers()));
     afterEach(() => clock.restore());
     const host = 'http://feedsite.info';
     const path = '/rss/feed.xml';
@@ -51,9 +47,7 @@ describe('Read feed without `emitOnStart`', () => {
       });
       after(() => reader.stop());
 
-      const scope = nock(host)
-        .get(path)
-        .replyWithFile(200, rss2old);
+      const scope = nock(host).get(path).replyWithFile(200, rss2old);
 
       const itemSpy = sinon.spy();
       reader.on('error', done);
@@ -80,9 +74,7 @@ describe('Read with `emitOnStart`', () => {
     reader.on('item', itemSpy);
     reader.on('items', itemsSpy);
 
-    const scope = nock(host)
-      .get(path)
-      .replyWithFile(200, rss2old);
+    const scope = nock(host).get(path).replyWithFile(200, rss2old);
 
     reader.read((err, items) => {
       assert.ifError(err);
@@ -100,7 +92,7 @@ describe('Read with `emitOnStart`', () => {
 
   describe('With `autoStart`', () => {
     let clock: sinon.SinonFakeTimers;
-    beforeEach(() => clock = sinon.useFakeTimers());
+    beforeEach(() => (clock = sinon.useFakeTimers()));
     afterEach(() => clock.restore());
     const host = 'http://feedsite.info';
     const path = '/rss/feed.xml';
@@ -112,19 +104,19 @@ describe('Read with `emitOnStart`', () => {
       });
       after(() => reader.stop());
 
-      const scope = nock(host)
-        .get(path)
-        .replyWithFile(200, rss2old);
+      const scope = nock(host).get(path).replyWithFile(200, rss2old);
 
       const itemSpy = sinon.spy();
       reader.on('error', done);
       reader.on('item', itemSpy);
       reader.on('items', (items) => {
         assert.ok(Array.isArray(items));
-        assert.equal(items.length, 4,
-          'Callback gets correct number of items');
-        assert.equal(itemSpy.callCount, 4,
-          'Correct number of item events emitted');
+        assert.equal(items.length, 4, 'Callback gets correct number of items');
+        assert.equal(
+          itemSpy.callCount,
+          4,
+          'Correct number of item events emitted',
+        );
         scope.done();
         done();
       });

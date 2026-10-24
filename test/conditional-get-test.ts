@@ -1,26 +1,22 @@
-import FeedSub from '..';
-import nock from 'nock';
-import sinon from 'sinon';
 import assert from 'assert';
+import nock from 'nock';
 import { join } from 'path';
-
+import sinon from 'sinon';
+import FeedSub from '..';
 
 const rss2old = join(__dirname, 'assets', 'rss2old.xml');
-
 
 describe('Conditional GET', () => {
   const host = 'http://feedburner.info';
   const path = '/rss';
 
   // Reply with headers.
-  let now = new Date().toUTCString();
-  let etag = '"asdfghjklpoiuytrewq"';
-  let headers = { 'last-modified': now, 'etag': etag };
+  const now = new Date().toUTCString();
+  const etag = '"asdfghjklpoiuytrewq"';
+  const headers = { 'last-modified': now, etag: etag };
 
   it('Should not return new items on second read', (done) => {
-    let scope1 = nock(host)
-      .get(path)
-      .replyWithFile(200, rss2old, headers);
+    const scope1 = nock(host).get(path).replyWithFile(200, rss2old, headers);
 
     const reader = new FeedSub(host + path, { emitOnStart: true });
     const itemSpy = sinon.spy();
@@ -46,7 +42,7 @@ describe('Conditional GET', () => {
 
       scope1.done();
 
-      let scope2 = nock(host)
+      const scope2 = nock(host)
         .get(path)
         .matchHeader('if-modified-since', now)
         .matchHeader('if-none-match', etag)

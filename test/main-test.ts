@@ -1,9 +1,8 @@
-import FeedSub from'..';
-import nock from'nock';
-import sinon from'sinon';
-import assert from'assert';
+import assert from 'assert';
+import nock from 'nock';
 import { join } from 'path';
-
+import sinon from 'sinon';
+import FeedSub from '..';
 
 const feedold = join(__dirname, 'assets', 'feedold.xml');
 const feednew = join(__dirname, 'assets', 'feednew.xml');
@@ -13,7 +12,6 @@ const badpubdate1 = join(__dirname, 'assets', 'badpubdate1.xml');
 const badpubdate2 = join(__dirname, 'assets', 'badpubdate2.xml');
 const stalebuilddate1 = join(__dirname, 'assets', 'stalebuilddate1.xml');
 const stalebuilddate2 = join(__dirname, 'assets', 'stalebuilddate2.xml');
-
 
 describe('Read the old RSS feed first', () => {
   const host = 'http://feedsite.info';
@@ -27,24 +25,23 @@ describe('Read the old RSS feed first', () => {
     reader.on('item', itemSpy);
     reader.on('items', itemsSpy);
 
-    const scope = nock(host)
-      .get(path)
-      .replyWithFile(200, feedold);
+    const scope = nock(host).get(path).replyWithFile(200, feedold);
 
     reader.read((err, items) => {
       assert.ifError(err);
       assert.ok(Array.isArray(items));
-      assert.equal(items.length, 2997,
-        'Callback gets correct number of items');
-      assert.equal(itemSpy.callCount, 2997,
-        'Correct number of item events emitted');
+      assert.equal(items.length, 2997, 'Callback gets correct number of items');
+      assert.equal(
+        itemSpy.callCount,
+        2997,
+        'Correct number of item events emitted',
+      );
       assert.equal(itemsSpy.callCount, 1);
 
       scope.done();
       done();
     });
   });
-
 
   describe('Read feed again', () => {
     it('Does not return any new items', (done) => {
@@ -55,20 +52,22 @@ describe('Read the old RSS feed first', () => {
       reader.on('item', itemSpy);
       reader.on('items', itemsSpy);
 
-      const scope1 = nock(host)
-        .get(path)
-        .replyWithFile(200, feedold);
-      const scope2 = nock(host)
-        .get(path)
-        .replyWithFile(200, feedold);
+      const scope1 = nock(host).get(path).replyWithFile(200, feedold);
+      const scope2 = nock(host).get(path).replyWithFile(200, feedold);
 
       reader.read((err, items) => {
         assert.ifError(err);
         assert.ok(Array.isArray(items));
-        assert.equal(items.length, 2997,
-          'Callback gets correct number of items');
-        assert.equal(itemSpy.callCount, 2997,
-          'Correct number of item events emitted');
+        assert.equal(
+          items.length,
+          2997,
+          'Callback gets correct number of items',
+        );
+        assert.equal(
+          itemSpy.callCount,
+          2997,
+          'Correct number of item events emitted',
+        );
         assert.equal(itemsSpy.callCount, 1);
 
         itemSpy.resetHistory();
@@ -98,17 +97,13 @@ describe('Read the old RSS feed first', () => {
         reader.on('item', itemSpy);
         reader.on('items', itemsSpy);
 
-        const scope1 = nock(host)
-          .get(path)
-          .replyWithFile(200, feedold);
-        const scope2 = nock(host)
-          .get(path)
-          .replyWithFile(200, feednew);
+        const scope1 = nock(host).get(path).replyWithFile(200, feedold);
+        const scope2 = nock(host).get(path).replyWithFile(200, feednew);
 
         reader.read((err, items) => {
           assert.ifError(err);
           assert.ok(Array.isArray(items));
-          assert.equal(items.length, 2997),
+          assert.equal(items.length, 2997);
           assert.equal(itemSpy.callCount, 2997);
           assert.equal(itemsSpy.callCount, 1);
 
@@ -145,13 +140,8 @@ describe('Same title but different pubdate', () => {
     reader.on('item', itemSpy);
     reader.on('items', itemsSpy);
 
-    const scope1 = nock(host)
-      .get(path)
-      .replyWithFile(200, rss2old);
-    const scope2 = nock(host)
-      .get(path)
-      .replyWithFile(200, rss2new);
-
+    const scope1 = nock(host).get(path).replyWithFile(200, rss2old);
+    const scope2 = nock(host).get(path).replyWithFile(200, rss2new);
 
     reader.read((err, items) => {
       assert.ifError(err);
@@ -231,7 +221,7 @@ describe('On a feed with newer items listed last', () => {
 
 describe('With a bad feed', () => {
   let clock: sinon.SinonFakeTimers;
-  beforeEach(() => clock = sinon.useFakeTimers());
+  beforeEach(() => (clock = sinon.useFakeTimers()));
   afterEach(() => clock.restore());
   const feed = join(__dirname, 'assets', 'badfeed.xml');
 
@@ -249,9 +239,7 @@ describe('With a bad feed', () => {
       reader.on('item', itemSpy);
       reader.on('items', itemsSpy);
 
-      const scope = nock(host)
-        .get(path)
-        .replyWithFile(200, feed);
+      const scope = nock(host).get(path).replyWithFile(200, feed);
 
       reader.on('error', (err) => {
         assert.ok(err);
@@ -279,9 +267,7 @@ describe('With a bad feed', () => {
       reader.on('items', itemsSpy);
       reader.on('error', done);
 
-      const scope = nock(host)
-        .get(path)
-        .replyWithFile(200, feed);
+      const scope = nock(host).get(path).replyWithFile(200, feed);
 
       reader.read((err) => {
         assert.ok(err);
@@ -297,7 +283,7 @@ describe('With a bad feed', () => {
 
 describe('With `ttl` field', () => {
   let clock: sinon.SinonFakeTimers;
-  beforeEach(() => clock = sinon.useFakeTimers());
+  beforeEach(() => (clock = sinon.useFakeTimers()));
   afterEach(() => clock.restore());
   const shortttlfeed = join(__dirname, 'assets', 'shortttl.xml');
   const longttlfeed = join(__dirname, 'assets', 'longttl.xml');
@@ -391,9 +377,7 @@ describe('With `ttl` field', () => {
         reader.on('error', done);
         reader.on('items', itemsSpy);
 
-        const scope = nock(host)
-          .get(path)
-          .replyWithFile(200, longttlfeed);
+        const scope = nock(host).get(path).replyWithFile(200, longttlfeed);
 
         reader.read((err) => {
           assert.ifError(err);
@@ -417,12 +401,8 @@ describe('With no `date` field', () => {
     const path = '/myfeed.xml';
     const reader = new FeedSub(host + path, { emitOnStart: true });
 
-    const scope1 = nock(host)
-      .get(path)
-      .replyWithFile(200, feed1);
-    const scope2 = nock(host)
-      .get(path)
-      .replyWithFile(200, feed2);
+    const scope1 = nock(host).get(path).replyWithFile(200, feed1);
+    const scope2 = nock(host).get(path).replyWithFile(200, feed2);
 
     reader.read((err, items) => {
       assert.ifError(err);
@@ -453,12 +433,8 @@ describe('With unparseable item pubdate', () => {
     reader.on('item', itemSpy);
     reader.on('items', itemsSpy);
 
-    const scope1 = nock(host)
-      .get(path)
-      .replyWithFile(200, badpubdate1);
-    const scope2 = nock(host)
-      .get(path)
-      .replyWithFile(200, badpubdate2);
+    const scope1 = nock(host).get(path).replyWithFile(200, badpubdate1);
+    const scope2 = nock(host).get(path).replyWithFile(200, badpubdate2);
 
     reader.read((err, items) => {
       assert.ifError(err);
@@ -492,12 +468,8 @@ describe('With unchanged `lastBuildDate`', () => {
     const path = '/rss';
     const reader = new FeedSub(host + path, { emitOnStart: true });
 
-    const scope1 = nock(host)
-      .get(path)
-      .replyWithFile(200, stalebuilddate1);
-    const scope2 = nock(host)
-      .get(path)
-      .replyWithFile(200, stalebuilddate2);
+    const scope1 = nock(host).get(path).replyWithFile(200, stalebuilddate1);
+    const scope2 = nock(host).get(path).replyWithFile(200, stalebuilddate2);
 
     reader.read((err, items) => {
       assert.ifError(err);
@@ -517,5 +489,3 @@ describe('With unchanged `lastBuildDate`', () => {
     });
   });
 });
-
-

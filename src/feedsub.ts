@@ -1,14 +1,19 @@
-import { TypedEmitter } from 'tiny-typed-emitter';
-import { default as FeedMe, FeedItem } from 'feedme';
-import NewsEmitter from 'newsemitter';
+import { type FeedItem, default as FeedMe } from 'feedme';
 import miniget from 'miniget';
+import NewsEmitter from 'newsemitter';
+import { TypedEmitter } from 'tiny-typed-emitter';
 import zlib from 'zlib';
 
-
 // Used for the skipdays tag.
-const DAYS = ['sunday', 'monday', 'tuesday', 'wednesday',
-  'thursday', 'friday', 'saturday'];
-
+const DAYS = [
+  'sunday',
+  'monday',
+  'tuesday',
+  'wednesday',
+  'thursday',
+  'friday',
+  'saturday',
+];
 
 export interface Options {
   interval?: number;
@@ -28,9 +33,9 @@ export interface Options {
 export type DefaultOptions = Required<Options>;
 
 interface FeedSubEvents {
-  'error': (err: Error) => void;
-  'item': (item: FeedItem) => void;
-  'items': (items: FeedItem[]) => void;
+  error: (err: Error) => void;
+  item: (item: FeedItem) => void;
+  items: (items: FeedItem[]) => void;
 }
 
 export { FeedItem } from 'feedme';
@@ -41,7 +46,7 @@ export default class FeedSub extends TypedEmitter<FeedSubEvents> {
   public news: NewsEmitter;
   public getOpts: miniget.Options & { headers: Record<string, string> };
   private _first: boolean;
-  private _intervalid: number;
+  private _intervalid?: NodeJS.Timeout;
 
   /**
    * @constructor
@@ -51,51 +56,56 @@ export default class FeedSub extends TypedEmitter<FeedSubEvents> {
   constructor(feed: string, options?: Options) {
     super();
     this.feed = feed;
-    this.options = Object.assign({
-      interval      : 10,
-      forceInterval : false,
-      autoStart     : false,
-      emitOnStart   : false,
-      lastDate      : null,
-      history       : [],
-      maxHistory    : 10,
-      skipHours     : false,
-      hoursToSkip   : null,
-      skipDays      : false,
-      daysToSkip    : null,
-      requestOpts   : {},
-    }, options);
+    this.options = Object.assign(
+      {
+        interval: 10,
+        forceInterval: false,
+        autoStart: false,
+        emitOnStart: false,
+        lastDate: null,
+        history: [],
+        maxHistory: 10,
+        skipHours: false,
+        hoursToSkip: null,
+        skipDays: false,
+        daysToSkip: null,
+        requestOpts: {},
+      },
+      options,
+    );
 
     // Create news emitter.
     this.news = new NewsEmitter({
       maxHistory: this.options.maxHistory,
       manageHistory: true,
       identifier: (item: any[]) => {
-        let feedItem = item[0];
+        const feedItem = item[0];
         return [
           feedItem.title,
           feedItem.link,
           feedItem.pubdate,
           feedItem.published,
-          feedItem.updated
+          feedItem.updated,
         ].join(',');
-      }
+      },
     });
 
     this.news.addHistory('item', this.options.history);
     this._first = (this.news.history.get('item') as Set<string>).size === 0;
-    this.getOpts = Object.assign({
-      headers: {} as Record<string, string>,
-      acceptEncoding: {
-        gzip: () => zlib.createGunzip(),
-        deflate: () => zlib.createInflate(),
+    this.getOpts = Object.assign(
+      {
+        headers: {} as Record<string, string>,
+        acceptEncoding: {
+          gzip: () => zlib.createGunzip(),
+          deflate: () => zlib.createInflate(),
+        },
       },
-    }, this.options.requestOpts);
+      this.options.requestOpts,
+    );
     if (this.options.autoStart) {
       this.start(true);
     }
   }
-
 
   /**
    * Start calling the read function on interval.
@@ -104,13 +114,12 @@ export default class FeedSub extends TypedEmitter<FeedSubEvents> {
    */
   start(readOnStart?: boolean) {
     this.stop();
-    let ms = this.options.interval * 60000;
+    const ms = this.options.interval * 60000;
     this._intervalid = setInterval(this.read.bind(this), ms);
     if (readOnStart) {
       this.read();
     }
   }
-
 
   /**
    * Stop interval if any
@@ -118,7 +127,6 @@ export default class FeedSub extends TypedEmitter<FeedSubEvents> {
   stop() {
     clearInterval(this._intervalid);
   }
-
 
   /**
    * Reads feed and determines if there are any new items
@@ -133,7 +141,7 @@ export default class FeedSub extends TypedEmitter<FeedSubEvents> {
   read(callback?: (err: null | Error, items?: FeedItem[]) => void) {
     let ended = false;
     let req: miniget.Stream;
-    let items: FeedItem[] = [];
+    const items: FeedItem[] = [];
     let newItems: FeedItem[] = [];
     let sortOrder = 0;
 
@@ -149,16 +157,23 @@ export default class FeedSub extends TypedEmitter<FeedSubEvents> {
     };
 
     const success = () => {
-      if (ended) { return; }
+      if (ended) {
+        return;
+      }
       ended = true;
       if (sortOrder <= 0) {
         newItems.reverse();
       }
-      this.news.addHistory('item', newItems.map((item) => [item]));
+      this.news.addHistory(
+        'item',
+        newItems.map((item) => [item]),
+      );
       if (this._first && !this.options.emitOnStart) {
         newItems = [];
       }
-      newItems.forEach(item => this.emit('item', item));
+      newItems.forEach((item) => {
+        this.emit('item', item);
+      });
       this.emit('items', newItems);
       if (req) {
         req.destroy();
@@ -174,15 +189,13 @@ export default class FeedSub extends TypedEmitter<FeedSubEvents> {
     const shouldSkip = () => {
       return (
         (!this._first || !this.options.emitOnStart) &&
-        (this.options.hoursToSkip || this.options.daysToSkip)
-      ) && (
-        (this.options.hoursToSkip &&
-         this.options.hoursToSkip.indexOf(now.getHours()) !== -1) ||
-        (this.options.daysToSkip &&
-         this.options.daysToSkip.some((day) => {
-           return day.toLowerCase() === DAYS[now.getDay()];
-         })
-        )
+        (this.options.hoursToSkip || this.options.daysToSkip) &&
+        ((this.options.hoursToSkip &&
+          this.options.hoursToSkip.indexOf(now.getHours()) !== -1) ||
+          (this.options.daysToSkip &&
+            this.options.daysToSkip.some((day) => {
+              return day.toLowerCase() === DAYS[now.getDay()];
+            })))
       );
     };
 
@@ -200,7 +213,8 @@ export default class FeedSub extends TypedEmitter<FeedSubEvents> {
 
       // Check headers for conditional get.
       if (res.headers['last-modified']) {
-        this.getOpts.headers['If-Modified-Since'] = res.headers['last-modified'];
+        this.getOpts.headers['If-Modified-Since'] =
+          res.headers['last-modified'];
       }
       if (res.headers.etag) {
         this.getOpts.headers['If-None-Match'] = res.headers.etag;
@@ -208,7 +222,7 @@ export default class FeedSub extends TypedEmitter<FeedSubEvents> {
 
       // Save date.
       let date: string;
-      let getdate = (text: string) => date = text;
+      const getdate = (text: string) => (date = text);
 
       // Create feed parser.
       const parser = new FeedMe();
@@ -237,8 +251,9 @@ export default class FeedSub extends TypedEmitter<FeedSubEvents> {
       // Listen for skipHours if enabled.
       if (this.options.skipHours && !this.options.hoursToSkip) {
         parser.once('skiphours', (data) => {
-          this.options.hoursToSkip =
-            [].concat(data.hour).map(h => parseInt(h, 10));
+          this.options.hoursToSkip = []
+            .concat(data.hour)
+            .map((h) => parseInt(h, 10));
         });
       }
 
@@ -248,7 +263,6 @@ export default class FeedSub extends TypedEmitter<FeedSubEvents> {
           this.options.daysToSkip = [].concat(data.day);
         });
       }
-
 
       // Compare date when first item is encountered.
       const firstitem = (item: FeedItem) => {
@@ -267,8 +281,10 @@ export default class FeedSub extends TypedEmitter<FeedSubEvents> {
       parser.once('item', firstitem);
 
       const getItemDate = (item: FeedItem) =>
-        Date.parse(item.pubdate as string) || Date.parse(item.published as string) || 0;
-      
+        Date.parse(item.pubdate as string) ||
+        Date.parse(item.published as string) ||
+        0;
+
       const getItem = (item: FeedItem) => {
         if (sortOrder === 0) {
           items.push(item);
@@ -280,7 +296,6 @@ export default class FeedSub extends TypedEmitter<FeedSubEvents> {
           }
         } else if (sortOrder < 0) {
           getOlderItem(item);
-
         } else {
           getNewerItem(item);
         }
@@ -290,7 +305,7 @@ export default class FeedSub extends TypedEmitter<FeedSubEvents> {
         if (this._first) {
           newItems.push(item);
         } else if (!ended) {
-          let emitted = this.news.emit('item', item);
+          const emitted = this.news.emit('item', item);
           if (emitted) {
             newItems.push(item);
           } else {
@@ -316,7 +331,9 @@ export default class FeedSub extends TypedEmitter<FeedSubEvents> {
       req.pipe(parser);
 
       parser.on('finish', () => {
-        if (ended) { return; }
+        if (ended) {
+          return;
+        }
         // Process items in descending order if no order found at end.
         if (sortOrder === 0 && newItems.length === 0) {
           items.forEach(getOlderItem);

@@ -1,13 +1,11 @@
-import FeedSub from '..';
-import nock from 'nock';
 import assert from 'assert';
-import { join } from 'path';
 import fs from 'fs';
+import nock from 'nock';
+import { join } from 'path';
 import zlib from 'zlib';
-
+import FeedSub from '..';
 
 const feed = join(__dirname, 'assets', 'rss2old.xml');
-
 
 describe('Compressed feed with gzip', () => {
   it('Able to parse and read feed', () => {
@@ -16,11 +14,11 @@ describe('Compressed feed with gzip', () => {
     const reader = new FeedSub(host + path, { emitOnStart: true });
 
     const scope = nock(host, {
-      reqheaders: { 'Accept-Encoding': /\bgzip\b/ }
+      reqheaders: { 'Accept-Encoding': /\bgzip\b/ },
     })
       .get(path)
       .reply(200, fs.createReadStream(feed).pipe(zlib.createGzip()), {
-        'content-encoding': 'gzip'
+        'content-encoding': 'gzip',
       });
 
     reader.read((err, items) => {
@@ -39,11 +37,11 @@ describe('Compressed feed with deflate', () => {
     const reader = new FeedSub(host + path, { emitOnStart: true });
 
     const scope = nock(host, {
-      reqheaders: { 'Accept-Encoding': /\bgzip\b/ }
+      reqheaders: { 'Accept-Encoding': /\bgzip\b/ },
     })
       .get(path)
       .reply(200, fs.createReadStream(feed).pipe(zlib.createDeflate()), {
-        'content-encoding': 'deflate'
+        'content-encoding': 'deflate',
       });
 
     reader.read((err, items) => {

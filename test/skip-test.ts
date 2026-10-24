@@ -1,9 +1,8 @@
-import FeedSub from '..';
-import nock from 'nock';
-import sinon from 'sinon';
 import assert from 'assert';
+import nock from 'nock';
 import { join } from 'path';
-
+import sinon from 'sinon';
+import FeedSub from '..';
 
 describe('Use skipHours', () => {
   const feed = join(__dirname, 'assets', 'skiphours.rss');
@@ -15,12 +14,11 @@ describe('Use skipHours', () => {
         const host = 'http://www.google.com';
         const path = '/reader/public/atom/';
         const reader = new FeedSub(host + path, {
-          emitOnStart: true, skipHours: true
+          emitOnStart: true,
+          skipHours: true,
         });
 
-        const scope = nock(host)
-          .get(path)
-          .replyWithFile(200, feed);
+        const scope = nock(host).get(path).replyWithFile(200, feed);
 
         reader.read((err, items) => {
           assert.ifError(err);
@@ -46,12 +44,11 @@ describe('Use skipHours', () => {
         const host = 'http://www.google.com';
         const path = '/reader/public/atom/';
         const reader = new FeedSub(host + path, {
-          emitOnStart: false, skipHours: true
+          emitOnStart: false,
+          skipHours: true,
         });
 
-        const scope = nock(host)
-          .get(path)
-          .replyWithFile(200, feed);
+        const scope = nock(host).get(path).replyWithFile(200, feed);
 
         reader.read((err, items) => {
           assert.ifError(err);
@@ -64,18 +61,17 @@ describe('Use skipHours', () => {
     });
   });
 
-  describe('With hours that don\'t match', () => {
+  describe("With hours that don't match", () => {
     it('Should return some items', (done) => {
       sinon.stub(Date.prototype, 'getHours').returns(7);
       const host = 'http://www.google.com';
       const path = '/reader/public/atom/';
       const reader = new FeedSub(host + path, {
-        emitOnStart: true, skipHours: true
+        emitOnStart: true,
+        skipHours: true,
       });
 
-      const scope = nock(host)
-        .get(path)
-        .replyWithFile(200, feed);
+      const scope = nock(host).get(path).replyWithFile(200, feed);
 
       reader.read((err, items) => {
         assert.ifError(err);
@@ -96,12 +92,11 @@ describe('Use skipDays', () => {
     const host = 'http://blog.nodejs.org';
     const path = '/feed/';
     const reader = new FeedSub(host + path, {
-      emitOnStart: false, skipDays: true
+      emitOnStart: false,
+      skipDays: true,
     });
 
-    const scope = nock(host)
-      .get(path)
-      .replyWithFile(200, feed);
+    const scope = nock(host).get(path).replyWithFile(200, feed);
 
     reader.read((err, items) => {
       assert.ifError(err);
