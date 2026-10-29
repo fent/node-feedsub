@@ -1,6 +1,6 @@
-import assert from 'assert';
+import assert from 'node:assert';
+import { join } from 'node:path';
 import nock from 'nock';
-import { join } from 'path';
 import sinon from 'sinon';
 import FeedSub from '..';
 
@@ -74,7 +74,7 @@ describe('Read the old RSS feed first', () => {
         itemsSpy.resetHistory();
 
         scope1.done();
-        reader.read((err: null | Error, items) => {
+        reader.read((_err: null | Error, items) => {
           assert.ok(Array.isArray(items));
           assert.equal(items.length, 0);
 

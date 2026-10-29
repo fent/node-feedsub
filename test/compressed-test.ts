@@ -1,8 +1,8 @@
-import assert from 'assert';
-import fs from 'fs';
+import assert from 'node:assert';
+import fs from 'node:fs';
+import { join } from 'node:path';
+import zlib from 'node:zlib';
 import nock from 'nock';
-import { join } from 'path';
-import zlib from 'zlib';
 import FeedSub from '..';
 
 const feed = join(__dirname, 'assets', 'rss2old.xml');

@@ -1,8 +1,8 @@
+import zlib from 'node:zlib';
 import { type FeedItem, default as FeedMe } from 'feedme';
 import miniget from 'miniget';
 import NewsEmitter from 'newsemitter';
 import { TypedEmitter } from 'tiny-typed-emitter';
-import zlib from 'zlib';
 
 // Used for the skipdays tag.
 const DAYS = [
@@ -78,7 +78,7 @@ export default class FeedSub extends TypedEmitter<FeedSubEvents> {
     this.news = new NewsEmitter({
       maxHistory: this.options.maxHistory,
       manageHistory: true,
-      identifier: (item: any[]) => {
+      identifier: (item: FeedItem[]) => {
         const feedItem = item[0];
         return [
           feedItem.title,
@@ -192,10 +192,9 @@ export default class FeedSub extends TypedEmitter<FeedSubEvents> {
         (this.options.hoursToSkip || this.options.daysToSkip) &&
         ((this.options.hoursToSkip &&
           this.options.hoursToSkip.indexOf(now.getHours()) !== -1) ||
-          (this.options.daysToSkip &&
-            this.options.daysToSkip.some((day) => {
-              return day.toLowerCase() === DAYS[now.getDay()];
-            })))
+          this.options.daysToSkip?.some((day) => {
+            return day.toLowerCase() === DAYS[now.getDay()];
+          }))
       );
     };
 

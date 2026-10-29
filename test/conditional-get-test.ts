@@ -1,6 +1,6 @@
-import assert from 'assert';
+import assert from 'node:assert';
+import { join } from 'node:path';
 import nock from 'nock';
-import { join } from 'path';
 import sinon from 'sinon';
 import FeedSub from '..';
 
