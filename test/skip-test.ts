@@ -88,7 +88,7 @@ describe('Use skipDays', () => {
   const feed = join(__dirname, 'assets', 'skipdays.xml');
 
   it('Should return no items', (done) => {
-    sinon.stub(Date.prototype, 'getHours').returns(6);
+    sinon.stub(Date.prototype, 'getDay').returns(6);
     const host = 'http://blog.nodejs.org';
     const path = '/feed/';
     const reader = new FeedSub(host + path, {
@@ -103,7 +103,15 @@ describe('Use skipDays', () => {
       assert.ok(Array.isArray(items));
       assert.equal(items.length, 0);
       scope.done();
-      done();
+
+      process.nextTick(() => {
+        reader.read((err, items) => {
+          assert.ifError(err);
+          assert.ok(Array.isArray(items));
+          assert.equal(items.length, 0);
+          done();
+        });
+      });
     });
   });
 });

@@ -178,15 +178,23 @@ export default class FeedSub extends TypedEmitter<FeedSubEvents> {
     // to skip and it's currently one of those hours/days, abort.
     const now = new Date();
     const shouldSkip = () => {
-      return (
-        (!this._first || !this.options.emitOnStart) &&
-        (this.options.hoursToSkip || this.options.daysToSkip) &&
-        ((this.options.hoursToSkip &&
-          this.options.hoursToSkip.indexOf(now.getHours()) !== -1) ||
-          this.options.daysToSkip?.some((day) => {
-            return day.toLowerCase() === DAYS[now.getDay()];
-          }))
-      );
+      if (this._first && this.options.emitOnStart) {
+        return false;
+      }
+      if (
+        this.options.hoursToSkip &&
+        this.options.hoursToSkip.indexOf(now.getHours()) !== -1
+      ) {
+        return true;
+      }
+      if (
+        this.options.daysToSkip?.some((day) => {
+          return day.toLowerCase() === DAYS[now.getDay()];
+        })
+      ) {
+        return true;
+      }
+      return false;
     };
 
     if (shouldSkip()) {
