@@ -48,11 +48,6 @@ export default class FeedSub extends TypedEmitter<FeedSubEvents> {
   private _first: boolean;
   private _intervalid?: NodeJS.Timeout;
 
-  /**
-   * @constructor
-   * @param {string} feed
-   * @param {!Object} options
-   */
   constructor(feed: string, options?: Options) {
     super();
     this.feed = feed;
@@ -109,8 +104,6 @@ export default class FeedSub extends TypedEmitter<FeedSubEvents> {
 
   /**
    * Start calling the read function on interval.
-   *
-   * @param {boolean} readOnStart
    */
   start(readOnStart?: boolean) {
     this.stop();
@@ -135,8 +128,6 @@ export default class FeedSub extends TypedEmitter<FeedSubEvents> {
    *
    * if callback is given, calls callback with all new items
    * even when there are 0.
-   *
-   * @param {!Function(!Error, Array.<Object>)} callback
    */
   read(callback?: (err: null | Error, items?: FeedItem[]) => void) {
     let ended = false;
