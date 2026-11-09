@@ -15,22 +15,8 @@ const DAYS = [
   'saturday',
 ];
 
-export interface Options {
-  interval?: number;
-  forceInterval?: boolean;
-  autoStart?: boolean;
-  emitOnStart?: boolean;
-  lastDate?: null | string;
-  history?: string[];
-  maxHistory?: number;
-  skipHours?: boolean;
-  hoursToSkip?: number[];
-  skipDays?: boolean;
-  daysToSkip?: string[];
-  requestOpts?: miniget.Options;
-}
-
-export type DefaultOptions = Required<Options>;
+type Options = FeedSub.Options;
+type DefaultOptions = FeedSub.DefaultOptions;
 
 interface FeedSubEvents {
   error: (err: Error) => void;
@@ -38,9 +24,9 @@ interface FeedSubEvents {
   items: (items: FeedItem[]) => void;
 }
 
-export { FeedItem } from 'feedme';
-
-export default class FeedSub extends TypedEmitter<FeedSubEvents> {
+class FeedSub extends TypedEmitter<FeedSubEvents> {
+  static FeedSub = FeedSub;
+  static default = FeedSub;
   public feed: string;
   public options: DefaultOptions;
   public news: NewsEmitter;
@@ -345,4 +331,29 @@ export default class FeedSub extends TypedEmitter<FeedSubEvents> {
   }
 }
 
+namespace FeedSub {
+  export interface Options {
+    interval?: number;
+    forceInterval?: boolean;
+    autoStart?: boolean;
+    emitOnStart?: boolean;
+    lastDate?: null | string;
+    history?: string[];
+    maxHistory?: number;
+    skipHours?: boolean;
+    hoursToSkip?: number[];
+    skipDays?: boolean;
+    daysToSkip?: string[];
+    requestOpts?: miniget.Options;
+  }
+
+  export type DefaultOptions = Required<Options>;
+  export type FeedItem = import('feedme').FeedItem;
+}
+
+// Statically recognizable exports for Node.js cjs-module-lexer (ESM named import support)
 module.exports = FeedSub;
+module.exports.default = FeedSub;
+module.exports.FeedSub = FeedSub;
+
+export = FeedSub;
