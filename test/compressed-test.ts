@@ -3,7 +3,7 @@ import fs from 'node:fs';
 import { join } from 'node:path';
 import zlib from 'node:zlib';
 import nock from 'nock';
-import FeedSub from '..';
+import FeedSub from '../src/feedsub';
 
 const feed = join(__dirname, 'assets', 'rss2old.xml');
 

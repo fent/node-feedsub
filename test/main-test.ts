@@ -2,7 +2,7 @@ import assert from 'node:assert';
 import { join } from 'node:path';
 import nock from 'nock';
 import sinon from 'sinon';
-import FeedSub from '..';
+import FeedSub from '../src/feedsub';
 
 const feedold = join(__dirname, 'assets', 'feedold.xml');
 const feednew = join(__dirname, 'assets', 'feednew.xml');

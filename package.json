@@ -23,8 +23,9 @@
     "lint:fix": "biome check --write .",
     "prepare": "tsc -p tsconfig.build.json",
     "build": "tsc -p tsconfig.build.json",
-    "test": "nyc --extension .ts --reporter=lcov --reporter=text-summary npm run test:unit",
-    "test:unit": "mocha --require ts-node/register test/*-test.ts"
+    "test": "nyc --extension .ts --reporter=lcov --reporter=text-summary npm run test:unit && npm run test:package",
+    "test:unit": "mocha --require ts-node/register --ignore test/export-test.ts test/*-test.ts",
+    "test:package": "mocha --require ts-node/register test/export-test.ts"
   },
   "dependencies": {
     "feedme": "^2.0.2",
