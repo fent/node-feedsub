@@ -489,3 +489,28 @@ describe('With unchanged `lastBuildDate`', () => {
     });
   });
 });
+
+describe('Promise API for read()', () => {
+  it('Resolves with new items when no callback is provided', async () => {
+    const host = 'http://promisefeed.info';
+    const path = '/rss';
+    const reader = new FeedSub(host + path, { emitOnStart: true });
+    const scope = nock(host).get(path).replyWithFile(200, rss2old);
+
+    const items = await reader.read();
+    assert.ok(Array.isArray(items));
+    assert.equal(items.length, 4);
+    scope.done();
+  });
+
+  it('Rejects when feed parsing fails', async () => {
+    const host = 'http://promisefeed.info';
+    const path = '/bad';
+    const badFeed = join(__dirname, 'assets', 'badfeed.xml');
+    const reader = new FeedSub(host + path, { emitOnStart: true });
+    const scope = nock(host).get(path).replyWithFile(200, badFeed);
+
+    await assert.rejects(() => reader.read(), /Unexpected end/);
+    scope.done();
+  });
+});

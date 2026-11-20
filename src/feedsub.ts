@@ -94,9 +94,16 @@ class FeedSub extends TypedEmitter<FeedSubEvents> {
   start(readOnStart?: boolean) {
     this.stop();
     const ms = this.options.interval * 60000;
-    this._intervalid = setInterval(this.read.bind(this), ms);
+    const poll = () => {
+      this._read((err) => {
+        if (err) {
+          this.emit('error', err);
+        }
+      });
+    };
+    this._intervalid = setInterval(poll, ms);
     if (readOnStart) {
-      this.read();
+      poll();
     }
   }
 
@@ -113,9 +120,29 @@ class FeedSub extends TypedEmitter<FeedSubEvents> {
    * if there are new items, emits `items` event at end with all items
    *
    * if callback is given, calls callback with all new items
-   * even when there are 0.
+   * even when there are 0. Otherwise returns a Promise resolving to them.
    */
-  read(callback?: (err: null | Error, items?: FeedItem[]) => void) {
+  read(): Promise<FeedItem[]>;
+  read(callback: (err: null | Error, items?: FeedItem[]) => void): void;
+  read(
+    callback?: (err: null | Error, items?: FeedItem[]) => void,
+  ): Promise<FeedItem[]> | undefined {
+    if (typeof callback === 'function') {
+      this._read(callback);
+      return;
+    }
+    return new Promise<FeedItem[]>((resolve, reject) => {
+      this._read((err, items) => {
+        if (err) {
+          reject(err);
+        } else {
+          resolve(items as FeedItem[]);
+        }
+      });
+    });
+  }
+
+  private _read(callback: (err: null | Error, items?: FeedItem[]) => void) {
     let ended = false;
     let req: miniget.Stream;
     const items: FeedItem[] = [];
@@ -125,11 +152,7 @@ class FeedSub extends TypedEmitter<FeedSubEvents> {
     const error = (err: Error) => {
       ended = true;
       this._first = false;
-      if (typeof callback === 'function') {
-        callback(err);
-      } else {
-        this.emit('error', err);
-      }
+      callback(err);
       req.destroy();
     };
 
@@ -155,9 +178,7 @@ class FeedSub extends TypedEmitter<FeedSubEvents> {
       if (req) {
         req.destroy();
       }
-      if (typeof callback === 'function') {
-        callback(null, newItems);
-      }
+      callback(null, newItems);
     };
 
     // If skipHours or skipDays are enabled and feed provides hours/days

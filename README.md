@@ -72,7 +72,7 @@ Creates a new instance of FeedSub. `options` defaults to.
 ```
 
 ### FeedSub#read([callback(err, items)])
-Reads the feed. Calls `callback` with possible error or new items discovered if provided. Causes `reader` to emit new item events.
+Reads the feed. Calls `callback` with possible error or new items discovered if provided; otherwise returns a `Promise` resolving to the new items. Causes `reader` to emit new item events.
 
 ### FeedSub#start(readOnStart)
 Starts checking the feed for any new items every `options.interval` minutes. If `readOnStart` is true, it checks right away.
@@ -96,7 +96,7 @@ Emits all new items from one request in one array.
 ### Event: error
 * `Error`
 
-Emitted when there is an error downloading or parsing the feed. Not emitted if `callback` is given for `read` or `readInterval`.
+Emitted when there is an error downloading or parsing the feed during automatic polling (`start()` / `autoStart`). Errors from direct `read()` calls are passed to the callback or reject the returned `Promise`.
 
 
 # Install
